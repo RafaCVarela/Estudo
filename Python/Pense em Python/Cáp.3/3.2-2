@@ -1,0 +1,12 @@
+# Imprime uma string duas vezes através duma função
+
+def do_twice(f, s):
+    f(string)
+    f(string)
+
+def print_string(s):
+    print(s)
+
+string = str(input('Digite uma string: '))
+
+do_twice(print_string, string)
