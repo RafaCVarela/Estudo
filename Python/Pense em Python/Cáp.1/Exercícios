@@ -1,1 +1,45 @@
+1.2-
+	1.
 
+# Quantos segundos há em 42 min e 42 seg?
+
+print(42 * 60 + 42)
+      
+2562
+
+	2.
+
+# Quantas milhas há em 10 km? Dica: uma milha equivale a 1,61 km
+
+print(10 / 1.61)
+      
+6.211180124223602
+
+	3.
+
+# Se você correr 10 km em 42 min e 42 seg, qual é o seu passo médio( tempo por milha em min e seg)?
+# Qual é a sua velociade média em milhar por hora?
+
+# Primeiro passo médio milha por min
+
+print(42 + (42 / 60))
+      
+42.7
+print(6.211180124223602 / 42.7)
+      
+0.14546089283896022
+
+# Segundo milha por seg
+
+print(6.211180124223602 / 2562)
+      
+0.0024243482139826703
+
+#Terceiro a velocidade média milha por hora
+
+print(2562 / 3600)
+      
+0.7116666666666667
+print(6.211180124223602 / 0.7116666666666667)
+      
+8.727653570337614
