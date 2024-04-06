@@ -1,0 +1,10 @@
+// Imprime a letra 'R' com 'X'
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf(" XXXXXX\n XX  XX\n XX  XX\n XXXXXX\n XX  XX\n XX   XX\n XX    XX ");
+    return 0;
+}
