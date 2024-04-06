@@ -1,0 +1,6 @@
+# Se você correr 10 km em 42 min e 42 seg, qual é o seu passo médio( tempo por milha em min e seg)?
+# Qual é a sua velociade média em milhar por hora?
+
+# Primeiro passo médio milha por min
+
+print(42 + (42 / 60))
