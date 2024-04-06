@@ -1,0 +1,20 @@
+// Calcula seu IMC
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    float peso, altura;
+    
+    printf("\n Digite o seu peso em kilogramas: ");
+    scanf("%f", &peso);
+    
+    printf("\n Digite a sua altura em metros: ");
+    scanf("%f", &altura);
+    
+    printf("\n Valor do IMC: %f", peso/pow(altura,2));
+    
+    return 0;
+}
