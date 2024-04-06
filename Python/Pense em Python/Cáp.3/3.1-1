@@ -1,0 +1,9 @@
+# Imprime uma string 'n' vezes, sendo 'n' o tamanho da string
+
+def right_justify(s):
+    n = 70 / len(s)
+    texto = int(n) * s
+    print(texto)
+
+string = str(input('Digite uma string: '))
+right_justify(string)
