@@ -1,0 +1,7 @@
+# Cálculo de um preço final com desconto
+
+preco_desconto = 0.4 * 24.95
+
+preco_total = preco_desconto + 3 + (preco_desconto + 0.75) * 59
+
+print('Preco total para as 60 copias e igual a RS ', preco_total)
