@@ -1,0 +1,35 @@
+// Converte uma temperatura em Celsius em Fahrenheit
+
+// (versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float c, f;
+
+    printf("\n Escreva a temperatura em Celsius: ");
+    scanf("%f", &c);
+
+    // Com a equação numa linha
+    f=(9*c+160)/5;
+
+    printf("\n A temperatura em Fahrenheit: %f", f);
+    return 0;
+}
+
+// (versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float c, f;
+
+    printf("\n Escreva a temperatura em Celsius: ");
+    scanf("%f", &c);
+
+    // Atribuindo a equação na variável 'f' diretamente na função 'printf'
+    printf("\n A temperatura em Fahrenheit: %f", f=(9*c+160)/5);
+    return 0;
+}
