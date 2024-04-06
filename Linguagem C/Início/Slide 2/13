@@ -1,0 +1,13 @@
+// Encontrar as soluções dum sistema de equações
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   float x, y;
+   
+   printf("\n SISTEMA DE EQUACOES\n x + y = 14.8\n x - y = 3.5\n SOLUCAO\n x = %f\n y = %f", 18.3/2, 11.3/2);
+   
+   return 0;
+}
