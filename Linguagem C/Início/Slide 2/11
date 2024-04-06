@@ -1,0 +1,19 @@
+// A soma, subtração, multiplicação, divisão e resto entre dois números
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y;
+    
+    printf("\n Digite o primeiro numero: ");
+    scanf("%d", &x);
+    
+    printf("\n Digite o segundo numero: ");
+    scanf("%d", &y);
+    
+    printf("\n %d + %d = %d\n %d - %d = %d\n %d * %d = %d\n %d / %d = %d\n %d %% %d = %d", x, y, x+y, x, y, x-y, x, y, x*y, x, y, x/y, x, y, x%y);
+    
+    return 0;
+}
