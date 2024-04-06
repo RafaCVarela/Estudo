@@ -1,1 +1,1 @@
-Aqui estão os exercícios feitos no iterador IDLE.
+Aqui os exercícios feitos no iterador IDLE.
