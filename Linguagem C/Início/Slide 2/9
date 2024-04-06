@@ -1,0 +1,16 @@
+// Calcula o desconto dum preço
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float preco, precod;
+    
+    printf("\n Digite o preco: ");
+    scanf("%f",&preco);
+    
+    printf("\n O preco com desconto e: %f", precod=preco*0.75);
+    
+    return 0;
+}
