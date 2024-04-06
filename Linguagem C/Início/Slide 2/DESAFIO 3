@@ -1,0 +1,50 @@
+// Calcula quantas o salário por quantidade de notas
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int salario1, salario2, soma, d1, v1, d2, v2, d3, v3, d4, v4, d5=v4/5;
+   
+   printf("\n Digite o primeiro salario: ");
+   scanf("%d", &salario1);
+   
+   printf("\n Digite o segundo salario: ");
+   scanf("%d", &salario2);
+   
+   soma=salario1+salario2;
+   
+   if(soma%100<=0){
+    d1=soma/100;
+    printf("\n Notas: %dxRS100; 0xRS50; 0xRS20; 0xRS10; 0xRS5", d1);
+   }
+   else{
+    v1=soma%100;
+    if(v1%50<=0){
+        d1=soma/100, d2=v1/50;
+        printf("\n Notas: %dxRS100; %dxRS50; 0xRS20; 0xRS10; 0xRS5", d1, d2);
+    }
+    else{
+        v2=v1%50;
+        if(v2%20<=0){
+            d1=soma/100, d2=v1/50, d3=v2/20;
+            printf("\n Notas: %dxRS100; %dxRS50; %dxRS20; 0xRS10; 0xRS5", d1, d2, d3);
+            }
+        else{
+            v3=v2%10;
+            if(v3%10<=0){
+                d1=soma/100, d2=v1/50, d3=v2/20, d4=v3/10;
+                printf("\n Notas: %dxRS100; %dxRS50; %dxRS20; %dxRS10; 0xRS5", d1, d2, d3, d4);
+            }
+            else{
+                v4=v3%10;
+                d1=soma/100, d2=v1/50, d3=v2/20, d4=v3/10, d5=v4/5;
+                printf("\n Notas: %dxRS100; %dxRS50; %dxRS20; %dxRS10; %dxRS5", d1, d2, d3, d4, d5);
+            }
+        }
+    }
+   }
+   
+   return 0;
+}
