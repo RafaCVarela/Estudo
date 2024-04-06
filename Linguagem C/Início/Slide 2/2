@@ -1,0 +1,19 @@
+// Imprime quantos dias, horas e minutos tantos segundos tem.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int segundos, minutos, horas, dias;
+    
+    segundos=200000;
+    minutos=segundos/60;
+    horas=minutos/60;
+    dias=horas/60;
+    
+    printf("Dias: %d\nHoras: %d\n", dias, horas);
+    printf("Minutos: %d\nSegundos: %d", minutos, segundos);
+    
+    return 0;
+}
