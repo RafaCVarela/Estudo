@@ -8,6 +8,8 @@
 int main()
 {
     float sldi=2000.0, slr=400.30;
+
     printf("\n EXTRATO BANCARIO\n Saldo inicial: RS%.1f\n Salario: RS%.1f\n Saldo parcial: RS%.1f\n 1a reitrada: RS%.1f\n Saldo parcial: RS%.1f\n 2a retirada: RS%.1f\n Saldo parcial: RS%.1f\n 3a retirada: RS%.1f\n Saldo final: RS%.1f", sldi, slr, sldi+slr, 150.0, sldi+slr-150.0, 250.0, sldi+slr-400.3, 499.5, sldi+slr-899.8);
+
     return 0;
 }
