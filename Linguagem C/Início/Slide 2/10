@@ -1,0 +1,18 @@
+// Calcula quantos minutos e horas tem tantos segundos
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float segundos, minutos, horas;
+    
+    printf("\n Digite o tempo em segundos: ");
+    scanf("%f",&segundos);
+    
+    printf("\n O tempo em segundos e: %f", segundos);
+    printf("\n O tempo em minutos e: %f", minutos=segundos/60.0);
+    printf("\n O tempo em horas e: %f", horas=segundos/3600.0);
+    
+    return 0;
+}
