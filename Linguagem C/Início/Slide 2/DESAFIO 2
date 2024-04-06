@@ -1,0 +1,41 @@
+// Chamada dum número de matrícula
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nm, h;
+    
+    printf("\n Digite o seu numero de matricula: ");
+    scanf("%d", &nm);
+    
+    if(nm<=6){
+        h=nm+7;
+        printf("\n 2-feira as %d:00", h);
+    }
+    else{
+        if(nm<=12){
+            h=nm+1;
+            printf("\n 3-feira as %d:00", h);
+        }
+        else{
+            if(nm<18){
+                h=nm-5;
+                printf("\n 4-feira as %d:00", h);
+            }
+            else{
+                if(nm<=24){
+                    h=nm-11;
+                    printf("\n 5-feira as %d:00", h);
+                }
+                else{
+                    h=nm-17;
+                    printf("\n 6-feira as %d:00",h);
+                }
+            }
+        }
+    }
+    
+    return 0;
+}
