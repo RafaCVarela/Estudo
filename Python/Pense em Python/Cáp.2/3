@@ -1,0 +1,33 @@
+# Duração duma caminhada
+
+(versão 1)
+
+tempo1 = 8 + (15 / 60)
+
+tempo2 = 7 + (12 / 60)
+
+tempo_caminhada = (1 * tempo1) + (tempo2 * 3) + (tempo1 * 1)
+
+tempo_decorrido = (6 * 60) + 52 + tempo_caminhada
+
+minutos = tempo_decorrido % 60
+
+horas = (tempo_decorrido - minutos) / 60
+
+print('O tempo de chegada e ', horas, ':', minutos)
+
+		(versão 2)
+
+tempo1 = 8 + (15 / 60)
+
+tempo2 = 7 + (12 / 60)
+
+tempo_caminhada = (1 * tempo1) + (tempo2 * 3) + (tempo1 * 1)
+
+tempo_decorrido = (6 * 60) + 52 + tempo_caminhada
+
+minutos = tempo_decorrido % 60
+
+horas = (tempo_decorrido - minutos) / 60
+
+print('O tempo de chegada e ', int(horas), ':', int(minutos))
