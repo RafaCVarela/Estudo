@@ -1,14 +1,17 @@
 # Usando duas funções, imprime strings
 # Sucesso!
 
+# Nessa função, ela chama duas vezes uma outra função
 def do_twice(f, s):
     f(s)
     f(s)
 
+# Nessa função, ela imprime duas vezes uma string
 def print_twice(s):
     print(s)
     print(s)
 
 string = str(input('Digite uma string: '))
 
+# Com a chama da função, teremos um total de quatro strings
 do_twice(print_twice, string)
