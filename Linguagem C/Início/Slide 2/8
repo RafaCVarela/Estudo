@@ -1,0 +1,58 @@
+// Calculo do perímetro dum triângulo
+
+// (versão- triângulo equilátero)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float lado, perimetro;
+    
+    printf("\n Digite o lado do triangulo: ");
+    scanf("%f",&lado);
+    
+    printf("\n O perimetro do triangulo e: %f", perimetro=lado+lado+lado);
+    
+    return 0;
+}
+
+// (versão- triângulo isocéles)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float base, lado, perimetro;
+    
+    printf("\n Digite a base do triangulo: ");
+    scanf("%f",&base);
+    
+    printf("\n Digite o lado do triangulo: ");
+    scanf("%f",&lado);
+    
+    printf("\n O perimetro do triangulo e: %f", perimetro=lado+lado+base);
+    
+    return 0;
+}
+
+// (versão - triângulo escaleno)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float lado1, lado2, lado3, perimetro;
+    
+    printf("\n Digite o primeiro lado do triângulo: ");
+    scanf("%f",&lado1);
+    
+    printf("\n Digite o segundo lado: ");
+    scanf("%f",&lado2);
+    
+    printf("\n Digite o terceiro: ");
+    scanf("%f",&lado3);
+    
+    printf("\n O perimetro do triangulo e: %f", perimetro=lado1+lado2+lado3);
+    
+    return 0;
+}
