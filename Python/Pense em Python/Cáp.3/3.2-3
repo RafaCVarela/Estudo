@@ -1,8 +1,9 @@
 # Usando duas funções, imprime uma string repetidas vezes
+# Dá erro
 
 def do_twice(f, s):
-    f(s)
-    f(s)
+    f(string)
+    f(string)
 
 def print_twice(s):
     print(s)
@@ -10,4 +11,4 @@ def print_twice(s):
 
 string = str(input('Digite uma string: '))
 
-do_twice(print_twice, string)
+do_twice(print_string, string)
