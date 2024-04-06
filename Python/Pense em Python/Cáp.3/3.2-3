@@ -1,5 +1,5 @@
-# Usando duas funções, imprime uma string repetidas vezes
-# Dá erro
+# Usando duas funções, imprime strings
+# Dá erro!
 
 def do_twice(f, s):
     f(string)
