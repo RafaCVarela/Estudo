@@ -4,3 +4,23 @@
 # Primeiro passo médio milha por min
 
 print(42 + (42 / 60))
+      
+42.7
+print(6.211180124223602 / 42.7)
+      
+0.14546089283896022
+
+# Segundo milha por seg
+
+print(6.211180124223602 / 2562)
+      
+0.0024243482139826703
+
+#Terceiro a velocidade média milha por hora
+
+print(2562 / 3600)
+      
+0.7116666666666667
+print(6.211180124223602 / 0.7116666666666667)
+      
+8.727653570337614
