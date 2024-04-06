@@ -1,1 +1,54 @@
+	2.2-
+
+1.
+
+r = int(input('Digite o raio da circunferencia: '))
+
+vol_esfera = 4 * 3.14 * (r**3) / 3
+
+print('Voume da esfera e igual a ', vol_esfera)
+
+2.
+
+preco_desconto = 0.4 * 24.95
+
+preco_total = preco_desconto + 3 + (preco_desconto + 0.75) * 59
+
+print('Preco total para as 60 copias e igual a RS ', preco_total)
+
+
+3.
+
+		(versão 1)
+
+tempo1 = 8 + (15 / 60)
+
+tempo2 = 7 + (12 / 60)
+
+tempo_caminhada = (1 * tempo1) + (tempo2 * 3) + (tempo1 * 1)
+
+tempo_decorrido = (6 * 60) + 52 + tempo_caminhada
+
+minutos = tempo_decorrido % 60
+
+horas = (tempo_decorrido - minutos) / 60
+
+print('O tempo de chegada e ', horas, ':', minutos)
+
+		(versão 2)
+
+tempo1 = 8 + (15 / 60)
+
+tempo2 = 7 + (12 / 60)
+
+tempo_caminhada = (1 * tempo1) + (tempo2 * 3) + (tempo1 * 1)
+
+tempo_decorrido = (6 * 60) + 52 + tempo_caminhada
+
+minutos = tempo_decorrido % 60
+
+horas = (tempo_decorrido - minutos) / 60
+
+print('O tempo de chegada e ', int(horas), ':', int(minutos))
+
 
