@@ -1,0 +1,7 @@
+# Volume de uma esfera
+
+r = int(input('Digite o raio da circunferencia: '))
+
+vol_esfera = 4 * 3.14 * (r**3) / 3
+
+print('Voume da esfera e igual a ', vol_esfera)
