@@ -1,0 +1,19 @@
+// Calcula quantos salários mínimos você ganha
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float slm, sl, n;
+    
+    printf("\n Digite o salario minimo: ");
+    scanf("%f", &slm);
+    
+    printf("\n Digite o seu salario: ");
+    scanf("%f", &sl);
+    
+    printf("\n O numero de salarios minimos ganhos: %f", n=sl/slm);
+    
+    return 0;
+}
