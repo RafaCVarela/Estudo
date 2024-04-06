@@ -1,0 +1,30 @@
+# Usando funções, imprime strings
+
+(versão 1)
+def do_twice(s):
+    print(s)
+    print(s)
+
+def do_four(f, s):
+    f(s)
+    f(s)
+
+string = str(input('Digite um a string: '))
+
+do_four(do_twice, string)
+
+(versão 2)
+def imprima(s):
+    print(s)
+
+def do_twice(s):
+    imprima(s)
+    imprima(s)
+
+def do_four(f, s):
+    f(s)
+    f(s)
+
+string = str(input('Digite um a string: '))
+
+do_four(do_twice, string)
