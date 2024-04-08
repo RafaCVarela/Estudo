@@ -1,0 +1,14 @@
+# Cria um quadrado com uma função com o tamanho do lado como parâmetro
+
+import turtle
+
+def quadrado(t, lado):
+    for i in range(4):
+        t.fd(lado)
+        t.lt(90)
+
+bob = turtle.Turtle()
+
+quadrado(bob, 50)
+
+turtle.mainloop()
