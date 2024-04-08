@@ -1,0 +1,46 @@
+// Número é ímpar ou par
+
+// (versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int x, r;
+   
+   printf("\n Digite um numero: ");
+   scanf("%d", &x);
+   
+   r=x%2;
+   
+   if(r<=0){
+    printf("\n O numero %d e par.", x);
+   }
+   else{
+    printf("\n O numero %d e impar", x);
+   }
+   
+   return 0;
+}
+
+// (versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int x, r;
+   
+   printf("\n Digite um numero: ");
+   scanf("%d", &x);
+   
+   r=x%2;
+   
+   if(r==0){
+    printf("\n O numero %d e par.", x);
+   }
+   else{
+    printf("\n O numero %d e impar", x);
+   }
+   return 0;
+}
