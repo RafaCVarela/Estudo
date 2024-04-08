@@ -1,5 +1,5 @@
 # Primeira vez usando o módulo Turtle do IDLE na versão script
-# Criando um quadrado
+# Criando um quadrado com o uso duma função e um objeto Turtle(bob)
 
 import turtle
 
