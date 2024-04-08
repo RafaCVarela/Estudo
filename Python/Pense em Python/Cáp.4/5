@@ -1,0 +1,25 @@
+# Criando um arco de circunferência(eu acho)
+
+import turtle
+import math
+
+def poligono(t, lado, angulo, n):
+    for i in range(n):
+        t.fd(lado)
+        t.lt(angulo)
+
+def circunferencia(t, r, alfa):
+    arco = math.pi * r * alfa / 180
+    n = 50
+    # Aqui o livro da uma dica que 'lado * n = circunferencia', 
+    # porque , a circunferencia é um polígono de n lados
+    lado = arco / n 
+    setor_ang = arco / n
+    angulo = alfa / n
+    poligono(t, setor_ang, angulo, n)
+
+bob = turtle.Turtle()
+
+circunferencia(bob, 100, 30)
+
+turtle.mainloop()
