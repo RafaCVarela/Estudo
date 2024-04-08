@@ -1,0 +1,40 @@
+// Estrutura que seleciona qual operação matemática fazer com dois números
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float x, y, r;
+    char oper;
+    
+    printf("\n Digite o primeiro número: ");
+    scanf("%f", &x);
+    printf("\n Digite o segundo número: ");
+    scanf("%f", &y);
+    
+    printf("\n Digite um operador matematico: ");
+    scanf(" %c", &oper);//muita atencao no espaco do " %c", pois, sem o espaco ele nao reconhece que e uma variavel!!
+    
+    if(oper=='+'){
+       printf("\n A operacao e: %f + %f = %f", x, y, x+y);
+    }
+    else{
+        if(oper=='-'){
+            printf("\n A A operacao e: %f - %f = %f", x, y, x-y);
+        }
+        else{
+            if(oper=='*'){
+                printf("\n A operacao e: %f * %f = %f", x, y, x*y);
+            }
+            else{
+                if(oper=='/'){
+                    printf("\n A operacao e: %f / %f = %f", x, y, x/y);
+                }
+            }
+        }
+
+    }
+    
+    return 0;
+}
