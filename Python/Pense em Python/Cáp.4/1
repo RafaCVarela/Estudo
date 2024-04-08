@@ -1,0 +1,15 @@
+# Primeira vez usando o módulo Turtle do IDLE na versão script
+# Criando uma figura simples com apenas duas linhas
+
+import turtle
+
+def quadrado(t):
+    for i in range(4):
+        t.fd(100)
+        t.lt(90)
+
+bob = turtle.Turtle()
+
+quadrado(bob)
+
+turtle.mainloop()
