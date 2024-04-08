@@ -1,0 +1,29 @@
+// Teste de saída por estrutura de controle de fluxo ou, se preferir, condicional
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a=2, b=3, c=4;
+    
+    if((a<2)&&((b!=3)||(c==4))){
+        printf("saida 1");
+    }
+    if((c==3)||(b==4)){
+        printf("saida 3");
+    }
+    else{
+        if(a==2){
+            if(b==5){
+                printf("saida 5");
+            }
+            else{
+                printf("saida 6");
+            }
+        }
+        else printf("saida 6");
+    }
+    
+    return 0;
+}
