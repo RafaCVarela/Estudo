@@ -1,5 +1,5 @@
 # Primeira vez usando o módulo Turtle do IDLE na versão script
-# Criando uma figura simples com apenas duas linhas
+# Criando um quadrado
 
 import turtle
 
