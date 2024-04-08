@@ -1,0 +1,52 @@
+// Cálculo de divisibilidade
+
+// 3.1 - Um número é divisível por outro
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int x, y, d1, d2;
+   
+   printf("\n Digite o primeiro inteiro: ");
+   scanf("%d", &x);
+   printf("\n Digite o segundo inteiro: ");
+   scanf("%d", &y);
+   
+   d1=x%y;
+   
+   if(d1==0){
+    printf("\n O numero %d e divisivel por %d", x, y);
+   }
+   else{
+    printf("\n O numero %d nao e divisivel por %d", x, y);
+   }
+   
+   return 0;
+}
+
+// 3.2 - Um número é divisível por 2, 3, 5 e 7 ao mesmo tempo
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int x, r1, r2, r3, r4;
+   
+   printf("\n Digite um numero inteiro: ");
+   scanf("%d", &x);
+   
+   r1=x%2;
+   r2=x%3;
+   r3=x%5;
+   r4=x%7;
+   
+   if(r1==0 && r2==0 && r3==0 && r4==0){
+    printf("\n O numero %d e divisivel por 2, por 3, por 5 e por 7.", x);
+   }
+   else{
+    printf("\n O numero %d nao e divisel por 2, por 3, por 5 e por 7.", x);
+   }
+   
+   return 0;
+}
