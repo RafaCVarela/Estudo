@@ -1,0 +1,15 @@
+# Cria um polígono usando uma função passando parâmetros
+
+import turtle
+
+def poligono(t, lado, n):
+    angulo = 360 /n
+    for i in range(n):
+        t.fd(lado)
+        t.lt(angulo)
+
+bob = turtle.Turtle()
+
+poligono(bob, 100, 6)
+
+turtle.mainloop()
