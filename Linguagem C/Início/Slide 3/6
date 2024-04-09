@@ -1,0 +1,31 @@
+// Pede uma idade e sai criança, adolescente, adulto e idoso
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int idade;
+    
+    printf("\n Digite uma idade: ");
+    scanf("%d", &idade);
+    
+    if(idade<13){
+        printf("\n Crianca ");
+    }
+    else{
+        if(idade>=13 && idade<20){
+            printf("\n Adolescente");
+        }
+        else{
+            if(idade>=20 && idade<65){
+                printf("\n Adulto");
+            }
+            else{
+                printf("\n Idoso");
+            }
+        }
+    }
+    
+    return 0;
+}
