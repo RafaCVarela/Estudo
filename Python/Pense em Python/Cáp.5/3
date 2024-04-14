@@ -1,0 +1,29 @@
+# Determina se o triângulo é valido pela desigualdade triângular
+
+# a)
+import math
+
+def teste_tri(a, b, c):
+    if(a <= b + c and b <= a + c and c <= a + b):
+        print('As medidas formam um triângulo.')
+    else:
+        print('As medidas não formam um triângulo.')
+
+teste_tri(14 , 13, 13)
+
+# b)
+import math
+
+def teste_tri(a, b, c):
+    if(a <= b + c and b <= a + c and c <= a + b):
+        print('As medidas formam um triângulo.')
+    else:
+        print('As medidas não formam um triângulo.')
+
+a = int(input('Digite um número inteiro para "a": '))
+
+b = int(input('Digite um número inteiro para "b": '))
+
+c = int(input('Digite um número inteiro para "c": '))
+
+teste_tri(a, b, c)
