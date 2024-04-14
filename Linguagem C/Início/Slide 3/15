@@ -1,0 +1,84 @@
+// Em três vezes, entra um caracter e sai seu tipo ou se é inválido
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char car;
+    
+    printf(" 1- Digite um caracter, um simbolo ou operador matematico: ");
+    scanf(" %c", &car);
+    
+    switch(car){
+        case '+': case '-': case '*': case '/': case '%': 
+        printf(" Operador matematico: %c\n", car);
+        break;
+                
+        case '<': case '>': 
+        printf(" Operador relacional: %c\n", car);
+        break;
+        
+        case '!': 
+        printf(" Operador logico: %c\n", car);
+        break;
+        
+        case '&': case '=': case '"': case '(': case '{': case ')': case '}': 
+        printf(" Outro simbolo valido em C: %c\n", car);
+        break;
+        
+        default: 
+        printf(" Caractere, simbolo ou operador matematico invalido.\n");
+    }
+    
+    printf(" 2- Digite um caracter, um simbolo ou operador matematico: ");
+    scanf(" %c", &car);
+    
+    switch(car){
+        case '+': case '-': case '*': case '/': case '%': 
+        printf(" Operador matematico: %c\n", car);
+        break;
+        
+        case '<': case '>': 
+        printf(" Operador relacional: %c\n", car);
+        break;
+        
+        case '!': 
+        printf(" Operador logico: %c\n", car);
+        break;
+        
+        case '&': case '=': case '"': case '(': case '{': case ')': case '}': 
+        printf(" Outro simbolo valido em C: %c\n", car);
+        break;
+        
+        default: 
+        printf(" Caractere, simbolo ou operador matematico invalido.\n");
+    }
+    
+    printf(" 3- Digite um caracter, um simbolo ou operador matematico: ");
+    scanf(" %c", &car);
+    
+    switch(car){
+        case '+': case '-': case '*': case '/': case '%': 
+        printf(" Operador matematico: %c\n", car);
+        break;
+        
+        case '<': case '>': 
+        printf(" Operador relacional: %c\n", car);
+        break;
+        
+        case '!': 
+        printf(" Operador logico: %c\n", car);
+        break;
+        
+        case '&': case '=': case '"': case '(': case '{': case ')': case '}': 
+        printf(" Outro simbolo valido em C: %c\n", car);
+        break;
+        
+        default: 
+        printf(" Caractere, simbolo ou operador matematico invalido.\n");
+    }
+    
+    return 0;
+    
+}
