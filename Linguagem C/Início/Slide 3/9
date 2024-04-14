@@ -1,0 +1,29 @@
+// Preço de venda dum produto
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int preco;
+    
+    printf("\n Valor de custo do produto: RS ");
+    scanf("%d", &preco);
+    
+    switch(preco){
+        case 1: case 2: 
+                printf("\n Preco final do produto: RS %.2f", preco+0.15);
+                break;
+        case 3: case 4: case 5: 
+                printf("\n Preco final do produto: RS %.2f", preco*1.02);
+                break;
+        case 6: case 7: case 8: case 9: case 10: case 11: case 12: case 13: case 14: case 15:
+case 16: case 17: case 18: case 19: case 20: 
+                printf("\n Preco final do produto: RS %.2f", preco*1.1);
+                break;
+        default: printf("\n Preco final do produto: RS %.2f", preco*1.08);
+    }
+    
+    return 0;
+    
+}
