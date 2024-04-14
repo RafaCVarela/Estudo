@@ -1,0 +1,124 @@
+# Desenha flores ou, se preferir, mandalas
+
+# 1.
+
+# Desenha uma flor de sete pétalas
+
+# 1.
+
+import turtle
+import math
+
+def petalas(t, n, lado, angulo):
+    for i in range (n):
+        t.lt(angulo)
+        t.fd(2 * lado)
+
+def escrita(t, n, lado, angulo):
+    for i in range(7):
+        petalas(t, n, lado, angulo)
+        t.lt(130)
+        petalas(t, n, lado, angulo)
+        t.lt(180)
+
+def arco(t, r, angulo):
+    circunferencia = 2 * math.pi * r * angulo / 360
+    n = int((circunferencia / 4) + math.pi)
+    arco_circun =  circunferencia / n
+    angulo_arco = angulo / n
+    t.lt(angulo_arco/2)
+    escrita(t, n, arco_circun, angulo_arco)
+    t.rt(angulo_arco/2)
+
+
+def circulo(t, r):
+    angulo = 50
+    arco(t, r, angulo)
+
+# A função main que chama o cálculo da circulo
+
+bob = turtle.Turtle()
+r = 100
+circulo(bob, r)
+
+turtle.mainloop()
+
+# 2.
+
+# Desenha uma flor mais complexa ou, se preferir, uma mandala
+
+import turtle
+import math
+
+def petalas(t, n, lado, angulo):
+    for i in range (n):
+        t.lt(angulo)
+        t.fd(2 * lado)
+
+def escrita(t, n, lado, angulo):
+    for i in range(10):
+        petalas(t, n, lado, angulo)
+        t.lt(108)
+        petalas(t, n, lado, angulo)
+        t.lt(144)
+
+def arco(t, r, angulo):
+    circunferencia = 2 * math.pi * r * angulo / 360
+    n = int((circunferencia / 4) + math.pi)
+    arco_circun =  circunferencia / n
+    angulo_arco = angulo / n
+    t.lt(angulo_arco/2)
+    escrita(t, n, arco_circun, angulo_arco)
+    t.rt(angulo_arco/2)
+
+
+def circulo(t, r):
+    angulo = 72
+    arco(t, r, angulo)
+
+# A função main que chama o cálculo da circulo
+
+bob = turtle.Turtle()
+r = 100
+circulo(bob, r)
+
+turtle.mainloop()
+
+# 3.
+
+# Desenha uma flor de 20 pétalas
+
+import turtle
+import math
+
+def petalas(t, n, lado, angulo):
+    for i in range (n):
+        t.lt(angulo)
+        t.fd(2 * lado)
+
+def escrita(t, n, lado, angulo):
+    for i in range(20):
+        petalas(t, n, lado, angulo)
+        t.lt(162)
+        petalas(t, n, lado, angulo)
+        t.lt(180)
+
+def arco(t, r, angulo):
+    circunferencia = 2 * math.pi * r * angulo / 360
+    n = int((circunferencia / 4) + math.pi)
+    arco_circun =  circunferencia / n
+    angulo_arco = angulo / n
+    t.lt(angulo_arco/2)
+    escrita(t, n, arco_circun, angulo_arco)
+    t.rt(angulo_arco/2)
+
+
+def circulo(t, r):
+    angulo = 18
+    arco(t, r, angulo)
+
+# A função main que chama o cálculo da circulo
+
+bob = turtle.Turtle()
+r = 100
+circulo(bob, r)
