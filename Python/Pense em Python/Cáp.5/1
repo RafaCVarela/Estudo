@@ -1,0 +1,19 @@
+# Ele dá a hora, minutos e segundo desde dum tempo incial definido pelo Python(não lembro o que)
+
+import time
+
+t = time.time()
+
+segundos = t % 60
+
+minutos = t // 60
+
+horas = minutos // 60
+
+minutos = minutos % 60
+
+dias = horas // 60
+
+horas = horas % 24
+
+print(dias,'dias ', horas,'horas ', minutos, 'minutos ', segundos, 'segundos')
