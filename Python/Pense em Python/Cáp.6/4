@@ -1,0 +1,16 @@
+# Exercício 6.4
+
+# O primeiro número é uma potência/múltiplo do segundo
+
+def potencia(a, b):
+    if a % b == 0:
+        return True
+    else:
+        return False
+
+
+a = int(input('Digite o primeiro número inteiro: '))
+
+b = int(input('Digite o segundo número inteiro: '))
+
+print("O primeiro número é um múltiplo do segundo: ",potencia(a, b))
