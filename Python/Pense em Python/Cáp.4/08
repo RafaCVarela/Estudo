@@ -1,0 +1,37 @@
+# Desenha um hexágono
+
+import turtle
+import math
+
+def triangulos(t, lado, num_lados, ang_int, ang_ext):
+    num_rept = num_lados - 2
+    ang_tri_base = ang_int / 2
+    ang_central_rad = (ang_ext * math.pi) / 180
+    lado_tri = math.sqrt((lado**2) / (2 - 2 * math.cos(ang_central_rad)))
+    for i in range(num_rept):
+        t.lt(ang_ext+ang_tri_base)
+        t.fd(lado_tri)
+        t.rt(180)
+        t.lt(ang_ext)
+        t.fd(lado_tri)
+        t.lt(ang_ext+ang_tri_base)
+        t.fd(lado)
+
+def poligono(t, lado, num_lados, ang_int, ang_ext):
+    for i in range(num_lados):
+        t.lt(ang_ext)
+        t.fd(lado)
+    triangulos(t, lado, num_lados, ang_int, ang_ext)
+
+def angulo_int(t, lado, num_lados):
+    ang_int = ((num_lados - 2) * 180) / num_lados
+    ang_ext = 360 / num_lados
+    poligono(t, lado, num_lados, ang_int, ang_ext)
+
+bob = turtle.Turtle()
+lado = 100
+num_lados = 7
+
+angulo_int(bob, lado, num_lados)
+
+turtle.mainloop()
