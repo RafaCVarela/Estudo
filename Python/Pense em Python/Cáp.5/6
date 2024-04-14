@@ -1,0 +1,55 @@
+# Desenha uma figura
+
+# a)
+import turtle
+
+def koch(t, x):
+    if x < 3:
+        t.fd(x)
+        return
+    else:
+        ang = 60
+        koch(t, x/3)
+        t.lt(ang)
+        koch(t, x/3)
+        t.rt(2*ang)
+        koch(t, x/3)
+        t.lt(ang)
+        koch(t, x/3)
+
+bob = turtle.Turtle()
+
+koch(bob, 75)
+
+turtle.mainloop()
+
+# b)
+import turtle
+
+def koch(t, x):
+    if x < 3:
+        t.fd(x)
+        return
+    else:
+        ang = 60
+        koch(t, x/3)
+        t.lt(ang)
+        koch(t, x/3)
+        t.rt(2*ang)
+        koch(t, x/3)
+        t.lt(ang)
+        koch(t, x/3)
+
+def floco_de_neve(t, x):
+    koch(t, x)
+    t.rt(120)
+    koch(t, x)
+    t.rt(120)
+    koch(t, x)
+    t.rt(120)
+
+bob = turtle.Turtle()
+
+floco_de_neve(bob, 75)
+
+turtle.mainloop()
