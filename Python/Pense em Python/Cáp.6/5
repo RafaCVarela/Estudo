@@ -1,0 +1,33 @@
+# Exercício 6.5
+
+# Retorna maior divisor comum de dois números
+
+def gcd(a, b):
+    
+    if a > b:
+        
+        r = a % b
+        
+        if r == 0:
+            return b
+        else:
+            return gcd(b, r)
+    
+    elif a == b:
+        return a
+    
+    else:
+        
+        r = b % a
+        
+        if r == 0:
+            return a
+        else:
+            return gcd(a, r)
+
+
+a = int(input('Digite um número inteiro: '))
+
+b = int(input('Digite outro número inteiro: '))
+
+print("O máximo divisor comum é: ", gcd(a, b))
