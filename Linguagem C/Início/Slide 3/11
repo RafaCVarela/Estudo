@@ -1,0 +1,22 @@
+// Entram dois números, sai se são ambos positivos ou não
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float x, y;
+    
+    printf(" Digite o primeiro numero real: ");
+    scanf("%f", &x);
+    printf(" Digite o segundo numero real: ");
+    scanf("%f", &y);
+    
+    if(x>0 && y>0)
+        printf(" Ambos os numeros sao positivos\n");
+    else
+        printf(" Ao menos um dos valores e negativos\n");
+
+    return 0;
+    
+}
