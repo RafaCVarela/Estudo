@@ -1,0 +1,103 @@
+/*
+    Esta questão as fórmulas estão incompletas, umas vez que, 
+    há duas variáveis sendo pedidas, mas nas fórmulas dadas
+    há apenas uma variável e não duas. 
+*/
+
+// Com base no seu sexo, imprime se seu peso é o ideal
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float peso, alt, r;
+    char sex;
+    
+    printf(" Digite a inicial do seu sexo (em letra maiuscula): ");
+    scanf("%c", &sex);
+    printf(" Digite a sua altura: ");
+    scanf("%f", &alt);
+    printf(" Digite o seu peso: ");
+    scanf("%f", &peso);
+    
+    switch(sex){
+        case 'F':
+            r=(peso*alt)-44.7;
+            if (r>0){
+                printf(" Voce esta acima do peso ideal\n");
+            }
+            else{
+                if(r<0)
+                    printf(" Voce esta abaixo do peso ideal\n");
+                else
+                    printf(" Voce esta no peso ideal\n");
+            }
+            break;
+        case 'M':
+            r=(peso*alt)-58;
+            if (r>0){
+                printf(" Voce esta acima do peso ideal\n");
+            }
+            else{
+                if(r<0)
+                    printf(" Voce esta abaixo do peso ideal\n");
+                else
+                    printf(" Voce esta no peso ideal\n");
+            }
+            break;
+        default: printf(" Sexo invalido\n");
+    }
+    
+    return 0;
+    
+}
+
+// OU
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float peso, alt, r;
+    char sex;
+    
+    printf(" Digite a inicial do seu sexo (em letra maiuscula): ");
+    scanf("%c", &sex); // Talves precise dar um espaço entre ' " ' e '%c'  
+    printf(" Digite a sua altura: ");
+    scanf("%f", &alt);
+    printf(" Digite o seu peso: ");
+    scanf("%f", &peso);
+    
+    switch(sex){
+        case 'F':
+            r=(62.1*alt)-peso;
+            if (r>0){
+                printf(" Voce esta acima do peso ideal\n");
+            }
+            else{
+                if(r<0)
+                    printf(" Voce esta abaixo do peso ideal\n");
+                else
+                    printf(" Voce esta no peso ideal\n");
+            }
+            break;
+        case 'M':
+            r=(72.7*alt)-peso;
+            if (r>0){
+                printf(" Voce esta acima do peso ideal\n");
+            }
+            else{
+                if(r<0)
+                    printf(" Voce esta abaixo do peso ideal\n");
+                else
+                    printf(" Voce esta no peso ideal\n");
+            }
+            break;
+        default: printf(" Sexo invalido\n");
+    }
+    
+    return 0;
+    
+}
