@@ -1,0 +1,24 @@
+// Leia três lados e retorne se formam um triângulo válido
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float x, y, z;
+    
+    printf(" Digite a medida do primeiro lado: ");
+    scanf("%f", &x);
+    printf(" Digite a medida do segundo lado: ");
+    scanf("%f", &y);
+    printf(" Digite a medida do terceiro lado: ");
+    scanf("%f", &z);
+    
+    if(x<y+z && y<x+z && z<x+y)
+        printf(" Triangulo existe.");
+    else
+        printf(" Triangulo nao existe.");
+
+    return 0;
+    
+}
