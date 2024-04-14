@@ -1,0 +1,21 @@
+# Desenha uma figura estranha, tente novamente mais tarde
+
+import turtle
+
+def draw(t, lado, n):
+    if n == 0:
+        return
+    ang = 50
+    t.fd(lado*n)
+    t.lt(ang)
+    draw(t, lado, n-1)
+    t.rt(2*ang)
+    draw(t, lado, n-1)
+    t.lt(ang)
+    t.bk(lado*n)
+
+bob = turtle.Turtle()
+
+draw(bob, 10, 5)
+
+turtle.mainloop()
