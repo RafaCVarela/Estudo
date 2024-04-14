@@ -1,0 +1,28 @@
+// Digite dois número, imprime divisão real ou inteira e o resultado
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y;
+    
+    printf("\n Digite o primeiro número inteiro: ");
+    scanf("%d", &x);
+    printf("\n Digite o segundo número inteiro: ");
+    scanf("%d", &y);
+    
+    if(y==0)
+        printf("\n Divisao por zero nao pertence aos Reais\n");
+    else{
+        if(x%y!=0){
+            printf("\n Divisao real: %d / %d = %f\n", x, y, (float)x/(float)y);
+            }
+        else{
+            printf("\n Divisao inteira: %d / %d = %d\n", x, y, x/y);
+            }
+    }
+    
+    return 0;
+    
+}
