@@ -1,0 +1,56 @@
+// Imprime preço duma chamada de telefone com base no seu DDD
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int ddd, min;
+    
+    printf("\n O prefixo do numero de origem da chamada: ");
+    scanf("%d", &ddd);
+    
+    printf("\n Numero de minutos da chamada: ");
+    scanf("%d", &min);
+    
+    if(min>=5){
+        switch(ddd){
+            case 41: case 598: case 595: case 56: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 1.90*0.95*min);
+            break;
+            
+            case 49: case 33: case 44: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.0*0.95*min);
+            break;
+            
+            case 2: case 1: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.1*0.95*min);
+            break;
+            
+            default: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.3*0.95*min);
+            
+        }
+    }
+    else{
+        switch(ddd){
+            case 41: case 598: case 595: case 56: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 1.90*min);
+            break;
+            
+            case 49: case 33: case 44: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.0*min);
+            break;
+            
+            case 2: case 1: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.1*min);
+            break;
+            
+            default: 
+            printf("\n Preco da ligacao internacional: RS %.2f", 2.3*min);
+            
+        }
+    }
+    
+    return 0;
+}
