@@ -1,0 +1,14 @@
+# Exercício 7.2
+
+# Não sei, preciso rever mais tarde
+
+import math
+
+def eval_loop():
+    while True:
+        texto = input('> ')
+        if texto == 'done':
+            break
+        print(eval(texto))
+
+eval_loop()
