@@ -1,0 +1,54 @@
+# Exercício 7.3
+
+# (versão 1)
+
+import math
+
+def fatorial(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return n * fatorial(n - 1)
+
+def estimate_pi(k):
+    while True:
+        x = (fatorial(4 * k) * (1103 + 26390 * k)) / ((fatorial(k)**4) * 396**(4 * k))
+        if x < 1e-15:
+            break
+        k = k + 1
+    return ((2 * math.sqrt(2)) / 9801) * x
+
+print('estimativa: ', estimate_pi(20),' - módulo math: ', 1 / math.pi, ' - diff: ', (1 / math.pi) - estimate_pi(20))
+
+# (versão corrigida - faltou o somatório e o termo da condicional não estava correto e o retorno, como não havia entendido
+# muito bem, cometi alguns erros)
+
+import math
+
+def fatorial(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return n * fatorial(n - 1)
+
+def estimate_pi(k):
+    somatorio = 0
+    fator = 2 * math.sqrt(2) / 9801
+
+    while True:
+        num = fatorial(4 * k) * (1103 + 26390 * k)
+        den = (fatorial(k)**4) * 396**(4 * k)
+
+        somatorio += num / den
+        termo = fator * num / den
+
+        if abs(termo) < 1e-15:
+            break
+        k = k + 1
+    return 1 / (fator * somatorio)
+
+print('estimativa: ', estimate_pi(0),' - módulo math: ', math.pi, ' - diff(módulo): ', abs((1 / math.pi) - estimate_pi(0)))
