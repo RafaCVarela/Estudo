@@ -1,0 +1,56 @@
+# Exercício 6.3
+
+# a)
+
+# Atraveça uma palavra e separa
+
+def fist(word):
+    return word[0]
+def last(word):
+    return word[-1]
+def middle(word):
+    return word[1:-1]
+
+word = 'Joao'
+
+print(word)
+print(fist(word), last(word), middle(word))
+
+"""
+Quando a string é de duas letras apenas as funções "fist" e "last" retornam e suas saídas são respectivamente
+a primeira e a segunda letra. Ao contrário do que pode se imaginar, uma string de uma letra também retornar
+para as "fist" e "last" e suas saídas são iguais, elas são a sua única letra. Por fim, uma string
+sem letras não retornar ou imprime nada, ela exibi uma mensagem de erro, a qual é "IndexError: string index
+out of range" .
+"""
+
+# b)
+
+# Descobre se uma palavra é palíndromo
+
+def fist(word):
+    return word[0]
+
+
+def last(word):
+    return word[-1]
+
+
+def middle(word):
+    return word[1:-1]
+
+
+def palidromo(word):
+    if len(word) == 1:
+        return False
+    else:
+        if fist(word) != last(word):
+            return False
+        elif fist(word) == last(word) and len(word) > 3:
+            return palidromo(middle(word))
+        elif fist(word) == last(word) and 2 <= len(word) <= 3:
+            return True
+
+word = 'hannah'
+
+print("É palíndromo: ", palidromo(word))
