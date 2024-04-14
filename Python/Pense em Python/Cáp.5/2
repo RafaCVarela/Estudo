@@ -1,0 +1,37 @@
+# Teste de algum teorema do Fermat
+
+# a)
+import math
+
+def teste_de_Fermat(a, b, c, n):
+    if(n <= 2):
+        print('O teorema é para valores de "n" maiores que 2.')
+    else:
+        if(a**n + b**n == c**n):
+            print('Fermat estava errado.')
+        else:
+            print('Fermat estava certo.')
+
+teste_de_Fermat(4, 3, 5, 5)
+
+# b)
+import math
+
+def teste_de_Fermat(a, b, c, n):
+    if(n <= 2):
+        print('O teorema é para valores de "n" maiores que 2.')
+    else:
+        if(a**n + b**n == c**n):
+            print('Fermat estava errado.')
+        else:
+            print('Fermat estava certo.')
+
+a = int(input('Digite um número inteiro para "a": '))
+
+b = int(input('Digite um número inteiro para "b": '))
+
+c = int(input('Digite um número inteiro para "c": '))
+
+n = int(input('Digite um número inteiro para "n": '))
+
+teste_de_Fermat(a, b, c, n)
