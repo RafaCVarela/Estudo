@@ -14,3 +14,5 @@ m = 3
 n = 4
 
 print(ack(m, n))
+
+# Quando "m" e "n" assumem valores maiores, ocorre um erro "RecursionError: maximum recursion depth exceeded" .
