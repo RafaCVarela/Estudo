@@ -1,0 +1,30 @@
+// Entra um número, sai se é inteiro  positivo 
+// ou não, repete pelo menos mais uma vez a estrutura
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y;
+    
+    printf(" Digite um numero inteiro positivo: ");
+    scanf("%d", &x);
+    
+    if(x>0)
+        printf(" %d e um numero inteiro positivo.\n", x);
+    else{
+        
+        printf(" O numero %d nao e um inteiro positivo\n", x);
+        printf(" Digite um numero inteiro positivo: ");
+        scanf("%d", &y);
+        
+        if(y>0)
+            printf(" %d e um numero inteiro positivo.\n", y);
+        else
+            printf(" O numero %d nao e um inteiro positivo.\n", y);
+    }
+    
+    return 0;
+    
+}
