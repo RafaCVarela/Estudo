@@ -1,0 +1,38 @@
+# Execício 7.1
+
+# Imprime duas formas de se cálcular uma raiz quadrada e sua discrepância
+
+import math
+
+def raizq(a, x):
+    
+    while True:
+        
+        y = (x + a/x) / 2
+        
+        if y == x:
+            return y
+            break
+        elif abs(y - x) < 0.0000001:
+            return y
+            break
+        
+        x = y
+
+def listaraizes(a, x):
+    
+    print('a',' '*2, 'raizq(a)',' '*17, 'math.sqrt(a)',' '*17, 'diff(módulo)')
+    print('-'*80)
+   
+    while a <= 10:
+        
+        p = float(raizq(a, x))
+        q = float(math.sqrt(a))
+        d = abs(p - q)
+        
+        print(a,' '*2, p,' '*17, q,' '*17, d)
+        
+        a = a + 1
+
+
+listaraizes(2, 3)
