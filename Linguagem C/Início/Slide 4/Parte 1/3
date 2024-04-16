@@ -1,0 +1,176 @@
+// a)
+
+// Repita até acerta o caracter
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char sexo;
+    
+    printf(" Digite a inicial do seu sexo: ");
+    scanf(" %c",&sexo);
+    
+    while(sexo!='M' && sexo!='F'){
+        
+        printf(" Caracter invalido.");
+        printf("\n Digite novamente a inicial do seu sexo: "); 
+        scanf(" %c",&sexo);
+        
+    }
+    
+        printf("\n Seu sexo: %c",sexo);
+        
+    return 0;
+    
+}
+
+// b)
+
+// Repita até digitar uma idade válida
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int id;
+    
+    printf(" Digite sua idade: ");
+    scanf("%d",&id);
+    
+    while(id<=0 || id>=130){
+        
+        printf(" Idade invalida.\n");
+        
+        printf("\n Digite sua idade: ");
+        scanf("%d", &id);
+        
+    }
+    
+    printf(" Sua idade %d",id);
+    
+    return 0;
+    
+}
+
+// c)
+
+// Repita até digitar uma idade válida
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int id;
+    
+    printf(" Digite sua idade: ");
+    scanf("%d",&id);
+    
+    while(id<=0 || id>=130){
+        
+        printf(" Idade invalida.\n");
+        
+        printf("\n Digite sua idade: ");
+        scanf("%d", &id);
+        
+    }
+    
+    printf(" Sua idade %d",id);
+    
+    return 0;
+    
+}
+
+// c)
+
+// (base)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int id;
+    
+    printf(" Digite sua idade: ");
+    scanf("%d",&id);
+    
+    while(id<=0 || id>=130){
+        
+        printf(" Idade invalida.\n");
+        
+        printf("\n Digite sua idade: ");
+        scanf("%d", &id);
+        
+    }
+    
+    char sexo;
+    
+    printf(" Digite a inicial do seu sexo: ");
+    scanf(" %c",&sexo);
+    
+    while(sexo!='M' && sexo!='F'){
+        
+        printf(" Caracter invalido.");
+        
+        printf("\n Digite novamente a inicial do seu sexo: "); 
+        scanf(" %c",&sexo);
+        
+    }
+    
+        printf(" Sua idade: %d\n Seu sexo: %c",id,sexo);
+        
+    return 0;
+    
+}
+
+// (versão final)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int id, x;
+    char sexo;
+    
+    x = 15;
+    
+    while(x!=0){
+        
+        printf("\n Digite sua idade: ");
+        scanf("%d",&id);
+        
+        while(id<=0 || id>=130){
+            
+            printf(" Idade invalida.\n");
+            
+            printf("\n Digite sua idade: ");
+            scanf("%d", &id);
+            
+        }
+    
+    printf(" Digite a inicial do seu sexo: ");
+    scanf(" %c",&sexo);
+    
+        while(sexo!='M' && sexo!='F'){
+        
+            printf(" Caracter invalido.");
+        
+            printf("\n Digite novamente a inicial do seu sexo: "); 
+            scanf(" %c",&sexo);
+        
+        }
+    
+        printf(" Sua idade: %d\n Seu sexo: %c",id,sexo);
+        
+        x--;
+        
+    }
+    
+    return 0;
+    
+}
