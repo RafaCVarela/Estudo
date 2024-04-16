@@ -1,0 +1,31 @@
+# Exercício 1 - Teste com replace
+
+# (versão 1)
+
+word = 'Eu gosto de bananas'
+
+z = word.replace('bananas', 'maçãs')
+
+print(z)
+
+# (versão 2)
+
+word = 'Eu gosto de bananas, bananas são muito boas'
+
+z = word.replace('bananas', 'maçãs'[0:5])
+
+print(z)
+
+# (versão 3)
+
+z = 'Eu gosto de bananas, bananas são muito boas'.replace('bananas', 'maçãs'[0:5])
+
+print(z)
+
+# (versão 4)
+
+word = 'Eu gosto de bananas, bananas são muito boas'
+
+z = word.replace('bananas', 'maçãs', 1)
+
+print(z)
