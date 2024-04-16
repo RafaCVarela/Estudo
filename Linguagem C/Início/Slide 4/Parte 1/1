@@ -1,0 +1,92 @@
+// a)
+
+// Entra um número, sai seu quadrado
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y;
+    
+    printf(" Digite um numero inteiro: ");
+    scanf("%d", &x);
+    
+    while(x!=0){
+        
+        y=x*x;
+        
+        printf(" Quadrado de %d: %d\n", x, y);
+        
+        printf("___________________");
+        
+        printf("\n\n Digite um numero inteiro: ");
+        scanf("%d", &x);
+        
+    }
+    
+    return 0;
+    
+}
+
+// b)
+
+// Aprovação ou reprovação devido a nota
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nota;
+    
+    printf(" Digite sua nota: ");
+    scanf("%d", &nota);
+    
+    while(nota>=0 && nota<=100){
+        
+        if(nota>=60)
+            printf(" Aprovado\n");
+        else
+            printf(" Reprovado\n");
+            
+        printf("\n Digite sua nota: ");
+        scanf("%d", &nota);
+        
+    }
+    
+    return 0;
+    
+}
+
+// c)
+
+// Aprovações ou reprovações duma sala de aula
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nota, al;
+    
+    printf(" Digite o numero de alunos: ");
+    scanf("%d", &al);
+    
+    while(al!=0){
+        
+        printf("\n Digite sua nota: ");
+        scanf("%d", &nota);
+        
+        if(nota>=60)
+            printf(" Aprovado\n");
+        else
+            printf(" Reprovado\n");
+        
+        al--;
+        
+    }
+    
+    return 0;
+    
+}
