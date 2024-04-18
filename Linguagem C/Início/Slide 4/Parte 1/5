@@ -1,0 +1,25 @@
+// a) e b)		(Sem certeza se está certo, pois o unico espaço que consegui colocar foi '_' não o ' '.)
+// Protótipo de processador de texto
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char caracter;
+    
+    while(caracter!='.'){
+        
+        while(caracter!='_'){
+            
+            scanf(" %c",&caracter);
+            
+        }
+        
+        printf("\n");
+        scanf(" %c",&caracter);
+        
+    }
+
+    return 0;
+}
