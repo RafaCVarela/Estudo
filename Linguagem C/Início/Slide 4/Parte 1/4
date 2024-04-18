@@ -1,0 +1,136 @@
+// Imprime o resultado da operação de dois números 
+
+// a)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y; char op;
+    
+    printf("Digite um operador matematico: "); scanf(" %c",&op);
+    
+    if(op!='+' && op!='-' && op!='*' && op!='/' && op!='%'){
+        
+        printf("\nOperador invalido.\n");
+        
+    }
+    else{
+        
+        printf("Digite o primeiro numero inteiros: "); 
+        scanf("%d", &x);
+        printf("Digite o segundo numero inteiros: "); 
+        scanf("%d", &y);
+        
+        if(y==0 && op=='/'){
+            
+            printf("\nOperacao invalida, pois esta a dividir por zero.\n");
+            
+        }
+        else{
+            
+            if(abs(x)<abs(y) && op=='/'){
+                
+                printf("Operacao invalida, nao pertence aos inteiros.\n");
+                
+            }
+            else{
+                
+                
+                switch(op){
+                    
+        case '+': printf(" %d + %d = %d\n",x,y,x+y); break;
+        
+        case '-': printf(" %d - %d = %d\n",x,y,x-y); break;
+        
+        case '*': printf(" %d * %d = %d\n",x,y,x*y); break;
+        
+        case '/': printf(" %d / %d = %d\n",x,y,x/y); break;
+        
+        case '%': printf(" %d %% %d = %d\n",x,y,x%y); break;
+        
+        default: printf("Operacao invalida.\n");
+        
+                }
+            }
+        }
+    }
+    
+    return 0;
+}
+
+// b)
+
+// Igual ao a) - fiz o que deveria ser feito no b) no a)
+
+// c)
+
+/* 
+    Agora com um laço de repetição, imprima um o resultado duma operação
+    de dois números inteiros.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y; char op;
+    
+    printf("Digite um operador matematico: "); 
+    scanf(" %c",&op);
+    
+    while(op!='F'){
+        
+        if(op!='+' && op!='-' && op!='*' && op!='/' && op!='%'){
+            printf("\nOperador invalido.\n");
+            
+    }
+        else{
+            
+            printf("Digite o primeiro numero inteiros: "); 
+            scanf("%d", &x);
+            printf("Digite o segundo numero inteiros: "); 
+            scanf("%d", &y);
+            
+            if(y==0 && op=='/'){
+                
+                printf("\nOperacao invalida, pois esta a dividir por zero.\n");
+                
+        }
+            else{
+                
+                if(abs(x)<abs(y) && op=='/'){
+                    
+                    printf("Operacao invalida, nao pertence aos inteiros.\n");
+                    
+            }
+                else{
+                    
+                    switch(op){
+                        
+        case '+': printf(" %d + %d = %d\n",x,y,x+y); break;
+        
+        case '-': printf(" %d - %d = %d\n",x,y,x-y); break;
+        
+        case '*': printf(" %d * %d = %d\n",x,y,x*y); break;
+        
+        case '/': printf(" %d / %d = %d\n",x,y,x/y); break;
+        
+        case '%': printf(" %d %% %d = %d\n",x,y,x%y); break;
+        
+        default: printf("Operacao invalida.\n");
+        
+                    }
+                }
+            }
+        }
+        
+        printf("Deseja continuar, sim ou nao, digite(S/N): ");
+        scanf(" %c", &op);
+        
+    }
+    
+    return 0;
+}
