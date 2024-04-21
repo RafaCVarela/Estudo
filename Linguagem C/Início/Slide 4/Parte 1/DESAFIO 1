@@ -1,0 +1,41 @@
+// Resolva multiplicações
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, r1, r2, cont;
+    
+    cont = 5;
+    
+    while(cont != 0){
+        
+        x = rand()%9;
+        y = rand()%9;
+        r1 = x * y;
+        
+        printf("Resolva as tabuadas: ");
+    
+        printf("%d x %d = ", x, y);
+        scanf("%d", &r2);
+        
+        if(r2 != r1){
+            
+            printf("Resultado errado, o resulta correto e: %d\n\n", r1);
+            
+        }
+        else{
+            
+            printf("Resultado correto.\n\n");
+            
+            }
+        
+        cont--;
+        
+        }
+        
+    printf("Parabéns!! Você resolve todas as multiplicações.\n");
+    
+    return 0;
+}
