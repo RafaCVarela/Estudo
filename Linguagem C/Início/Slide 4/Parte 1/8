@@ -1,0 +1,141 @@
+// Acerte a multiplicação randômica
+
+// a)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, r1, r2;
+    
+    x = rand()%9;
+    y = rand()%9;
+    r1 = x * y;
+    
+    printf("%d x %d = ", x, y);
+    scanf("%d", &r2);
+    
+    if(r2 != r1){
+        
+        while(r2 != r1){
+            
+            printf("\nResultado errado, tente novamente: ");
+            
+            x = rand()%9;
+            y = rand()%9;
+            r1 = x * y;
+            
+            printf("%d x %d = ", x, y);
+            scanf("%d", &r2);
+            
+        }
+    }
+    
+    printf("\nResultado correto.\n");
+    
+    return 0;
+}
+
+// Resolva a tabuada dum número randômico
+
+// b)
+
+// (versão 1)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, r1, r2, cont;
+    
+    x = rand()%9;
+    y = rand()%9;
+    r1 = x * y;
+    cont = 15;
+    
+    printf("Resolva as tabuadas: ");
+    printf("%d x %d = ", x, y);
+    scanf("%d", &r2);
+    
+    while(cont!=0){
+        
+        if(r2!=r1){
+            
+            while(r2!=r1){
+                
+                printf("\nResultado errado, tente novamente: ");
+                
+                x = rand()%9;
+                y = rand()%9;
+                r1 = x * y;
+                
+                printf("%d x %d = ", x, y);
+                scanf("%d", &r2);
+                
+            }
+        }
+        else{
+            
+            printf("Resultado correto.\n");
+            
+            x=rand()%9;
+            y=rand()%9;
+            r1 = x * y;
+            
+            printf("\nResolva a proxima tabuada: %d x %d = ", x, y);
+            scanf("%d",&r2);
+            cont--;
+            
+            }
+        }
+        
+    printf("Resultado correto.\n");
+    
+    return 0;
+}
+
+// (versão 2)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numeroRand, tabuada, resultado1, resultado2;
+    
+    numeroRand = rand()%9;
+    tabuada = 0;
+
+    printf("Resolva as tabuadas: ");
+    
+    while(tabuada < 11){
+        
+        resultado1 = numeroRand * tabuada;
+        
+        printf("%d x %d = ", numeroRand, tabuada);
+        scanf("%d", &resultado2);
+        
+        if(resultado2 != resultado1){
+            
+            while(resultado2 != resultado1){
+                
+                printf("Resultado errado, tente novamente:\n");
+                
+                printf("%d x %d = ", numeroRand, tabuada);
+                scanf("%d", &resultado2);
+                
+            }
+        }
+        
+        printf("Resultado correto.\n");
+        
+        tabuada++;
+            
+        }
+        
+    printf("A tabuada está correta!.\n");
+    
+    return 0;
+}
