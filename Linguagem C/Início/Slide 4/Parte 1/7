@@ -1,0 +1,63 @@
+// Imprime um fila de números
+
+// a)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y;
+    
+    printf("Digite um número inteiro: ");
+    scanf("%d", &x);
+    
+    y = 1;
+    
+    while(y <= x){
+        
+        printf("%4d", y);
+        
+        y++;
+        
+    }
+    
+    return 0;
+}
+
+// Imprime um triângulos de números
+
+// b)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, y, z;
+    
+    printf("Digite um número inteiro: ");
+    scanf("%d", &x);
+    
+    y = 1;
+    z = 1 ;
+    
+    while(z <= x){
+        
+        while(y <= z){
+            
+            printf("%4d", y);
+            
+            y++;
+            
+        }
+        
+        printf("\n");
+        
+        y = 1;
+        z++;
+        
+    }
+    
+    return 0;
+}
