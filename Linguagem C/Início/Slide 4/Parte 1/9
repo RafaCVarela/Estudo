@@ -1,0 +1,34 @@
+// Imprima o valor do benefício
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numeroDependentes, idadeDependente, valorReais, contador;
+    
+    contador=28;
+    
+    while(contador != 30){
+        
+        printf("Digite o numero de dependentes menores de 18 anos: ");
+        scanf("%d", &numeroDependentes);
+        
+        valorReais = numeroDependentes * 60;
+        
+        while(numeroDependentes != 0){
+            
+            printf("Digite a idade do dependente: ");
+            scanf("%d", &idadeDependente);
+            
+            numeroDependentes--;
+            
+        }
+        printf("Valor do beneficio e: RS %d\n\n",valorReais);
+        
+        contador++;
+        
+    }
+    
+    return 0;
+}
