@@ -1,0 +1,20 @@
+// Imprime os múltiplus de 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x;
+    
+    for(x = 100; x > 0; x--){
+        
+        if(x%2 == 0){
+            
+        printf("%4d", x);
+        
+        }
+    }
+    
+    return 0;
+}
