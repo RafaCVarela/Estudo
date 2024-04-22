@@ -1,0 +1,25 @@
+// Média aritmética de números
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float soma = 0, contNumeros, num;
+    
+    printf("Digite um numero real: ");
+    scanf("%f", &num);
+    
+    for(contNumeros = 1; num!=0; contNumeros++){
+        
+        soma = soma + num;
+        
+        printf("Digite um numero real: ");
+        scanf("%f", &num);
+        
+    }
+    
+    printf("\nA media entre os elementos e: %f\n", soma/contNumeros);
+    
+    return 0;
+}
