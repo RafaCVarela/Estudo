@@ -1,0 +1,44 @@
+// Quanto foi gasto por loja
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numeroLojas, numeroItens;
+    int cont1=1, cont2=1;
+    float precoProduto, precoTotal = 0.0;
+    
+    printf("Numero de lojas visitadas: ");
+    scanf("%d", &numeroLojas);
+    
+    while(numeroLojas != 0){
+        
+        printf("\nNumero de itens comprados na loja %d: ", cont1);
+        scanf("%d", &numeroItens);
+        
+        while(numeroItens > 0){
+            
+            printf("Digite o valor do item %d: RS ", cont2);
+            scanf("%f", &precoProduto);
+            
+            precoTotal += precoProduto;
+            
+            cont2++;
+            numeroItens--;
+            
+        }
+        
+        printf("Sub-total: R$ %.2f\n\n", precoTotal);
+        
+        cont2 = 1;
+        
+        cont1++;
+        numeroLojas--;
+        
+    }
+    
+    printf("Total gasto: R$ %.2f", precoTotal);
+    
+    return 0;
+}
