@@ -1,0 +1,23 @@
+// Potências de 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int acu, cont, x;
+    
+    printf("Digite um inteiro positivo: ");
+    scanf("%d", &x);
+    
+    for(cont = 0; cont<=x; cont++){
+        
+        acu = pow(2, cont);
+        
+        printf("%10d", acu);
+        
+    }
+    
+    return 0;
+}
