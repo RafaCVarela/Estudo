@@ -1,4 +1,4 @@
-// Quanto foi gasto por loja
+// Sistema de quantas loja e produtos comprados por loja
 
 #include <stdio.h>
 #include <stdlib.h>
