@@ -1,0 +1,99 @@
+// Dublas
+
+// a)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numAlunos, cont=1;
+    
+    printf("Digite o número de alunos: ");
+    scanf("%d", &numAlunos);
+    
+    if(numAlunos%2 != 0){
+        
+        while(numAlunos > cont){
+            
+            printf("%d e %d\n", cont, numAlunos);
+            
+            cont++;
+            numAlunos--;
+            
+        }
+        
+        printf("%d",numAlunos);
+        
+    }
+    else{
+        
+        while(numAlunos > cont){
+            
+            printf("%d e %d\n", cont, numAlunos);
+            
+            cont++;
+            numAlunos--;
+            
+        }
+    }
+    
+    return 0;
+}
+
+// b)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numAlunos, cont=1, somaAlunos=0, numTurmas, cont2=1;
+    
+    printf("Digite o numero de turmas: ");
+    scanf("%d", &numTurmas);
+    
+    while(numTurmas > 0){
+        
+        printf("O numero de alunos da %da turma: ", cont2);
+        scanf("%d", &numAlunos);
+        
+        somaAlunos += numAlunos;
+        
+        cont2++;
+        numTurmas--;
+        
+    }
+    
+    if(somaAlunos%2 != 0){
+        
+        printf("\nAs duplas sao:\n");
+        
+        while(somaAlunos > cont){
+            
+            printf("%d e %d\n", cont, somaAlunos);
+            
+            cont++;
+            somaAlunos--;
+            
+        }
+        
+        printf("%d", somaAlunos);
+        
+    }
+    else{
+        
+        printf("\nAs duplas sao:\n");
+        
+        while(somaAlunos > cont){
+            
+            printf("%d e %d\n", cont, somaAlunos);
+            
+            cont++;
+            somaAlunos--;
+            
+        }
+    }
+    
+    return 0;
+}
