@@ -1,0 +1,24 @@
+// Fatorial dum número
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numero, y, fatorial;
+    
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+    
+    y = numero;
+    
+    for(fatorial = 1; numero!=0; numero--){
+        
+        fatorial = fatorial * numero;
+        
+    }
+    
+    printf("\nO fatorial de %d e: %d\n", y, fatorial);
+    
+    return 0;
+}
