@@ -1,0 +1,40 @@
+// Encontre um primo
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, cont, r;
+    
+    printf("Digite um inteiro positivo: ");
+    scanf("%d", &x);
+    
+    while(x<=0){
+        
+        printf("O numero nao e valido.");
+        
+        printf(" Digite um inteiro positivo: ");
+        scanf("%d", &x);
+        
+    }
+    
+    for(cont = 2; x > cont; cont++){
+        
+        r=x%cont;
+        
+        if(r==0){
+            
+            printf("\nO numero %d nao e primo.\n",x);
+            break;
+            
+        }
+    }
+    
+    if(r!=0)
+        printf("\nO numero %d e primo.\n", x);
+    if(x==2)
+        printf("\nO numero 2 e primo.\n");
+        
+    return 0;
+}
