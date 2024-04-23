@@ -3,17 +3,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <locale.h>
 
 int main()
 {
     float a=1.0, b=-2.0, c=1.0;
-    float d, r1, r2;
+    float delta, raiz1, raiz2;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    delta = b*b - 4*a*c;
+    raiz1 = (-b+sqrt(d)) / (2*a);
+    raiz2 = (-b-sqrt(d)) / (2*a);
     
-    d=b*b-4*a*c;
-    r1=(-b+sqrt(d))/(2*a);
-    r2=(-b-sqrt(d))/(2*a);
-    
-    printf("%f e %f", r1, r2);
+    printf("As raízes são: x1 = %.2f e x2 = %.2f", raiz1, raiz2);
     
     return 0;
 }
