@@ -1,4 +1,4 @@
-// Imprime a tabuada de dois e três e o quadrado dum número
+// Imprime a dobro, tripulo e o quadrado dum número
 
 #include <stdio.h>
 #include <stdlib.h>
