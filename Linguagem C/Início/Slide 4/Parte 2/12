@@ -1,0 +1,25 @@
+// Outro problema de somatório
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int varInt;
+    float varDen = 1.0, contDen = 1.0, e = 1.0;
+    
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &varInt);
+    
+    do{
+        
+        varDen= varDen * contDen;
+        e=e+(1/varDen);
+        contDen++;
+        
+    }while(contDen <= varInt);
+    
+    printf("O resultado e igual a %f", e);
+    
+    return 0;
+}
