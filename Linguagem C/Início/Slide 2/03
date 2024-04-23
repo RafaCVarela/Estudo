@@ -2,12 +2,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
-    int x=3;
-    
-    printf("\n O dobro da variavel: %d\n O triplo da variavel: %d\n O quadrado da variavel: %d", 2*x, 3*x, x*x);
-    
+    int x = 3;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    printf(" O dobro da variável: %d\n", 2 * x);
+    printf(" O triplo da variável: %d\n", 3 * x);
+    printf(" O quadrado da variável: %d\n", x * x);
+
     return 0;
 }
