@@ -1,0 +1,46 @@
+// Problema de função afim - Um ter a maior altura que outro
+
+// (versão 1)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contAnos=0, altZe, altChico;
+    
+    do{
+        
+        altChico = 150 + 2*contAnos;
+        altZe = 140 + 3*contAnos;
+        contAnos++;
+        
+    }while(altZe < altChico);
+    
+    printf("O numero de anos para Ze ficar maior que o Chico e igual a %d.", 
+    contAnos);
+    
+    return 0;
+}
+
+
+// (Forma 2)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contAnos=0, altZe, altChico;
+    
+    do{
+        altChico=150 + 2*contAnos;
+        altZe=140 + 3*contAnos;
+        contAnos++;
+        
+    }while(altZe != altChico);
+    
+    printf("O numero de anos para Ze ficar maior que o Chico e igual a %d.", 
+    contAnos);
+    
+    return 0;
+}
