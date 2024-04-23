@@ -1,0 +1,39 @@
+// Imprima o maior e o menor número de entrada
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float varDig, valMax, valMin;
+    int cont, contAux = 1;
+    
+    printf("Digite o %do valor: ", contAux);
+    scanf("%f", &varDig);
+    
+    valMax = varDig;
+    valMin = varDig;
+    
+    for(cont = 1; cont < 10; cont++){
+        
+        contAux++;
+        
+        printf("Digite o %do valor: ", contAux);
+        scanf("%f", &varDig);
+        
+        if(varDig > valMax){
+            
+            valMax = varDig;
+            
+        }
+        else if(varDig < valMin){
+            
+            valMin=varDig;
+            
+        }
+    }
+    
+    printf("O valor minimo e %f e o valor maximo e %f.", valMin, valMax);
+    
+    return 0;
+}
