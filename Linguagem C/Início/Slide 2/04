@@ -13,8 +13,8 @@ int main()
     setlocale(LC_ALL, "Portuguese");
 
     delta = b*b - 4*a*c;
-    raiz1 = (-b+sqrt(d)) / (2*a);
-    raiz2 = (-b-sqrt(d)) / (2*a);
+    raiz1 = (-b+sqrt(delta)) / (2*a);
+    raiz2 = (-b-sqrt(delta)) / (2*a);
     
     printf("As raízes são: x1 = %.2f e x2 = %.2f", raiz1, raiz2);
     
