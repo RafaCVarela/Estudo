@@ -1,0 +1,22 @@
+// Quando a aplicação supera as dívidas
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contMes = 1;
+    float valorDivida = 10000.0, valorAplicacao = 1500.0;
+    
+    while(valorDivida != valorAplicacao){
+        
+        valorDivida = valorDivida * (1 + 0.025);
+        valorAplicacao = valorAplicacao * (1 + 0.04);
+        contMes++;
+        
+    }
+    
+    printf("O numero de meses de rendimento necessarios e igual a %d", contMes);
+    
+    return 0;
+}
