@@ -1,0 +1,109 @@
+// (Rascunho)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numParE = 0, numParD = 0, contAux = 0;
+    char caracter;
+    
+    do{
+        
+        printf("Digite : ");
+        scanf(" %c",&caracter);
+        
+        if(caracter=='('){
+            
+            numParE++;
+            
+           }
+        if(caracter==')'){
+            
+            numParD++;
+            
+            if(numParD > numParE){
+                
+                contAux++;
+                
+            }
+        }
+    }while(caracter=='(' || caracter==')');
+    
+    if(numParE==numParD && contAux==0){
+        
+        printf("Balanceado. %d, %d, %d", numParE, numParD, contAux);
+        
+    }
+    else {
+        
+        if(numParE==numParD && contAux!=0){
+            
+            printf("Nao balanceado. %d, %d, %d",numParE,numParD,contAux);
+            
+        }
+        else if(numParE!=numParD){
+            
+            printf("Nao balanceado. %d, %d, %d",numParE,numParD,contAux);
+            
+        }
+    }
+
+    return 0;
+}
+
+
+// Contagem de parênteses
+
+// (Definitivo)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numParE=0,numParD=0,contAux=0;
+    char caracter;
+    
+    do{
+        
+        printf("Digite : ");
+        scanf(" %c",&caracter);
+        
+        if(caracter=='('){
+            
+            numParE++;
+            
+           }
+        if(caracter==')'){
+            
+            numParD++;
+            
+            if(numParD > numParE){
+                
+                contAux++;
+                
+            }
+        }
+    }while(caracter=='(' || caracter==')');
+    
+    if(numParE==numParD && contAux==0){
+        
+        printf("Balanceado.");
+        
+    }
+    else {
+        
+        if(numParE==numParD && contAux!=0){
+            
+            printf("Nao balanceado. %d, %d, %d", numParE, numParD, contAux);
+            
+        }
+        else if(numParE != numParD){
+            
+            printf("Nao balanceado. %d, %d, %d", numParE, numParD, contAux);
+            
+        }
+    }
+        
+    return 0;
+}
