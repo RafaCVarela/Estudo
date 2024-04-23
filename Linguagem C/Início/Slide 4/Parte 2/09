@@ -1,0 +1,27 @@
+// Um resultado maluco
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int contDenominador, contNumerador;
+    float soma = 0;
+    
+    contDenominador = 0;
+    contNumerador = 1;
+    
+    while(contNumerador != 26){
+        
+        soma = soma+((pow(2,contNumerador)/50-2*contDenominador));
+        
+        contDenominador++;
+        contNumerador++;
+        
+    }
+    
+    printf("O resultado e igual a %.2f",soma);
+    
+    return 0;
+}
