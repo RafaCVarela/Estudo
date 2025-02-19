@@ -1,0 +1,58 @@
+/*
+
+    Estrutura de dados - Alocação dinâmica de memória
+
+    Programa elucidando o uso das funções "malloc()" e 
+    "free()" para alocação dinâmica da memória.
+    
+*/
+
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(){
+
+    // Um vetor sendo declarado como ponteiro
+    int* vet;
+
+    // O índice dos laços/vetor e a quantadade de elementos do vetor
+    int i, qtdElem;
+
+    printf("Digite o tamanho do vertor: ");
+    scanf("%d", &qtdElem);
+
+    
+    // Condicional para verificar se há espaço de emória sufieciente
+    if ((vet = (int*)malloc(qtdElem * sizeof(int))) == NULL){
+
+        printf("Memoria insuficiente!");
+        exit(1);
+
+    }
+
+    for (i = 0; i<qtdElem; i++){
+
+        printf("vet[%d] = ", i);
+        scanf("%d", &vet[i]);
+
+    }
+
+    system("pause");
+
+    printf("O vetor e:\n");
+
+    for (i = 0; i<qtdElem; i++){
+
+        printf("vet[%d] = %d\n", i, vet[i]);
+
+    }
+
+    // Liberando espaço da memória
+    free(vet);
+    // Impedindo que os ponteiros fiquem soltos
+    vet = NULL;
+
+    system("pause");
+
+    return 0;
+}
