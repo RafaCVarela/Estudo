@@ -1,0 +1,65 @@
+/*
+
+    Estrutura de dados - Introdução a ponteiros
+
+    Código de exemplo de ponteiros.
+    Nele temos funções que:
+        - Imprimem os dados duma váriavel e um ponteiro que aponta a ela;
+        - Imprime o valor apontado pelo ponteiro;
+        - Modifica o valor apontado pelo ponteiro através do ponteiro como parâmetro;
+        - Limpar o terminal;
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void imprimeDados(int* ptr, int x);
+void imprimePonteiro(int* ptr);
+void mudaValorPonteiro(int* ptr);
+void limparTerminal();
+
+int main(){
+
+    int i = 10;
+    int* p;
+
+    p = &i;
+
+    imprimeDados(p, i);
+    limparTerminal();
+
+    imprimePonteiro(p);
+    limparTerminal();
+
+    mudaValorPonteiro(p);
+    limparTerminal();
+    
+    imprimeDados(p, i);
+
+    return 0;
+}
+void imprimeDados(int* ptr, int x){
+
+    printf("i=%d\n*p=%d\n", x, *ptr);
+    system("pause");
+
+}
+void imprimePonteiro(int* ptr){
+
+    printf("*p = %d\n", *ptr);
+    system("pause");
+
+}
+void mudaValorPonteiro(int* ptr){
+
+    printf("Digite outro valor: ");
+    scanf("%d", ptr);
+    system("pause");
+
+}
+void limparTerminal(){
+
+    system("cls");
+
+}
