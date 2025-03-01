@@ -1,0 +1,29 @@
+// Imprime o n-ésimo elemento de fibonacci e os múltiplos de 5 da sequência
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int valInt, contInt;
+    int resFib=0, cont1Fib=1, cont2Fib=1;
+
+    printf("Digite um inteiro positivo: ");
+    scanf("%d",&valInt);
+
+    for(contInt=3; contInt<=valInt; contInt++){
+
+        resFib= cont1Fib + cont2Fib;
+        cont1Fib= cont2Fib;
+        cont2Fib= resFib;
+
+        if(contInt%5==0 && contInt!=0)
+
+            printf("O %do e igual a %d\n", contInt, resFib);
+
+    }
+
+    printf("O %do e igual a %d", valInt, resFib);
+
+    return 0;
+}
