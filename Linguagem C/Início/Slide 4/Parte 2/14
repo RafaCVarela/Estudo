@@ -1,0 +1,41 @@
+// Digite valores inteiros. Saída os valores minímo e máximo.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float varDig, valMax, valMin;
+    int cont, contAux=1, posValMax=1, posValMin=1;
+
+    printf("Digite o %do valor: ",contAux);
+    scanf("%f",&varDig);
+
+    valMax=varDig;
+    valMin=varDig;
+
+    for(cont=1;cont<10;cont++){
+
+        contAux++;
+
+        printf("Digite o %do valor: ",contAux);
+        scanf("%f",&varDig);
+
+        if(varDig>valMax){
+
+            valMax=varDig;
+            posValMax=contAux;
+
+        }
+        if(varDig<valMin){
+
+            valMin=varDig;
+            posValMin=contAux;
+
+        }
+    }
+
+    printf("O %do e o valor minimo e o %do e o valor maximo.",posValMin,posValMax);
+
+    return 0;
+}
