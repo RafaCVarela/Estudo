@@ -1,0 +1,23 @@
+# Exercício 1 - Teste com strip
+
+# (versão 1)
+word = '     espaço     '
+
+x = word.strip() # Por padrão, ele deve retirar o espaço em branco.
+
+print(x)
+
+
+# (versão 2)
+
+word = '###.olha só,'
+
+x = word.strip('#.,') # Agora retirar os caracteres.
+
+print(x)
+
+# (versão 3)
+
+x = '###.olha só,'.strip('#.,') # Aplicando a função diretamente.
+
+print(x)
