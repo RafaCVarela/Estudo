@@ -1,0 +1,18 @@
+# Exercício 1 - Teste com find
+
+# (versão 1)
+
+word = 'Eu gosto de bananas, bananas são muito boas' # Ele conta os espaços.
+
+z = word.find('bananas') # Retorna o índice do primeiro valor correspondente.
+
+print(z)
+
+
+# (versão 2)
+
+txt = "Hello, welcome to my world."
+
+x = txt.find("e", 5, 10) # Retorna o primeiro índice correspondente dentro do intervalo [5,10].
+
+print(x)
