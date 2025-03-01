@@ -1,0 +1,34 @@
+// Digite inteiros não negativos e tenha saída do menor valor.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contAux=1, posValMin=1;
+    int varDig, valMin;
+
+    printf("Digite o %do elemento do conjunto: ",contAux);
+    scanf("%d",&varDig);
+
+    valMin=varDig;
+
+    while( varDig!=0 ){
+
+        contAux++;
+        
+        printf("Digite o %do elemento do conjunto (zero encerra e nao faz parte do conjunto): ", contAux);
+        scanf("%d", &varDig);
+
+        if(varDig<valMin && varDig!=0){
+
+            valMin=varDig;
+            posValMin=contAux;
+
+        }
+    }
+
+    printf("O %do elemento e o valor minimo e ele e igual a %d.", posValMin, valMin);
+
+    return 0;
+}
