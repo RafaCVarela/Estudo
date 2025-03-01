@@ -1,0 +1,24 @@
+// Imprima as temperaturas em Fahrenheit e suas respectivas em Celsius.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contTemp=0;
+    float tempCel, tempFah;
+
+    printf("Veja a tabela a seguir das temperaturas em Fahrenheit e sua respectivas temperaturas em Celsius:\n");
+    printf("   Fahrenheit\t|\tCelsius\n");
+    printf("\n-------------------------------------------------------\n\n");
+
+    for(tempFah=50;tempFah<=150;tempFah++){
+
+        tempCel=5*(tempFah-32)/9;contTemp++;
+
+        printf(" %3d- %.2foF\t|\t%.2foC\n", contTemp, tempFah, tempCel);
+
+    }
+
+    return 0;
+}
