@@ -1,0 +1,42 @@
+// Usando diretivas 'define' para determinar o tamahos dos vetores,
+// Entre com valores de dois vetores e some os respectivos elementos para obter o terceiro vetor.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define vetor1 5
+#define vetor2 5
+#define vetor3 5
+
+int main()
+{
+    int contador1[vetor1], contador2[vetor2], contador3[vetor3]; 
+    int i;
+
+
+    for(i=0; i<vetor1; i++){
+
+        printf("Digite %do numero inteiro positivo para o primeiro vetor: ", i+1);
+        scanf("%d", &contador1[i]);
+
+    }
+
+
+    for(i=0; i<vetor2; i++){
+
+        printf("Digite %do numero inteiro positivo para o segundo vetor: ", i+1);
+        scanf("%d",&contador2[i]);
+
+    }
+
+
+    for(i=0; i<vetor3; i++){
+
+        contador3[i] = contador1[i] + contador2[i];
+
+        printf("O %do resultado e igual a %d.\n", i+1, contador3[i]);
+
+    }
+
+    return 0;
+}
