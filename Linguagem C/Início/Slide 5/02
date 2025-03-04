@@ -1,0 +1,29 @@
+// Digite 20 números e receba qual deles é o menor e o índice no vetor
+
+#include <stdio.h>
+#include <stdlib.h>
+#define vetor1 20
+
+int main()
+{
+    int cont[vetor1];
+    int i, contInd;
+
+
+    for(i=0; i<vetor1; i++){
+
+        printf("%d-Digite o numero inteiro positivo do vetor:", i);
+        scanf("%d", &cont[i]);
+
+        if(cont[contInd]>cont[i]){
+
+            cont[contInd] = cont[i];
+            contInd = i;
+
+        }
+    }
+
+    printf("De indice %d, o menor valor e igual a %d", contInd, cont[contInd]);
+
+    return 0;
+}
