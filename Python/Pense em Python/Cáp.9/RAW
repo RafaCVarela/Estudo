@@ -1,0 +1,480 @@
+	1-
+
+# Exercício 1
+
+fin = open('words.txt')
+
+for line in fin:
+
+    word = line.strip()
+    
+    if len(word) > 20:
+        print(word)
+
+	2-
+
+# Exercício 2
+
+fin = open('words.txt')
+
+def has_no_e(s):
+    
+    if  s.find('e') == -1:
+        return True
+    else:
+        return False
+
+cont_words = 0
+cont_words_no_e = 0
+
+for line in fin:
+
+    word = line.strip()
+    
+    if has_no_e(word):
+        
+        print(word)
+        
+        cont_words_no_e += 1
+
+    cont_words += 1
+
+d = cont_words_no_e / cont_words
+
+p = d * 100
+
+print('%d%%' %p)
+
+	3-
+
+(parte 1)
+# Exercício 3 - Primeira parte
+
+def avoids(s, av):
+    
+    if s.find(av) != 1:
+        return True
+    else:
+        return False
+    
+s = input('> ')
+
+av = input('> ')
+
+print(avoids(s, av))
+
+(parte 2)
+# Exercício 3 - Segunda parte
+
+fin = open('words.txt')
+
+def avoids(s, av):
+    
+    if s.find(av) != 1:
+        return True
+    else:
+        return False
+    
+av = input('> ')
+
+cont_total = 0
+cont_avoids = 0
+
+for line in fin:
+
+    word = line.strip()
+
+    if avoids(word, av):
+        cont_avoids += 1
+
+    cont_total += 1
+    
+print('O número total de palavra é %d.' %cont_total, 'O número de palavras sem a sequência de letra é %d'  %cont_avoids)
+
+(parte 3)
+Como a lista está em inglês, uma sequência das cinco vogais, 'aeiou', gerou uma exclusão de zero palavras. 
+
+	4-
+
+(parte 1)
+# Exercício 4 - Primeira parte
+
+def uses_only(s, letras):
+
+    if len(s.strip(letras)) == 0:
+        return True
+    else:
+        return False
+
+s = input('> ')
+
+letras = input('> ')
+
+print(uses_only(s, letras))
+
+(parte 2)
+	Olha a alfafa
+	Olha o alface
+	Colha o alface
+	Colher cheia de alface
+
+	5-
+
+(parte 1)
+# Exercício 5 - Primeira parte
+
+def uses_all(s, letras):
+
+    for letra in letras:
+        
+        if s.find(letra) == -1:
+            return False
+
+    return True
+
+s = input('> ')
+
+letras = input('> ')
+
+print(uses_all(s, letras))
+
+(parte 2 e 3)
+# Exercício 5 - Segunda e terceira parte
+
+def uses_all(letras):
+
+    fin = open('words.txt')
+
+    cont = 0
+    
+    for line in fin:
+
+        word = line.strip()
+
+        for letra in letras:
+        
+            if word.find(letra) == -1:
+                
+                break
+
+            cont += 1
+
+    return cont
+
+letras = input('> ')
+
+print(uses_all(letras))
+
+	6-
+
+(parte 1)
+# Exercício 6 - Primeira parte
+
+def is_abcedarian(s):
+
+    i = 0
+
+    if len(s) % 2 != 0:
+        
+        while i < len(s):
+        
+            if i - 1 >= 0 and i + 1 < len(s):
+
+                if i % 2 != 0:
+
+                    if ord(s[i]) < ord(s[i - 1]) or ord(s[i]) > ord(s[i + 1]):
+
+                        return False
+
+            i += 1
+
+        return True
+    
+    else:
+        
+        while i < len(s):
+        
+            if ord(s[len(s) - 1]) < ord(s[len(s) - 2]):
+
+                return False
+            
+            if i - 1 >= 0 and i + 1 < len(s):
+
+                if i % 2 != 0:
+
+                    if ord(s[i]) < ord(s[i - 1]) or ord(s[i]) > ord(s[i + 1]):
+
+                        return False
+                    
+            i += 1
+
+        return True
+
+palavra = input('> ')
+
+print(is_abcedarian(palavra))
+
+(parte 2)
+# Exercício 6 - Segunda parte
+
+def is_abcedarian(s):
+
+    i = 0
+
+    if len(s) % 2 != 0:
+        
+        while i < len(s):
+        
+            if i - 1 >= 0 and i + 1 < len(s):
+
+                if i % 2 != 0:
+
+                    if ord(s[i]) < ord(s[i - 1]) or ord(s[i]) > ord(s[i + 1]):
+
+                        return False
+
+            i += 1
+
+        return True
+    
+    else:
+        
+        while i < len(s):
+        
+            if ord(s[len(s) - 1]) < ord(s[len(s) - 2]):
+
+                return False
+            
+            if i - 1 >= 0 and i + 1 < len(s):
+
+                if i % 2 != 0:
+
+                    if ord(s[i]) < ord(s[i - 1]) or ord(s[i]) > ord(s[i + 1]):
+
+                        return False
+                    
+            i += 1
+
+        return True
+
+fin = open('words.txt')
+
+cont = 0
+
+for line in fin:
+
+    word = line.strip()
+
+    if is_abcedarian(word):
+
+        cont += 1
+
+print(cont)
+
+	7-
+
+# Exercício 7
+
+def tres_duplas(s, i, d):
+
+    tam = len(s)
+
+    if i >= tam - 1 or d == 3:
+
+        return d
+
+    else:
+
+        if s[i] == s[i + 1]:
+
+            return tres_duplas(s, i + 2, d + 1)
+        
+        else:
+
+            return tres_duplas(s, i + 1, 0)
+
+fin = open('words.txt')
+
+cont = 0
+
+for line in fin:
+
+    word = line.strip()
+    tam = len(word)
+
+    if tam >= 6:
+
+        i = 0
+        d = 0
+
+        x = tres_duplas(word, i, d)
+
+        if x >= 3:
+            
+            print(word)
+            cont += 1
+
+print(cont)
+
+	8-
+
+# Exercício 8
+
+def passo_1(num):
+
+    x = num % 10000
+
+    a = num % 10
+
+    y = int((num - a) / 10) % 100
+
+    if int(x / 1000) == x % 10 and int(y / 10) == y % 10:
+
+        return True
+
+    else:
+
+        return False
+    
+def passo_2(num):
+
+    x = num % 100000
+
+    a = num % 10
+
+    y = int((num - a) / 10) % 1000
+
+    if int(x / 10000) == x % 10 and int(y / 100) == y % 10:
+
+        return True
+
+    else:
+
+        return False
+
+def passo_3(num):
+
+    a = (num % 100000) - num % 10
+    
+    x = int(a / 10)
+
+    b = num % 10
+
+    y = int((num - b) / 10) % 100
+
+    if int(x / 1000) == x % 10 and int(y / 10) == y % 10:
+
+        return True
+
+    else:
+
+        return False
+
+def passo_4(num):
+
+    x = int(num / 100000)
+
+    a = num % 10
+
+    y = int((num - a) / 10) % 10000
+
+    z = int(y / 1000)
+
+    b = y % 10
+
+    w = int((y - b) / 10) % 100
+
+    o = int(w / 10)
+
+    p = w % 10
+
+    if x == a and z == b and o == p:
+
+        return True
+    
+    else:
+
+        return False
+
+
+def palidromo(num):
+
+    if passo_1(num):
+
+        if passo_2(num + 1):
+            
+            if passo_3(num + 2):
+
+                if passo_4(num + 3):
+
+                    return True
+                
+                else:
+
+                    return False
+                
+            else:
+
+                return False
+            
+        else:
+            return False  
+
+    else:
+        return False
+
+numero = 100000
+
+cont = 0
+
+while numero <= 999999:
+
+    if palidromo(numero):
+        
+        print(numero)
+        cont += 1
+
+    numero += 1
+
+print(cont)
+
+	9-
+
+# Exercício 9
+
+def comparar(m, f):
+
+    cont = 0
+
+    while m <= 99 and cont < 7:
+
+        x = int(m / 10)
+
+        y = m % 10
+
+        a = int(f / 10)
+    
+        b = f % 10
+
+        if x == b and y == a:
+
+            cont += 1
+
+        if cont == 7:
+
+            resp = f
+
+        m += 1
+        f += 1
+
+    if cont == 7:
+
+        print(resp)
+    
+m = 18
+
+while m <= 99:
+
+    comparar(m + 10, 10)
+
+    m += 1
