@@ -1,0 +1,486 @@
+	Exemplo 1-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct data{
+    int dia,mes,ano;
+};
+int main(){
+    struct data aniversario,prova;
+    printf("Digite a data de seu aniversario: ");scanf("%d%d%d",&aniversario.dia,&aniversario.mes,&aniversario.ano);
+    printf("Sua data de aniversario e %2d/%2d/%4d\n\n",aniversario.dia,aniversario.mes,aniversario.ano);
+    printf("Digite a data da sua prova: ");scanf("%d%d%d",&prova.dia,&prova.mes,&prova.ano);
+    printf("A data da sua prova e %2d/%2d/%4d",prova.dia,prova.mes,prova.ano);
+    return 0;
+}
+
+	Exemplo 2-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct data{
+    int dia,mes,ano;
+};
+int main(){
+    typedef struct data Data;
+    Data aniversario,prova;
+    printf("Digite a data de seu aniversario: ");scanf("%d%d%d",&aniversario.dia,&aniversario.mes,&aniversario.ano);
+    printf("Sua data de aniversario e %2d/%2d/%4d\n\n",aniversario.dia,aniversario.mes,aniversario.ano);
+    printf("Digite a data da sua prova: ");scanf("%d%d%d",&prova.dia,&prova.mes,&prova.ano);
+    printf("A data da sua prova e %2d/%2d/%4d",prova.dia,prova.mes,prova.ano);
+    return 0;
+}
+
+	Exemplo 3-
+
+
+(Versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    printf("sizeof(char)\t=%4d\n",sizeof(char));
+    printf("sizeof(int)\t=%4d\n",sizeof(int));
+    printf("sizeof(float)\t=%4d\n",sizeof(float));
+    printf("sizeof(double)\t=%4d\n",sizeof(double));
+    printf("sizeof(char *)\t=%4d\n",sizeof(char *));
+    printf("sizeof(int *)\t=%4d\n",sizeof(int *));
+    return 0;
+}
+
+(Versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    printf("sizeof(char)\t=%4d\n",sizeof(char));
+    printf("sizeof(int)\t=%4d\n",sizeof(int));
+    printf("sizeof(float)\t=%4d\n",sizeof(float));
+    printf("sizeof(double)\t=%4d\n",sizeof(double));
+    printf("sizeof(char *)\t=%4d\n",sizeof(char *));
+    printf("sizeof(int *)\t=%4d\n",sizeof(int *));
+    printf("\n\n");
+    printf("sizeof(short int)\t=%4d\n",sizeof(short int));
+    printf("sizeof(long int)\t=%4d\n",sizeof(long int));
+    printf("sizeof(long long int)\t=%4d\n",sizeof(long long int));
+    return 0;
+}
+
+(Versão 3)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    printf("sizeof(char)\t=%4d\n",sizeof(char));
+    printf("sizeof(int)\t=%4d\n",sizeof(int));
+    printf("sizeof(float)\t=%4d\n",sizeof(float));
+    printf("sizeof(double)\t=%4d\n",sizeof(double));
+    printf("sizeof(char *)\t=%4d\n",sizeof(char *));
+    printf("sizeof(int *)\t=%4d\n",sizeof(int *));
+    printf("\n\n");
+    printf("sizeof(short int)\t=%4d\n",sizeof(short int));
+    printf("sizeof(long int)\t=%4d\n",sizeof(long int));
+    printf("sizeof(long long int)\t=%4d\n",sizeof(long long int));
+    printf("sizeof(long double)\t=%4d\n",sizeof(long double));
+    printf("\n\n");
+    printf("sizeof(unsigned int)\t=%4d\n",sizeof(unsigned int));
+    printf("sizeof(unsigned char)\t=%4d\n",sizeof(unsigned char));
+    return 0;
+}
+
+	Exemplo 4-
+
+(Versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int i;
+    printf("Digite um numero inteiro qualquer: ");scanf("%d",&i);
+    printf("end. &i=%10p\tcont. i=%4d",&i,i);
+    return 0;
+}
+
+(Versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int i;
+    printf("Digite um numero inteiro qualquer: ");scanf("%d",&i);
+    printf("end. &i=%10x#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int i;
+    printf("Digite um numero inteiro qualquer: ");scanf("%d",&i);
+    printf("end. &i=%10x\tcont. i=%4d",&i,i);
+    return 0;
+}
+\tcont. i=%4d",&i,i);
+    return 0;
+}
+
+	Exemplo 5-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int *p,*q;
+    int a=5,b=6,c;
+    p=&a;
+    q=&b;
+    c=*p+*q;
+    printf("\n\n\t%d\n\n",c);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int *p,**r;
+    int a=8,c;
+    p=&a;
+    r=&p;
+    c=*p+**r;
+    printf("\n\n\t%4d+%4d=%d\n\n",*p,**r,c);
+    return 0;
+}
+
+	Exemplo 5-
+
+
+(Forma errada)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void troca(int i,int j){
+    int temp;
+    temp=i;
+    i=j;
+    j=temp;
+}
+int main(){
+    int a=10,b=20;
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    troca(a,b);
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    return 0;
+}
+
+(Forma certa)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void troca(int *i,int *j){
+    int temp;
+    temp=*i;
+    *i=*j;
+    *j=temp;
+}
+int main(){
+    int a=10,b=20;
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    troca(&a,&b);
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    return 0;
+}
+
+(Outra forma errada)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void troca(int *i,int *j){
+    int temp;
+    temp=*i;
+    *i=*j;
+    *j=temp;
+}
+int main(){
+    int a=10,b=20;
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    troca(a,b);
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4d\tb=%4d\n\n",a,b);
+    return 0;
+}
+
+	
+		Agora com char
+(Forma errada)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void troca(int i,int j){
+    char temp;
+    temp=i;
+    i=j;
+    j=temp;
+}
+int main(){
+    char a='j',b='y';
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4c\tb=%4c\n\n",a,b);
+    troca(a,b);
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4c\tb=%4c\n\n",a,b);
+    return 0;
+}
+
+(Forma certa)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void troca(int *i,int *j){
+    char c;
+    c=*j;
+    *j=*i;
+    *i=c;
+}
+int main(){
+    char a='j',b='y';
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4c\tb=%4c\n\n",a,b);
+    troca(&a,&b);
+    printf("end. &a=%10p\t&b=%10p\n",&a,&b);
+    printf("cont. a=%4c\tb=%4c\n\n",a,b);
+    return 0;
+}
+
+
+	Exemplo 6-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int v[10];
+    p=&v[0];
+    v[0]=100;
+    printf("end. &p=%10p\t&v[0]=%10p\n",&p,&v[0]);
+    printf("cont. *p=%4d\tv[0]=%4d\n\n",*p,v[0]);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int v[10];
+    p=v;
+    v[0]=100;
+    printf("end. &p=%10p\t&v[0]=%10p\n",&p,&v[0]);//'v' eh muito provavelmente interpretado como enderço igual ao de &v[0],
+isto é, o primeiro endereço do vetor//
+    printf("cont. *p=%4d\tv[0]=%4d\n\n",*p,v[0]);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int v[10];
+    p=v;
+    v[0]=100;
+    printf("end. &v=%10p\t&v[0]=%10p\n",&v,&v[0]);
+    printf("cont. *v=%4d\tv[0]=%4d\n\n",*v,v[0]);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int v[10];
+    p=&v[0];
+    v[2]=100;
+    printf("end. &p[2]=%10p\t&v[0]=%10p\n",&p[2],&v[2]);
+    printf("cont. p[2]=%4d\tv[2]=%4d\n\n",p[2],v[2]);
+    return 0;
+}
+
+(Vetor 1)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    p=&v[0];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 2 - diferente de vetor 1)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    p=&v[0];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&*(p+i),i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 3 - Não serve para operações que até o momento imaginamos)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    p=&v[0];
+    for(p=&v,i=0;i<10;i++,p++){
+        *p=rand()%100;
+    }
+    for(i=0;i<10;i++,p++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*p,i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 4 - Error)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    p=&v[0];
+    for(p=&v,i=0;i<10;i++,p++){
+        p=rand()%100;
+    }
+    for(i=0;i<10;i++,p++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*p,i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 5 - O ideal)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 6 - Loucura)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    for(p=&v[0],i=0;i<10;i++,(*p)++){
+    }
+    for(i=0;i<10;i++,(*p)++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v[i]);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*p,i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 7 - Diferente do Vetor 5)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,&v+i);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 8 - Igual a ao Vetor 5)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,&p+i,i,v+i);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+(Vetor 9 - O mais correto até agora)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int *p;
+    int i,v[10];
+    p=&v[0];
+    for(p=&v,i=0;i<10;i++){
+        *(p+i)=rand()%100;
+    }
+    for(i=0;i<10;i++){
+        printf("end. &p[%d]=%10p\t&v[%d]=%10p\n",i,p+i,i,v+i);
+        printf("cont. *p[%d]=%4d\tv[%d]=%4d\n\n",i,*(p+i),i,v[i]);
+    }
+    return 0;
+}
+
+	Exemplo 7-
+
+
