@@ -1,0 +1,973 @@
+	1-
+
+// Usando diretivas 'define' para determinar o tamahos dos vetores,
+// Entre com valores de dois vetores e some os respectivos elementos para obter o terceiro vetor.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define vetor1 5
+#define vetor2 5
+#define vetor3 5
+
+int main()
+{
+    int contador1[vetor1], contador2[vetor2], contador3[vetor3]; 
+    int i;
+
+
+    for(i=0; i<vetor1; i++){
+
+        printf("Digite %do numero inteiro positivo para o primeiro vetor: ", i+1);
+        scanf("%d", &contador1[i]);
+
+    }
+
+
+    for(i=0; i<vetor2; i++){
+
+        printf("Digite %do numero inteiro positivo para o segundo vetor: ", i+1);
+        scanf("%d",&contador2[i]);
+
+    }
+
+
+    for(i=0; i<vetor3; i++){
+
+        contador3[i] = contador1[i] + contador2[i];
+
+        printf("O %do resultado e igual a %d.\n", i+1, contador3[i]);
+
+    }
+
+    return 0;
+}
+
+	2-
+
+// Digite 20 números e receba qual deles é o menor e o índice no vetor
+
+#include <stdio.h>
+#include <stdlib.h>
+#define vetor1 20
+
+int main()
+{
+    int cont[vetor1];
+    int i, contInd;
+
+
+    for(i=0; i<vetor1; i++){
+
+        printf("%d-Digite o numero inteiro positivo do vetor:", i);
+        scanf("%d", &cont[i]);
+
+        if(cont[contInd]>cont[i]){
+
+            cont[contInd] = cont[i];
+            contInd = i;
+
+        }
+    }
+
+    printf("De indice %d, o menor valor e igual a %d", contInd, cont[contInd]);
+
+    return 0;
+}
+
+	3-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define NOTAS 10
+
+int main()
+{
+    int i,contAc=0,contAb=0,contAux1,contAux2;float notas[NOTAS],notasAc[NOTAS],notasAb[NOTAS],soma=0,media;
+    for(i=0;i<NOTAS;i++){
+        printf("Digite sua nota: ");scanf("%f",&notas[i]);
+        soma+=notas[i];
+    }
+    media=soma/NOTAS;printf("Sua media foi : %.3f\n",media);
+    for(i=0;i<NOTAS;i++){
+        if(notas[i]>media){
+            notasAc[contAc]=notas[i];contAc++;
+        }
+        else{
+            notasAb[contAb]=notas[i];contAb++;
+        }
+    }
+    contAux1=contAc;contAux2=contAb;
+    printf("Ha %d notas acima da media e ha %d notas abaixo da media.\n",contAc,contAb);
+    printf("Suas notas acima da media sao: \n");
+    for(contAc=0;contAc<contAux1;contAc++){
+        printf("%.3f\n",notasAc[contAc]);
+    }
+    printf("Suas notas abaixo da media sao: \n");
+    for(contAb=0;contAb<contAux2;contAb++){
+        printf("%.3f\n",notasAb[contAb]);
+    }
+    return 0;
+}
+
+	4-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define NOTAS 8
+
+int main()
+{
+    int n,a,nota,soma;float media[NOTAS];
+    for(a=0;a<8;a++){
+        soma=0;
+        printf("%do alunos digite suas notas: \n",a+1);
+        for(n=1;n<8;n++){
+            printf("Digite a %da nota de 1 a 10: ",n);scanf("%d",&nota);soma+=nota;
+        }
+        media[a]=soma/7;
+    }
+    for(a=0;a<8;a++){
+        printf("A media das notas do %do aluno e %.2f\n",a+1,media[a]);
+    }
+    return 0;
+}
+
+	-Desafio 1 - 
+
+(Anteriomente, havia tentado ler do teclado um valor inteiro pra definir o tamanho do vetor e, por conseguinte, o
+o valor do terceiro vetor(TAMANHO_VETOR*2), contudo, os programas mostraram que há um conflito entre
+os vetores(ou arrays), desse modo, ao digitar os valores do segundo vetor e tentar copia-los no terceiro,
+eles apagam os valores do primeiro, sejam eles já copiados para terceiro, sejam eles valores já definidos
+no primeiro vetor, por fim, apenas desisti e passei usar um valor constante.) 
+#include <stdio.h>
+#include <stdlib.h>
+#define VETOR 10
+
+int main()
+{
+    int N,i;float V1[VETOR],V2[VETOR],V3[VETOR*2];
+    for(i=0;i<VETOR;i++){
+        printf("Digite o %do: ",i+1);scanf("%f",&V1[i]);V3[i]=V1[i];
+    }
+    for(i=0;i<VETOR;i++){
+        printf("Digite o %do: ",i+1);scanf("%f",&V2[i]);V3[i+VETOR]=V2[i];
+    }
+    for(i=0;i<VETOR*2;i++){
+        printf("O %do do 3o vetor: %f\n",i+1,V3[i]);
+    }
+    return 0;
+}
+
+	5-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define tamABI 10
+#define tamUNIAO 20
+
+void lerVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%do : ",i);scanf("%d",&vet[i]);
+    }
+}
+void interVetores(int vetA[],int vetB[],int tam,int vetInter[]){
+    int i,j,z;
+    for(i=0;i<tam;i++){
+        for(j=0;j<tam;j++){
+            if(vetA[i]==vetB[j]){
+                vetInter[z]=vetA[i];z++;
+            }
+        }
+        j=0;
+    }
+}
+void uniaoVetores(int vetA[],int vetB[],int tam,int vetU[]){
+    int i;
+    for(i=0;i<tam;i++){
+        vetU[i]=vetA[i];vetU[i+tam]=vetB[i];
+    }
+}
+void imprimeVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("-%2do:%4d\n",i,vet[i]);
+    }
+}
+int main(){
+    int vetorA[tamABI],vetorB[tamABI],vetorInter[tamABI],vetorUniao[tamUNIAO];
+    printf("Digite valores inteiros para o primeiro vetor:\n");lerVetor(vetorA,tamABI);
+    printf("Digite valores inteiros para o segundo vetor:\n");lerVetor(vetorB,tamABI);
+    interVetores(vetorA,vetorB,tamABI,vetorInter);
+    uniaoVetores(vetorA,vetorB,tamABI,vetorUniao);
+    printf("O vetor intersecao e:\n");imprimeVetor(vetorInter,tamABI);
+    printf("O vetor uniao e:\n");imprimeVetor(vetorUniao,tamUNIAO);
+    return 0;
+}
+
+	6-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define PRODUTOS 1000
+
+void lerVetor(float vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("Digite o %do: ",i);scanf("%f",&vet[i]);
+    }
+}
+void imprimeVendas(float vet[],int tam){
+    int i;float soma=0.0;
+    for(i=0;i<tam;i++){
+        printf("%do: %.3f\n",i,vet[]);
+    }
+}
+void totalVendas(float vetA[],float vetB[],float vetC[],int tam){
+    int i;float soma=0.0;
+    for(i=0;i<tam;i++){
+        soma+=vetA[i]+vetB[],vetC[];
+    }
+    printf("O total de vendas e RS %.3f\n",soma);
+}
+void reajustePrecos(float vetA[],float vetB[],float vetC[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        vetA[i]=vetA[i]*1.1;vetB[i]=vetB[i]*1.1;vetC[i]=vetC[i]*1.1;
+    }
+}
+int main(){
+    float junho[PRODUTOS],julho[PRODUTOS],agosto[PRODUTOS];
+    printf("Os precos dos produtos vendidos em Junho:\n");lerVetor(junho,PRODUTOS);
+    printf("Os precos dos produtos vendidos em Julho:\n");lerVetor(julho,PRODUTOS);
+    printf("Os precos dos produtos vendidos em Agosto:\n");lerVetor(agosto,PRODUTOS);
+    printf("O total de vendas em Junho:\n");imprimeVendas(junho,PRODUTOS);
+    printf("O total de vendas em Julho:\n");imprimeVendas(julho,PRODUTOS);
+    printf("O total de vendas em Agosto:\n");imprimeVendas(agosto,PRODUTOS);
+    totalVendas(junho,julho,agosto,PRODUTOS);reajustePrecos(junho,julho,agosto,PRODUTOS);
+    return 0;
+}
+
+	7-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void totalprodEstoque(int vet[]){
+    int i,somaEstq=0;
+    for(i=0;i<5;i++){
+        somaEstq+=vet[i];
+    }
+    printf("O estoque tem %d produtos.\n",somaEstq);
+}
+int vendidosDia(int vetA[],float vetB[]){
+    int i;float somaPrecos=0.0;
+    char flag;
+    for(i=0;i<5;i++){
+        vetA[i]=0;
+    }
+    while(flag!='n'){
+        printf("Digite o codigo do produto:");scanf("%d",&i);
+            if(i<0 || i>4){
+                printf("Codigo invalido.\n");
+            }
+            else{
+                vetA[i]=vetA[i]+1;
+            }
+        printf("Deseja continua, digite 's' ou 'n': ");scanf(" %c",&flag);
+    }
+    for(i=0;i<5;i++){
+        somaPrecos+=vetA[i]*vetB[i];
+    }
+    printf("O total de vendas do dia e RS %.3f .",somaPrecos);
+}
+void attEstoque(int vetA[],int vetB[]){
+    int i;
+    for(i=0;i<5;i++){
+        vetA[i]=vetA[i]-vetB[i];
+    }
+}
+int main(){
+    int contQuantCod[5],estq[5]={10,50,45,3,80},vendHoje[188];float val[5]={59.99,25.0,60.0,129.99,20.99};
+    totalprodEstoque(estq);
+    vendidosDia(contQuantCod,val);attEstoque(estq,contQuantCod);
+    return 0;
+}
+
+	-Desafio 2 -
+
+a)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+void lerVetor(int vet[],int tam){
+    int i,j;
+    for(i=0;i<tam;i++){
+        printf("Digite um valor para a posicao %d: ",i);scanf("%d",&vet[i]);
+    }
+    for(i=0;i<tam-2;i++){
+        for(j=tam;j>i;j--){
+            if(vet[i]==vet[j] && j<tam){
+                printf("O %d e igual a %d, digite um novo valor para %d: ",i,j,j);scanf("%d",&vet[j]);
+            }
+        }
+    }
+}
+int main(){
+    int vetor[TAMANHO];
+    lerVetor(vetor,TAMANHO);
+    return 0;
+}
+
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+void separacaoParImp(int vet[],int tam){
+    int vetAux[tam],i,j,z;
+    for(i=0,j=tam-1,z=0;z<=j;i++){
+        if(vet[i]%2==0 && vet[i]!=1){
+            vetAux[z]=vet[i];z++;
+        }
+        else{
+            vetAux[j]=vet[i];j--;
+        }
+    }
+    for(i=0;i<tam;i++){
+        vet[i]=vetAux[i];
+    }
+}
+void imprimeVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%2do:%2d\n",i,vet[i]);
+    }
+}
+int main(){
+    int vetor[TAMANHO]={1,2,3,4,5};
+    separacaoParImp(vetor,TAMANHO);
+    imprimeVetor(vetor,TAMANHO);
+    return 0;
+}
+
+
+c)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+void lerVetor(int vet[],int tam){
+    int i,j;
+    for(i=0;i<tam;i++){
+        printf("Digite um valor para a posicao %d: ",i);scanf("%d",&vet[i]);
+    }
+    for(i=0;i<tam-2;i++){
+        for(j=tam;j>i;j--){
+            if(vet[i]==vet[j] && j<tam){
+                printf("O %d e igual a %d, digite um novo valor para %d: ",i,j,j);scanf("%d",&vet[j]);
+            }
+        }
+    }
+}
+void separacaoParImp(int vet[],int tam){
+    int vetAux[tam],i,j,z;
+    for(i=0,j=tam-1,z=0;z<=j;i++){
+        if(vet[i]%2==0 && vet[i]!=1){
+            vetAux[z]=vet[i];z++;
+        }
+        else{
+            vetAux[j]=vet[i];j--;
+        }
+    }
+    for(i=0;i<tam;i++){
+        vet[i]=vetAux[i];
+    }
+}
+void imprimeVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%2do:%2d\n",i,vet[i]);
+    }
+}
+int main(){
+    int vetor[TAMANHO];
+    lerVetor(vetor,TAMANHO);imprimeVetor(vetor,TAMANHO);
+    separacaoParImp(vetor,TAMANHO);imprimeVetor(vetor,TAMANHO);
+    return 0;
+}
+
+	8-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+int main(){
+    int i,escalar;float vetReais[TAMANHO];
+    for(i=0;i<TAMANHO;i++){
+        printf("Digite o %do: ",i);scanf("%f",&vetReais[i]);
+    }
+    printf("Digite um numero inteiro qualquer: ");scanf("%d",&escalar);
+    for(i=0;i<TAMANHO;i++){
+        printf("%2f *%2d =%2f\n",vetReais[i],escalar,vetReais[i]*escalar);
+    }
+    return 0;
+}
+
+	9-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+int main(){
+    int vetor[TAMANHO],i;
+    for(i=0;i<TAMANHO;i++){
+        printf("Digite o %do valor: ",i);scanf("%d",&vetor[i]);
+    }
+    for(i=0;i<TAMANHO;i++){
+        if(i%2==0){
+            if(vetor[i]%2!=0){
+                printf("%d\n",vetor[i]);
+            }
+        }
+    }
+    return 0;
+}
+
+	10-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+int main(){
+    int vetor[TAMANHO],i,j;
+    for(i=0;i<TAMANHO;i++){
+        printf("Digite o %do valor: ",i);scanf("%d",&vetor[i]);
+    }
+    for(i=0;i<TAMANHO-2;i++){
+        for(j=TAMANHO-1;j>i;j--){
+            if(vetor[i]==vetor[j]){
+                printf("Nos indices %d e %d, o valores sao iguais.\n",i,j);
+            }
+        }
+    }
+    return 0;
+}
+
+	11-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+int main(){
+    int vetor[TAMANHO],i,j,fim=0;
+    for(i=0;i<TAMANHO;i++){
+        printf("Digite o %do valor: ",i);scanf("%d",&vetor[i]);
+    }
+    for(i=0;i<TAMANHO-2;i++){
+        for(j=TAMANHO-1;j>i;j--){
+            if(vetor[i]==vetor[j] && fim!=1){
+                printf("Nos indices %d e %d, o valores sao iguais.\n",i,j);fim++;
+            }
+        }
+    }
+    if(fim==0){
+        printf("Nenhum valor e repetido.");
+            }
+    return 0;
+}
+
+	12-
+
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 100
+
+int main(){
+    int i,contAux1,contAux2,valor,vet[TAMANHO];
+    for(i=0,contAux1=0;valor>=0;i++,contAux1++){
+        printf("Digite o %do valor inteiro: ",i);scanf("%d",&valor);
+        vet[i]=valor;
+    }
+    contAux2=contAux1;
+    for(i=0;i<3;i++,contAux1--){
+        valor=vet[i];vet[i]=vet[contAux1-2];vet[contAux1-2]=valor;
+    }
+    for(i=0;i<contAux2-1;i++){
+        printf("%2d:%2d\n",i,vet[i]);
+    }
+    return 0;
+}
+
+	-Desafio 3-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int i,x,vet[20]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+    printf("Digite um numero de 0 a 10: ");scanf("%d",&x);
+    for(i=18;x<=i;i--){
+        vet[i+1]=vet[i];
+    }
+    printf("Digite um valor para %do: ",x);scanf("%d",&vet[x]);
+    for(i=0;i<20;i++){
+        printf("%2do:%2d\n",i,vet[i]);
+    }
+    return 0;
+}
+
+	-Desafio 4-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int i,x,vet[20]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+    printf("Digite um numero de 0 a 10: ");scanf("%d",&x);
+    for(i=x;i<20;i++){
+        vet[i]=vet[i+1];
+    }
+    printf("Digite um valor para %do: ",i-1);scanf("%d",&vet[i-1]);
+    for(i=0;i<20;i++){
+        printf("%2do:%2d\n",i,vet[i]);
+    }
+    return 0;
+}
+
+	13-
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void ordena(int vet[],int tam){
+    int i,j,aux;
+    imprime(vet,tam);
+    for(i=0,j=tam-1;i<j;i++,j--){
+        printf("Temos:");
+        printf("\ni=%2d  j=%2d  vet[i]=%2d  vet[j]=%2d",i,j,vet[i],vet[j]);
+        aux=vet[i];
+        vet[i]=vet[j];
+        vet[j]=aux;
+        printf("\nTrocamos o %d pelo %d:",i,j);
+        printf("\ni=%2d  j=%2d  vet[i]=%2d  vet[j]=%2d\n",i,j,vet[i],vet[j]);
+    }
+    imprime(vet,tam);
+    printf("\n--------------------------------------------------------\n\n");
+}
+void imprime(int vet[],int tam){
+    int i;
+    printf("O vetor sera impresso:\n");
+    for(i=0;i<tam;i++){
+        printf("%2do:%2d\n",i,vet[i]);
+    }
+}
+int main(){
+    int v1[4]={9,2,5,6},v2[5]={44,2,0,4,9},v3[9]={1,2,3,4,5,6,7,8,9},v4[14]={1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+    ordena(v1,4);ordena(v2,5);ordena(v3,9);ordena(v4,14);
+    return 0;
+}
+
+	14-
+
+(versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+void ordena(int vet[],int tam, int num){
+    int i,digito;
+    for(i=0;i<tam;i++){
+        vet[i]=0;
+    }
+    imprime(vet,tam);
+    for(i=tam-1;num!=0;i--){
+       digito=num%10;printf("Digito i=%2d:%2d\n",i,digito);
+       vet[i]=digito;printf("vet[%d]=%2d\n",i,vet[i]);
+       num=num/10;printf("numero=%2d\n",num);
+    }
+    imprime(vet,tam);
+}
+void imprime(int vet[],int tam){
+    int i;
+    printf("O vetor sera impresso:\n");
+    for(i=0;i<tam;i++){
+        printf("vet[%d]=%2d\n",i,vet[i]);
+    }
+}
+int main(){
+    int numero,v[TAMANHO];
+    printf("Digite um numero entre 0 e 99999: ");scanf("%d",&numero);ordena(v,TAMANHO,numero);
+    return 0;
+}
+
+(versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 5
+
+void ordena(int vet[],int tam, int num){
+    int i,digito;
+    for(i=0;i<tam;i++){
+        vet[i]=0;
+    }
+    imprime(vet,tam);
+    for(i=tam-1;num!=0;i--){
+       digito=num%10;printf("Digito i=%2d:%2d\n",i,digito);
+       vet[i]=digito;printf("vet[%d]=%2d\n",i,vet[i]);
+       num=num/10;printf("numero=%2d\n",num);
+    }
+    imprime(vet,tam);
+}
+void imprime(int vet[],int tam){
+    int i;
+    printf("O vetor sera impresso:\n");
+    for(i=0;i<tam;i++){
+        printf("vet[%d]=%2d\n",i,vet[i]);
+    }
+}
+int lerNumero(){
+    int num;
+    printf("Digite um numero entre 0 e 99999: ");scanf("%d",&num);
+    return num;
+}
+int main(){
+    int numero,v[TAMANHO];
+    numero=lerNumero();ordena(v,TAMANHO,numero);
+    return 0;
+}
+
+	15-
+
+(com o debug)
+#include <stdio.h>
+#include <stdlib.h>
+#define CLASSE 2
+
+void lerNotas(float vetA[],int vetAB[],int vetAC[],int tam){
+    int i,j,z;
+    for(i=0,j=0,z=0;i<tam;i++){
+        printf("O %2do aluno: ",i+1);scanf("%f",&vetA[i]);
+        if(vetA[i]>100.0 || vetA[i]<0.0){
+            while(vetA[i]>100.0 || vetA[i]<0.0){
+                printf("Nota invalida(%3.2f), digite um valor valido: ",vetA[i]);scanf("%f",&vetA[i]);
+            }
+        }
+         if(vetA[i]<60.0){
+            vetAB[j]=i+1;printf("vetAB[%d]=%2d            (DEBUG)\n",j,vetAB[j]);j++;
+        }
+        if(vetA[i]>=60.0){
+            vetAC[z]=i+1;printf("vetAC[%d]=%2d            (DEBUG)\n",z,vetAC[z]);z++;
+        }
+    }
+}
+void imprimeVetor(float vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("O %2do aluno:%5.2f\n",i+1,vet[i]);
+    }
+}
+void notaFinal(float vetA[],float vetB[],float vetC[],float vetD[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        vetD[i]=(vetA[i]+vetB[i]+(2*vetC[i]))/4;
+    }
+    for(i=0;i<tam;i++){
+        printf("A nota final do %do aluno e %f\n",i+1,vetD[i]);
+    }
+}
+void notaAbaixo(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(vet[i]!=0)
+           printf("Aluno %d com nota abaixo da media.\n",vet[i]);
+    }
+}
+void notaAcima(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(vet[i]!=0)
+           printf("Aluno %d com nota acima da media.\n",vet[i]);
+    }
+}
+int main(){
+    float notas1[CLASSE],notas2[CLASSE],notas3[CLASSE],notasFinais[CLASSE];
+    int ordenador;char flag;
+    int notasAbaixo1[CLASSE],notasAcima1[CLASSE],notasAbaixo2[CLASSE],notasAcima2[CLASSE],notasAbaixo3[CLASSE],notasAcima3[CLASSE];
+    int notasAbaixoF[CLASSE],notasAcimaF[CLASSE];
+    printf("Digite as notas da P1:\n");lerNotas(notas1,notasAbaixo1,notasAcima1,CLASSE);
+    printf("Digite as notas da P2:\n");lerNotas(notas2,notasAbaixo2,notasAcima2,CLASSE);
+    printf("Digite as notas da P3:\n");lerNotas(notas3,notasAbaixo3,notasAcima3,CLASSE);
+    printf("-Escolha uma das opçoes abaixo:\n");
+    printf(" 1-Ver as notas da P1.\n 2-Ver as notas da P2.\n 3-Ver as notas da P3.\n 4-Ver as notas finais.\n");
+    printf(" 5-Ver as notas da P1 abaixo da media.\n 6-Ver as notas da P1 acima da media.\n");
+    printf(" 7-Ver as notas da P2 abaixo da media.\n 8-Ver as notas da P2 acima da media.\n");
+    printf(" 9-Ver as notas da P3 abaixo da media.\n 10-Ver as notas da P3 acima da media.\n");
+    printf("-Digite um numero: ");scanf("%d",&ordenador);
+    while(ordenador!=0){
+        switch(ordenador){
+            case 1: imprimeVetor(notas1,CLASSE);
+                    break;
+            case 2: imprimeVetor(notas2,CLASSE);
+                    break;
+            case 3: imprimeVetor(notas3,CLASSE);
+                    break;
+            case 4: notaFinal(notas1,notas2,notas3,notasFinais,CLASSE);
+                    break;
+            case 5: notaAbaixo(notasAbaixo1,CLASSE);
+                    break;
+            case 6: notaAcima(notasAcima1,CLASSE);
+                    break;
+            case 7: notaAbaixo(notasAbaixo2,CLASSE);
+                    break;
+            case 8: notaAcima(notasAcima2,CLASSE);
+                    break;
+            case 9: notaAbaixo(notasAbaixo3,CLASSE);
+                    break;
+            case 10: notaAcima(notasAcima3,CLASSE);
+                    break;
+            default: printf("Numero digitado invalido.");
+    }
+        printf("Deseja rever a lista digite 's' ou 'n': ");scanf(" %c",&flag);
+        if(flag=='s'){
+    printf("-Escolha uma das opçoes abaixo:\n");
+    printf(" 1-Ver as notas da P1.\n 2-Ver as notas da P2.\n 3-Ver as notas da P3.\n 4-Ver as notas finais.\n");
+    printf(" 5-Ver as notas da P1 abaixo da media.\n 6-Ver as notas da P1 acima da media.\n");
+    printf(" 7-Ver as notas da P2 abaixo da media.\n 8-Ver as notas da P2 acima da media.\n");
+    printf(" 9-Ver as notas da P3 abaixo da media.\n 10-Ver as notas da P3 acima da media.\n");
+        }
+        printf("Se deseja parar digite 0, se deseja continuar digite um numero da lista: ");scanf("%d",&ordenador);
+    }
+    return 0;
+}
+
+(sem debug)
+#include <stdio.h>
+#include <stdlib.h>
+#define CLASSE 2
+
+void lerNotas(float vetA[],int vetAB[],int vetAC[],int tam){
+    int i,j,z;
+    for(i=0,j=0,z=0;i<tam;i++){
+        printf("O %2do aluno: ",i+1);scanf("%f",&vetA[i]);
+        if(vetA[i]>100.0 || vetA[i]<0.0){
+            while(vetA[i]>100.0 || vetA[i]<0.0){
+                printf("Nota invalida(%3.2f), digite um valor valido: ",vetA[i]);scanf("%f",&vetA[i]);
+            }
+        }
+         if(vetA[i]<60.0){
+            vetAB[j]=i+1;j++;
+        }
+        if(vetA[i]>=60.0){
+            vetAC[z]=i+1;z++;
+        }
+    }
+}
+void imprimeVetor(float vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("O %2do aluno:%5.2f\n",i+1,vet[i]);
+    }
+}
+void notaFinal(float vetA[],float vetB[],float vetC[],float vetD[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        vetD[i]=(vetA[i]+vetB[i]+(2*vetC[i]))/4;
+    }
+    for(i=0;i<tam;i++){
+        printf("A nota final do %do aluno e %f\n",i+1,vetD[i]);
+    }
+}
+void notaAbaixo(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(vet[i]!=0)
+           printf("Aluno %d com nota abaixo da media.\n",vet[i]);
+    }
+}
+void notaAcima(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        if(vet[i]!=0)
+           printf("Aluno %d com nota acima da media.\n",vet[i]);
+    }
+}
+int main(){
+    float notas1[CLASSE],notas2[CLASSE],notas3[CLASSE],notasFinais[CLASSE];
+    int ordenador;char flag;
+    int notasAbaixo1[CLASSE],notasAcima1[CLASSE],notasAbaixo2[CLASSE],notasAcima2[CLASSE],notasAbaixo3[CLASSE],notasAcima3[CLASSE];
+    int notasAbaixoF[CLASSE],notasAcimaF[CLASSE];
+    printf("Digite as notas da P1:\n");lerNotas(notas1,notasAbaixo1,notasAcima1,CLASSE);
+    printf("Digite as notas da P2:\n");lerNotas(notas2,notasAbaixo2,notasAcima2,CLASSE);
+    printf("Digite as notas da P3:\n");lerNotas(notas3,notasAbaixo3,notasAcima3,CLASSE);
+    printf("-Escolha uma das opçoes abaixo:\n");
+    printf(" 1-Ver as notas da P1.\n 2-Ver as notas da P2.\n 3-Ver as notas da P3.\n 4-Ver as notas finais.\n");
+    printf(" 5-Ver as notas da P1 abaixo da media.\n 6-Ver as notas da P1 acima da media.\n");
+    printf(" 7-Ver as notas da P2 abaixo da media.\n 8-Ver as notas da P2 acima da media.\n");
+    printf(" 9-Ver as notas da P3 abaixo da media.\n 10-Ver as notas da P3 acima da media.\n");
+    printf("-Digite um numero: ");scanf("%d",&ordenador);
+    while(ordenador!=0){
+        switch(ordenador){
+            case 1: imprimeVetor(notas1,CLASSE);
+                    break;
+            case 2: imprimeVetor(notas2,CLASSE);
+                    break;
+            case 3: imprimeVetor(notas3,CLASSE);
+                    break;
+            case 4: notaFinal(notas1,notas2,notas3,notasFinais,CLASSE);
+                    break;
+            case 5: notaAbaixo(notasAbaixo1,CLASSE);
+                    break;
+            case 6: notaAcima(notasAcima1,CLASSE);
+                    break;
+            case 7: notaAbaixo(notasAbaixo2,CLASSE);
+                    break;
+            case 8: notaAcima(notasAcima2,CLASSE);
+                    break;
+            case 9: notaAbaixo(notasAbaixo3,CLASSE);
+                    break;
+            case 10: notaAcima(notasAcima3,CLASSE);
+                    break;
+            default: printf("Numero digitado invalido.");
+    }
+        printf("Deseja rever a lista digite 's' ou 'n': ");scanf(" %c",&flag);
+        if(flag=='s'){
+    printf("-Escolha uma das opçoes abaixo:\n");
+    printf(" 1-Ver as notas da P1.\n 2-Ver as notas da P2.\n 3-Ver as notas da P3.\n 4-Ver as notas finais.\n");
+    printf(" 5-Ver as notas da P1 abaixo da media.\n 6-Ver as notas da P1 acima da media.\n");
+    printf(" 7-Ver as notas da P2 abaixo da media.\n 8-Ver as notas da P2 acima da media.\n");
+    printf(" 9-Ver as notas da P3 abaixo da media.\n 10-Ver as notas da P3 acima da media.\n");
+        }
+        printf("Se deseja parar digite 0, se deseja continuar digite um numero da lista: ");scanf("%d",&ordenador);
+    }
+    return 0;
+}
+
+	-Desafio 5-
+
+(Por inserção)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 10
+
+void preencheVetorAleatoriamente(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        vet[i]=rand()%1000;
+    }
+}
+void imprimeVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%5d",vet[i]);
+    }
+}
+void ordenaInsercao(int vet[],int tam){
+    int i,j,z,aux;
+    printf("\n");
+    for(i=1;i<tam;i++){
+        for(j=0;j<i;j++){
+            if(vet[i]<vet[j]){
+                aux=vet[i];
+                for(z=i;z>j;z--){
+                    vet[z]=vet[z-1];
+                }
+                vet[j]=aux;
+            }
+        }
+    }
+}
+int main(){
+    int vetor[TAMANHO];
+    printf("\n\n Vetor aleatorio: ");
+    preencheVetorAleatoriamente(vetor,TAMANHO);
+    imprimeVetor(vetor,TAMANHO);
+    ordenaInsercao(vetor,TAMANHO);
+    printf("\n Vetor ordenado: ");
+    imprimeVetor(vetor,TAMANHO);
+    return 0;
+}
+
+(Por seleção)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 10
+
+void preencheVetorAleatoriamente(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        vet[i]=rand()%1000;
+    }
+}
+void imprimeVetor(int vet[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%5d",vet[i]);
+    }
+}
+void ordenaSelecao(int vet[],int tam){
+    int i,j,aux;
+    for(i=0;i<tam-1;i++){
+        for(j=i+1;j<tam;j++){
+            if(vet[j]<vet[i]){
+                aux=vet[i];vet[i]=vet[j];vet[j]=aux;
+            }
+        }
+    }
+}
+int main(){
+    int vetor[TAMANHO];
+    printf("\n\n Vetor aleatorio: \n");
+    preencheVetorAleatoriamente(vetor,TAMANHO);
+    imprimeVetor(vetor,TAMANHO);
+    ordenaSelecao(vetor,TAMANHO);
+    printf("\n Vetor ordenado: \n");
+    imprimeVetor(vetor,TAMANHO);
+    return 0;
+}
+
+(Por contagem)
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMANHO 7
+
+void imprimeVetor(int vet[], int tam) {
+    int i;
+    for (i = 0; i < tam; i++) {
+        printf("%5d", vet[i]);
+    }
+}
+void ordenaContagem(int vet[], int tam) {
+    int i, j, z, cont, vetAux[TAMANHO+1];
+    for (i = 0; i < tam+1; i++) {
+        vetAux[i] = 0;
+    }
+    for (i = 0; i < tam; i++) {
+        j = vet[i];
+        vetAux[j] = vetAux[j] + 1;
+    }
+    j = 0;
+    for (i = 0; i < tam + 1; i++) {
+        for (cont = vetAux[i]; cont != 0; j++,cont--) {
+            vet[j] = i;
+        }
+    }
+}
+int main() {
+    int vetor[TAMANHO] = {5,1,4,5,5,1,7};
+    printf("O vetor e:\n");
+    imprimeVetor(vetor, TAMANHO);
+    ordenaContagem(vetor, TAMANHO);
+    printf("\n Vetor ordenado: \n");
+    imprimeVetor(vetor, TAMANHO);
+    return 0;
+}
+
+
