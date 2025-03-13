@@ -1,0 +1,1685 @@
+	1-
+
+a = int(input(''))
+
+b = int(input(''))
+
+x = a + b
+
+print('X =', x)
+
+	2-
+
+raio = float(input(''))
+
+area = 3.14159 * raio**2
+
+print(f'A={area:1.4f}')
+
+	3-
+
+a = int(input(''))
+
+b = int(input(''))
+
+soma = a + b
+
+print(f'SOMA = {soma}')
+
+	4-
+
+a = int(input(''))
+
+b = int(input(''))
+
+prod = a * b
+
+print(f'PROD = {prod}')
+
+	5-
+
+a = float(input(''))
+
+b = float(input(''))
+
+media = (3.5 * a + 7.5 * b) / 11
+
+print(f'MEDIA = {media:.5f}')
+
+	6-
+
+a = float(input(''))
+
+b = float(input(''))
+
+c = float(input(''))
+
+media = (2 * a + 3 * b + 5 * c) / 10
+
+print(f'MEDIA = {media:.1f}')
+
+	7-
+
+a = int(input(''))
+
+b = int(input(''))
+
+c = int(input(''))
+
+d = int(input(''))
+
+dif = a * b - c * d
+
+print(f'DIFERENCA = {dif}')
+
+	8-
+
+num = int(input(''))
+
+h = int(input(''))
+
+vh = float(input(''))
+
+print(f'NUMBER = {num}\nSALARY = U$ {vh * h:.2f}')
+
+	9-
+
+nome = input('')
+
+sal = float(input(''))
+
+vendas = float(input(''))
+
+print(f'TOTAL = R$ {sal + 0.15 * vendas:.2f}')
+
+	10-
+
+cod1, num1, v1 = input().split()
+cod2, num2, v2 = input().split()
+
+num1 = int(num1)
+num2 = int(num2)
+
+v1 = float(v1)
+v2 = float(v2)
+
+print(f'VALOR A PAGAR: R$ {num1 * v1 + num2 * v2:.2f}')
+
+
+	11-
+
+raio = float(input(''))
+
+pi = 3.14159
+
+vol = (4/3) * pi * raio**3
+
+print(f'VOLUME = {vol:.3f}')
+
+	12-
+
+a, b, c= input().split()
+
+a = float(a)
+b = float(b)
+c = float(c)
+
+area1 = 0.5 * a * c
+area2 = 3.14159 * c**2
+area3 = (a + b) * c * 0.5
+area4 = b**2
+area5 = a * b
+
+print(f'TRIANGULO: {area1:.3f}')
+print(f'CIRCULO: {area2:.3f}')
+print(f'TRAPEZIO: {area3:.3f}')
+print(f'QUADRADO: {area4:.3f}')
+print(f'RETANGULO: {area5:.3f}')
+
+	13-
+
+a, b, c = input().split()
+
+a = int(a)
+b = int(b)
+c = int(c)
+
+maior1 = (a+b+abs(a-b))/2
+maior2 = (maior1+c+abs(maior1-c))/2
+
+print(f'{int(maior2)} eh o maior')
+
+	14-
+
+x = int(input())
+y = float(input())
+
+print(f'{x / y:.3f} km/l')
+
+	15-
+
+x1, y1 = input().split()
+x2, y2 = input().split()
+
+x1 = float(x1)
+x2 = float(x2)
+y1 = float(y1)
+y2 = float(y2)
+
+print(f'{((x1 - x2)**2 + (y1 - y2)**2)**0.5:.4f}')
+
+	16-
+
+s = int(input())
+
+print(f'{2 * s} minutos')
+
+	17-
+
+t = int(input())
+
+v = int(input())
+
+print(f'{float((v * t) / 12):.3f}')
+
+	18-
+
+v = int(input())
+
+vo = v
+
+n100 = int((v - (v % 100)) / 100)
+v = v % 100
+
+n50 = int((v - (v % 50)) / 50)
+v = v % 50
+
+n20 = int((v - (v % 20)) / 20)
+v = v % 20
+
+n10 = int((v - (v % 10)) / 10)
+v = v % 10
+
+n5 = int((v - (v % 5)) / 5)
+v = v % 5
+
+n2 = int((v - (v % 2)) / 2)
+v = v % 2
+
+n1 = int((v - (v % 1)) / 1)
+
+print(f'{vo}\n{n100} nota(s) de R$ 100,00\n{n50} nota(s) de R$ 50,00\n{n20} nota(s) de R$ 20,00')
+print(f'{n10} nota(s) de R$ 10,00\n{n5} nota(s) de R$ 5,00\n{n2} nota(s) de R$ 2,00\n{n1} nota(s) de R$ 1,00')
+
+	19-
+
+t = int(input())
+
+seg = int(t % 60)
+t = (t - (t % 60)) / 60
+
+min = int(t % 60)
+h = int((t - (t % 60)) / 60)
+
+print(f'{h}:{min}:{seg}')
+
+
+	20-
+
+t = int(input())
+
+ano = int((t - (t % 365)) / 365)
+t = t % 365
+
+mes = int((t - (t % 30)) / 30)
+dia = int(t % 30)
+
+print(f'{ano} ano(s)\n{mes} mes(es)\n{dia} dia(s)')
+
+	21-
+
+v = float(input())
+
+n100 = int((v - (v % 100)) / 100)
+v = v % 100
+
+n50 = int((v - (v % 50)) / 50)
+v = v % 50
+
+n20 = int((v - (v % 20)) / 20)
+v = v % 20
+
+n10 = int((v - (v % 10)) / 10)
+v = v % 10
+
+n5 = int((v - (v % 5)) / 5)
+v = v % 5
+
+n2 = int((v - (v % 2)) / 2)
+v = v % 2
+
+n1 = int((v - (v % 1)) / 1)
+v = (v % 1) * 100
+
+nc50 = int((v - (v % 50)) / 50)
+v = v % 50
+
+nc25 = int((v - (v % 25)) / 25)
+v = v % 25
+
+nc10 = int((v - (v % 10)) / 10)
+v = v % 10
+
+nc5 = int((v - (v % 5)) / 5)
+v = v % 5
+
+nc1 = int((v - (v % 1)) / 1)
+
+
+print(f'NOTAS:\n{n100} nota(s) de R$ 100.00\n{n50} nota(s) de R$ 50.00\n{n20} nota(s) de R$ 20.00\n{n10} nota(s) de R$ 10.00')
+print(f'{n5} nota(s) de R$ 5.00\n{n2} nota(s) de R$ 2.00\nMOEDAS:\n{n1} moeda(s) de R$ 1.00\n{nc50} moeda(s) de R$ 0.50')
+print(f'{nc25} moeda(s) de R$ 0.25\n{nc10} moeda(s) de R$ 0.10\n{nc5} moeda(s) de R$ 0.05\n{nc1} moeda(s) de R$ 0.01')
+
+	22-
+
+a, b, c, d = input().split()
+
+a = int(a)
+b = int(b)
+c = int(c)
+d = int(d)
+
+if (b > c and d > a and (c + d) > (a + b) and c > 0 and d > 0 and (a % 2 == 0)):
+    print('Valores aceitos')
+
+else:
+    print('Valores nao aceitos')
+
+	23-
+
+import math
+a, b, c = map(float, input().split())
+
+delta = math.pow(b, 2) - 4.0 * a * c
+
+if delta < 0.0 or a == 0.0:
+    print('Impossivel calcular')
+
+else:
+    x1 = (-b + delta**(1 / 2)) / (2.0 * a)
+    x2 = (-b - delta**(1 / 2)) / (2.0 * a)
+    print(f'R1 = {x1:.5f}\nR2 = {x2:.5f}')
+
+	24-
+
+x = float(input())
+
+if x >= 0 and x <= 25:
+    print('Intervalo [0,25]')
+
+elif x > 25 and x <= 50:
+    print('Intervalo (25,50]')
+
+elif x> 50 and x <= 75:
+    print('Intervalo (50,75]')
+
+elif x > 75 and x <= 100:
+    print('Intervalo (75,100]')
+
+else:
+    print('Fora de intervalo')
+
+	25-
+
+def codigo(x):
+
+    if x == 1:
+        v = 4.00
+    elif x == 2:
+        v = 4.50
+    elif x == 3:
+        v = 5.00
+    elif x == 4:
+        v = 2.00
+    elif x == 5:
+        v = 1.50
+
+    return v
+
+a, b = input().split()
+
+a = int(a)
+b = int(b)
+
+soma = codigo(a) * b
+
+print(f'Total: R$ {soma:.2f}')
+
+	26-
+
+n1, n2, n3, n4 = map(float, input().split())
+
+media = (2*n1 + 3*n2 + 4*n3 + n4) / (2+3+4+1)
+
+print(f'Media: {media:.1f}')
+
+if media >= 7.0:
+    print('Aluno aprovado.')
+elif media < 5.0:
+    print('Aluno reprovado.')
+elif 5.0 <= media <= 6.9:
+    print('Aluno em exame.')
+
+    exame = float(input())
+
+    nmedia = (exame + media) / 2
+
+    print(f'Nota do exame: {exame:.1f}')
+    
+    if nmedia >= 5.0:
+        print(f'Aluno aprovado.\nMedia final: {nmedia:.1f}')
+    elif nmedia <= 4.9:
+        print(f'Aluno reprovado.\nMedia final: {nmedia:.1f}')
+
+	27-
+
+ x, y, = map(float, input().split())
+
+if x == 0 and y == 0:
+    print('Origem')
+elif x == 0 and y != 0:
+    print('Eixo Y')
+elif x != 0 and y == 0:
+    print('Eixo X')
+elif x > 0 and y > 0:
+    print('Q1')
+elif x < 0 and y > 0:
+    print('Q2')
+elif x < 0 and y < 0:
+    print('Q3')
+elif x > 0 and y < 0:
+    print('Q4')
+
+	28-
+
+def comparador(p, q):
+    if p > q:
+        return True
+    else:
+        return False
+    
+def ordenador(a, b, c):
+    if comparador(a, b):
+        if comparador(a, c):
+            if comparador(b, c):
+                print(f'{c}\n{b}\n{a}\n')
+            else:
+                print(f'{b}\n{c}\n{a}\n')
+        else:
+            print(f'{b}\n{a}\n{c}\n')
+    else:
+        if comparador(a, c):
+            print(f'{c}\n{a}\n{b}\n')
+        else:
+            if comparador(b, c):
+                print(f'{a}\n{c}\n{b}\n')
+            else:
+                print(f'{a}\n{b}\n{c}\n')
+
+x, y, z = map(int, input().split())
+
+ordenador(x, y, z)
+
+print(f'{x}\n{y}\n{z}')
+
+	29-
+
+def desi_tri(x, y, z):
+    if x >= y + z or x <= abs(y - z):
+        return False
+    elif y >= x + z or y <= abs(x - z):
+        return False
+    elif z >= x + y or z <= abs(x - y):
+        return False
+    else:
+        return True
+
+a, b, c = map(float, input().split())
+
+if desi_tri(a, b, c):
+    P = a + b + c
+    print(f'Perimetro = {P:.1f}')
+else:
+    S = (a + b) * c / 2
+    print(f'Area = {S:.1f}')
+
+	30-
+
+x, y = map(int, input().split())
+
+if x > y:
+    if x % y == 0:
+        print('Sao Multiplos')
+    else:
+        print('Nao sao Multiplos')
+else:
+    if y % x == 0:
+        print('Sao Multiplos')
+    else:
+        print('Nao sao Multiplos')
+
+	31-
+
+def lados(x, y, z):
+    if x == y:
+        if x == z:
+            print('TRIANGULO EQUILATERO')
+        else:
+            print('TRIANGULO ISOSCELES')
+    elif y == z:
+        print('TRIANGULO ISOSCELES')
+
+def natu_tri(a, b, c):
+    if a**2 == b**2 +  c**2:
+        print('TRIANGULO RETANGULO')
+    elif a**2 > b**2 + c**2:
+        print('TRIANGULO OBTUSANGULO')
+    elif a**2 < b**2 + c**2:
+        print('TRIANGULO ACUTANGULO')
+    lados(a, b, c)
+
+def desi_tri(x, y, z):
+    if x >= y + z:
+        print('NAO FORMA TRIANGULO')
+    else:
+        natu_tri(x, y, z)
+
+def comparador(p, q):
+    if p >= q:
+        return True
+    else:
+        return False
+
+def ordenador(a, b, c):
+    if comparador(a, b):
+        if comparador(a, c):
+            if comparador(b, c):
+                desi_tri(a, b, c)
+            else:
+                desi_tri(a, c, b)
+        else:
+            desi_tri(c, a, b)
+    else:
+        if comparador(a, c):
+            desi_tri(b, a, c)
+        else:
+            if comparador(b, c):
+                desi_tri(b, c, a)
+            else:
+                desi_tri(c, b, a)
+
+x, y, z = map(float, input().split())
+
+ordenador(x, y, z)
+
+	32-
+
+t0, tf = map(int, input().split())
+
+if t0 == tf:
+    print('O JOGO DUROU 24 HORA(S)')
+elif t0 > tf:
+    T = (24 - t0) + tf
+    print(f'O JOGO DUROU {T} HORA(S)')
+else:
+    T = tf - t0
+    print(f'O JOGO DUROU {T} HORA(S)')
+
+	33-
+
+def h_m(t):
+    minutos = int(t % 60)
+    horas = int((t - (t % 60)) / 60)
+
+    print(f'O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)')
+
+h0, m0, hf, mf = map(int, input().split())
+
+x = 60 * h0 + m0
+y = 60 * hf + mf
+
+if x == y:
+    print('O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)')
+elif x > y:
+    T = (24 * 60 - x) + y
+    h_m(T)
+else:
+    T = y - x
+    h_m(T)
+
+	34-
+
+def reajuste(salario, i):
+    nsalario = salario * (1 + i)
+
+    print(f'Novo salario: {nsalario:.2f}\nReajuste ganho: {(salario * i):.2f}\nEm percentual: {int(i * 100)} %')
+
+x = float(input())
+
+if x >= 0 and x <= 400.0:
+    reajuste(x, 0.15)
+
+elif x >= 400.01 and x <= 800.0:
+    reajuste(x, 0.12)
+
+elif x >= 800.01 and x <= 1200.0:
+    reajuste(x, 0.10)
+
+elif x >= 1200.01 and x <= 2000.0:
+    reajuste(x, 0.07)
+
+elif x > 2000.0:
+    reajuste(x, 0.04)
+
+	35-
+
+filo = input()
+classe = input()
+ordem = input()
+
+if filo == 'vertebrado':
+    if classe == 'ave':
+        if ordem == 'carnivoro':
+            print('aguia')
+        else:
+            print('pomba')
+    else:
+        if ordem == 'onivoro':
+            print('homem')
+        else:
+            print('vaca')
+else:
+    if classe == 'inseto':
+        if ordem == 'hematofago':
+            print('pulga')
+        else:
+            print('lagarta')
+    else:
+        if ordem == 'hematofago':
+            print('sanguessuga')
+        else:
+            print('minhoca')
+
+	36-
+
+ddd = int(input())
+
+if ddd % 10 == 1:
+    if ddd == 61:
+        print('Brasilia')
+    elif ddd == 71:
+        print('Salvador')
+    elif ddd == 11:
+        print('Sao Paulo')
+    elif ddd == 21:
+        print('Rio de Janeiro')
+    elif ddd == 31:
+        print('Belo Horizonte')
+    else:
+        print('DDD nao cadastrado')
+else:
+    if ddd == 32:
+        print('Juiz de Fora')
+    elif ddd == 19:
+        print('Campinas')
+    elif ddd == 27:
+        print('Vitoria')
+    else:
+        print('DDD nao cadastrado')
+
+	37-
+
+def imposto(x):
+    if x >= 0.0 and x <= 2000.0:
+        return 0 
+    elif x >= 2000.01 and x <= 3000.0:
+        valor = imposto(2000) + (x - 2000) * 0.08
+        return valor
+    elif x >= 3000.01 and x <= 4500.0:
+        valor = imposto(3000) + (x - 3000) * 0.18
+        return valor
+    elif x > 4500.0:
+        valor = imposto(4500) + (x - 4500) * 0.28
+        return valor
+
+x = float(input())
+
+if x >= 0.0 and x <= 2000.0:
+    print('Isento')
+elif x >= 2000.01 and x <= 3000.0:
+    valor = (x - 2000) * 0.08
+    print(f'R$ {valor:.2f}')
+elif x >= 3000.01 and x <= 4500.0:
+    valor = imposto(3000) + (x - 3000) * 0.18
+    print(f'R$ {valor:.2f}')
+elif x > 4500.0:
+    valor = imposto(4500) + (x - 4500) * 0.28
+    print(f'R$ {valor:.2f}')
+
+	38-
+
+mes = int(input())
+
+if mes % 2 == 0:
+    if mes % 3 == 0:
+        if mes % 4 == 0:
+            print('December')
+        else:
+            print('June')
+    elif mes % 5 == 0:
+        print('October')
+    elif mes % 4 == 0:
+        if mes % 8 == 0:
+            print('August')
+        else:
+            print('April')
+    else:
+        print('February')
+else:
+    if mes % 3 == 0:
+        if mes % 9 == 0:
+            print('September')
+        else:
+            print('March')
+    elif mes % 5 == 0:
+        print('May')
+    elif mes % 7 == 0:
+        print('July')
+    elif mes % 11 == 0:
+        print('November')
+    else:
+        print('January')
+
+	39-
+
+i = 1
+
+while i <= 100:
+    if i % 2 == 0:
+        print(i)
+    i += 1
+
+	40-
+
+numeros = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+i = 0
+cont = 0
+
+while i < 6:
+    numeros[i] = float(input())
+    if numeros[i] > 0.0:
+        cont += 1
+    i += 1
+
+print(f'{cont} valores positivos')
+
+	41-
+
+delimiter = ' : '
+
+strDia0, data0 = input().split()
+h0, min0, seg0 = map(int, input().split(delimiter))
+
+strDiaf, dataf = input().split()
+hf, minf, segf = map(int, input().split(delimiter))
+
+data0 = int(data0)
+dataf = int(dataf)
+
+if data0 == dataf:
+    dataT = int(dataf - data0)
+    hT = hf - h0
+    minT = minf - min0
+    segT = segf - seg0
+
+    print(f'{dataT} dia(s)\n{hT} hora(s)\n{minT} minuto(s)\n{segT} segundo(s)')
+
+else:
+    dataT = dataf - data0 - 1
+    
+    somaSeg0 = h0 * 3600 + min0 * 60 + seg0
+    seg24H = 24 * 3600
+    d0 = seg24H - somaSeg0
+
+    somaSegf = hf * 3600 + minf * 60 + segf
+
+    somaSegTotal = d0 + somaSegf
+
+    segundos = int(somaSegTotal % 60)
+    x = (somaSegTotal - segundos) / 60
+
+    minutos = int(x % 60)
+    y = (x - minutos) / 60
+
+    horas = int(y % 24)
+    z = (y - horas) / 24
+
+    data = int(dataT + z)
+
+    print(f'{data} dia(s)\n{horas} hora(s)\n{minutos} minuto(s)\n{segundos} segundo(s)')
+
+	42-
+
+def soma_positivos(x, soma):
+    if x > 0:
+        soma += x
+        return soma
+    else:
+        return soma
+
+
+def cont_positivos(x, cont):
+    if x > 0:
+        cont += 1
+        return cont
+    else:
+        return cont
+
+
+cont = 0
+soma = 0
+
+a = float(input())
+cont = cont_positivos(a, cont)
+soma = soma_positivos(a, soma)
+b = float(input())
+cont = cont_positivos(b, cont)
+soma = soma_positivos(b, soma)
+c = float(input())
+cont = cont_positivos(c, cont)
+soma = soma_positivos(c, soma)
+d = float(input())
+cont = cont_positivos(d, cont)
+soma = soma_positivos(d, soma)
+e = float(input())
+cont = cont_positivos(e, cont)
+soma = soma_positivos(e, soma)
+f = float(input())
+cont = cont_positivos(f, cont)
+soma = soma_positivos(f, soma)
+
+cont = int(cont)
+media = float(soma / cont)
+
+print(f'{cont} valores positivos\n{media:.1f}')
+
+	43-
+
+def numPares(x, cont):
+    if x % 2 == 0:
+        cont += 1
+        return cont
+    else:
+        return cont
+
+
+cont = 0
+
+a = int(input())
+cont = numPares(a, cont)
+b = int(input())
+cont = numPares(b, cont)
+c = int(input())
+cont = numPares(c, cont)
+d = int(input())
+cont = numPares(d, cont)
+e = int(input())
+cont = numPares(e, cont)
+
+print(f"{cont} valores pares")
+
+	44-
+
+pares = 0
+impares = 0
+intPositivos = 0
+intNegativos = 0
+
+for i in range(5):
+    x = int(input())
+    if x > 0:
+        intPositivos += 1
+        if x % 2 == 0:
+            pares += 1
+        else:
+            impares += 1
+    elif x < 0:
+        intNegativos += 1
+
+        if x % 2 == 0:
+            pares += 1
+        else:
+            impares += 1
+    else:
+        pares += 1
+
+
+print(f'{pares} valor(es) par(es)\n{impares} valor(es) impar(es)')
+print(f'{intPositivos} valor(es) positivo(s)\n{intNegativos} valor(es) negativo(s)')
+
+	45-
+
+x = int(input())
+
+for n in range(x + 1):
+    if n % 2 != 0:
+        print(n)
+
+	46-
+
+x = int(input())
+
+n = 0
+cont = 0
+
+while cont < 6:
+    if (n + x) % 2 != 0:
+        print(n + x)
+        cont += 1
+    n += 1
+
+	47-
+
+def somaImpares(x, y):
+    n = 1
+    soma = 0
+
+    while (n + x) < y:
+        if (n + x) % 2 != 0:
+            soma += (n + x)
+        n += 1
+    print(soma)
+
+
+a = int(input())
+b = int(input())
+
+if a < b:
+    somaImpares(a, b)
+elif a > b:
+    somaImpares(b, a)
+else:
+    print(0)
+
+	48-
+
+dentro = 0
+fora = 0
+
+n = int(input())
+
+for i in range(n):
+    x = int(input())
+    if x >= 10 and x <= 20:
+        dentro += 1
+    else:
+        fora += 1
+
+
+print(f'{dentro} in\n{fora} out')
+
+	49-
+
+n = int(input())
+
+i = 2
+
+while i <= n:
+    if i % 2 == 0:
+        quadrado = i * i
+        print(f'{i}^2 = {quadrado}')
+    i += 1
+
+	50-
+
+n = int(input())
+
+for i in range(n):
+    x = int(input())
+
+    if x % 2 == 0:
+        if x > 0:
+            print('EVEN POSITIVE')
+        elif x < 0:
+            print('EVEN NEGATIVE')
+        else:
+            print('NULL')
+    else:
+        if x > 0:
+            print('ODD POSITIVE')
+        else:
+            print('ODD NEGATIVE')
+
+	51-
+
+n = int(input())
+
+i = 1
+
+while i < 10000:
+    if i % n == 2:
+        print(i)
+    i += 1
+
+	52-
+
+n = int(input())
+
+i = 1
+
+while i <= 10:
+    mult = i * n
+    print(f'{i} x {n} = {mult}')
+    i += 1
+
+	53-
+
+n = int(input())
+
+for i in range(n):
+    a, b, c = map(float, input().split())
+    mediaPond = (2 * a + 3 * b + c * 5) / 10
+    print(f'{mediaPond:.1f}')
+
+	54-
+
+maiorValor = -1
+
+for i in range(100):
+    x = int(input())
+    if x > maiorValor:
+        maiorValor = x
+        ind_maiorValor = i + 1
+
+print(f'{maiorValor}\n{ind_maiorValor}')
+
+	55-
+
+n = int(input())
+
+numCoelhos = 0
+numRatos = 0
+numSapos = 0
+
+for i in range(n):
+    num, tipo = input().split()
+    if tipo == 'C':
+        numCoelhos += int(num)
+    elif tipo == 'S':
+        numSapos += int(num)
+    else:
+        numRatos += int(num)
+
+total = numCoelhos + numRatos + numSapos
+
+pC = float(numCoelhos / total) * 100.0
+pS = float(numSapos / total) * 100.0
+pR = float(numRatos / total) * 100.0
+
+print(f'Total: {total} cobaias\nTotal de coelhos: {numCoelhos}\nTotal de ratos: {numRatos}\nTotal de sapos: {numSapos}')
+print(f'Percentual de coelhos: {pC:.2f} %\nPercentual de ratos: {pR:.2f} %\nPercentual de sapos: {pS:.2f} %')
+
+	56-
+
+i = 1
+j = 60
+
+while j >= 0:
+    print(f'I={i} J={j}')
+    i = i + 3
+    j = j - 5
+
+	57-
+
+i = 1
+j = 7
+
+while i <= 9:
+    while j >= 5:
+        print(f'I={i} J={j}')
+        j -= 1
+    
+    j = 7
+    i += 2
+
+	58-
+
+i = 1
+j = 7
+
+while i <= 9:
+    for n in range(3):
+        print(f'I={i} J={j}')
+        j -= 1
+    
+    j += 5
+    i += 2
+
+	59-
+
+i = 0
+j = 1
+
+while i <= 2:
+    for n in range(3):
+        di = round(i - int(i), 1)
+        dj = round(j - int(j), 1)
+        
+        if di != 0.0 and dj != 0.0:
+            print(f'I={i:.1f} J={j:.1f}')
+        elif di == 0.0 and dj != 0.0:
+            print(f'I={i} J={j:.1f}')
+        elif di != 0.0 and dj == 0.0:
+            print(f'I={i:.1f} J={j}')
+        elif di == 0.0 and dj == 0.0:
+            print(f'I={int(i)} J={int(j)}')
+        j += 1
+    
+    i = round(i + 0.2, 1)
+    j = round(1 + i, 1)
+
+	60-
+
+def somaImpares(x, y):
+    soma = 0
+    i = x + 1
+
+    while i < y:
+        if i % 2 != 0:
+            soma += i
+
+        i += 1
+
+    return soma
+
+
+n = int(input())
+
+for i in range(n):
+    a, b = map(int, input().split())
+
+    if a > b:
+        resp = somaImpares(b, a)
+        print(f'{resp}')
+    elif a < b:
+        resp = somaImpares(a, b)
+        print(f'{resp}')
+    else:
+        print(0)
+
+	61-
+
+while(True):
+
+    M, N = map(int, input().split())
+    
+    if (M<= 0 or N<= 0):
+        break
+    
+    else:
+        if (M > N):
+
+            soma  = 0
+
+            for x in range(N, M + 1):
+
+                soma = x + soma
+                print(x, end=" ")
+            print(f"Sum={soma}")
+
+        else:
+            soma  = 0
+
+            for x in range(M, N + 1):
+
+                soma = x + soma
+                print(x, end=" ")
+            print(f"Sum={soma}")
+
+	62-
+
+while (True):
+
+    X, Y= map(int, input().split())
+
+    if (X == Y):
+
+        break
+
+    else:
+
+        if (X < Y):
+
+            print('Crescente')
+
+        else:
+
+            print('Decrescente')
+
+
+	63-
+
+while (True):
+
+    senha = int(input())
+
+    if (senha == 2002):
+
+        print('Acesso Permitido')
+        break
+
+    else:
+
+        print('Senha Invalida')
+
+
+	64-
+
+while (True):
+
+    X, Y = map(int, input().split())
+
+    if (X == 0 or Y == 0):
+
+        break
+
+    elif (X > 0 and Y > 0):
+
+        print('primeiro')
+
+    elif (X < 0 and Y > 0):
+
+        print('segundo')
+
+    elif (X < 0 and Y < 0):
+
+        print('terceiro')
+
+    else:
+
+        print('quarto')
+
+
+	65-
+
+qtdLacos = int(input())
+
+for i in range(1, qtdLacos+1):
+
+    X, Y= map(int, input().split())
+
+    if (Y == 0):
+
+        print('divisao impossivel')
+    
+    else:
+
+        divisao = X/Y
+
+        print(f"{divisao:.1f}")
+
+
+	66-
+
+soma = 0
+notas = []
+
+while (True):
+
+    tamanho = len(notas)
+
+    if (tamanho == 2):
+
+        media = soma/2
+
+        print(f'media = {media:.2f}')
+
+        break
+
+    else:
+        
+        nota = float(input())
+        
+        if (nota < 0.0 or nota > 10.0):
+
+            print('nota invalida')
+        
+        else:
+
+            soma = nota + soma
+
+            notas.append(nota)
+
+
+	67-
+
+X = 1
+
+while(True):
+
+    if (X == 2):
+        break
+
+    soma = 0
+    notas = []
+
+    while (True):
+
+        tamanho = len(notas)
+
+        if (tamanho == 2):
+
+            media = soma/2
+
+            print(f'media = {media:.2f}')
+
+            break
+
+        else:
+        
+            nota = float(input())
+        
+            if (nota < 0.0 or nota > 10.0):
+
+                print('nota invalida')
+        
+            else:
+
+                soma = nota + soma
+
+                notas.append(nota)
+
+    print('novo calculo (1-sim 2-nao)')
+    X = int(input())
+
+    while (X<1 or X>2):
+        
+        print('novo calculo (1-sim 2-nao)')
+        X = int(input())
+
+
+	68-
+
+numeroGrenais = 1
+vitoriaInter = 0
+vitoriaGremio = 0
+empate = 0
+
+while True:
+    
+    golInter, golGremio = map(int, input().split())
+
+    if golInter > golGremio:
+        vitoriaInter += 1
+    elif golInter < golGremio:
+        vitoriaGremio += 1
+    else:
+        empate += 1
+
+    print('Novo grenal (1-sim 2-nao)')
+    flag = int(input())
+
+    if flag == 2:
+        print(f'{numeroGrenais} grenais\nInter:{vitoriaInter}')
+        print(f'Gremio:{vitoriaGremio}\nEmpates:{empate}')
+
+        if vitoriaInter > vitoriaGremio:
+            print('Inter venceu mais')
+        elif vitoriaInter < vitoriaGremio:
+            print('Gremio venceu mais')
+        else:
+            print('Nao houve vencedor')
+        
+        break
+    else:
+        numeroGrenais += 1
+
+
+	69-
+
+X = int(input())
+Y = int(input())
+
+soma = 0
+
+if X > Y:
+    inicio = Y
+    fim = X
+else:
+    inicio = X
+    fim = Y
+
+for dividendo in range(inicio, fim + 1):
+
+    if dividendo%13 != 0:
+        soma += dividendo
+
+print(soma)
+
+
+	70-
+
+X = int(input())
+Y = int(input())
+
+if X > Y:
+    inicio = Y
+    fim = X
+else:
+    inicio = X
+    fim = Y
+
+for dividendo in range(inicio+1, fim):
+
+    if dividendo%5 == 2 or dividendo%5 == 3:
+        print(dividendo)
+
+
+	71-
+
+indice = int(input(''))
+
+alcool = 0
+gasolina = 0
+diesel = 0
+
+while True:
+
+    match indice:
+
+        case 1:
+            alcool += 1
+        case 2:
+            gasolina += 1
+        case 3:
+            diesel += 1
+        case 4: 
+            break
+        case _: 
+            pass
+
+    indice = int(input(''))
+
+print(f'MUITO OBRIGADO\nAlcool: {alcool}\nGasolina: {gasolina}\nDiesel: {diesel}')
+
+
+	72-
+
+contador = 1
+
+indice = int(input())
+
+for x in range(1, indice + 1):
+
+    for j in range(1, 5):
+
+        if j!=4:
+            print(contador, end=' ')
+        else:
+            print('PUM')
+        
+        contador += 1
+
+
+	73-
+
+linhas = int(input())
+
+if 1<linhas<1000:
+
+    for x in range(1, linhas+1):
+
+        print(x, x**2, x**3)
+
+
+	74-
+
+linhas = int(input())
+
+if 1<linhas<1000:
+
+    for x in range(1, linhas+1):
+
+        print(x, x**2, x**3)
+        print(x, (x**2) + 1 , (x**3) + 1)
+
+
+	75-
+
+contador = 1
+
+X, Y = map(int, input().split())
+
+if (1<X<20) and (X<Y<100000):
+
+    while contador <= Y:
+
+        for j in range(1, X + 1):
+
+            if j!= X:
+                print(contador, end=' ')
+            else:
+                print(contador)
+            
+            contador += 1
+
+
+	76-
+
+contador = 1
+
+N = int(input())
+
+while N!=0:
+
+    for j in range(1, N+1):
+
+        if j!= N:
+            print(contador, end=' ')
+        else:
+            print(contador)
+            
+        contador += 1
+
+    contador = 1
+
+    N = int(input())
+
+
+	77-
+
+soma = 0
+
+A = list(map(int,input().split()))
+
+
+for i in range(A[len(A)-1]):
+
+    soma += A[0] + i
+
+
+print(soma)
+
+
+	78-
+
+contador = 0
+
+X = int(input())
+
+consecutivoX = X + 1
+soma = X
+
+Z = int(input())
+
+while Z <= X:
+
+    Z = int(input())
+
+
+while soma < Z:
+
+    soma += consecutivoX
+
+    contador += 1
+
+
+print(contador)
+
+
+	79-
+
+num1 = 0
+num2 = 1
+
+N = int(input())
+
+while not(0<N<46):
+
+    N = int(input())
+
+
+print(f'{num1} {num2}', end=' ')
+
+for i in range(N - 2):
+
+    num1, num2 = num2, num1 + num2
+
+    if i==N-3:
+        print(num2)
+    else:
+        print(num2, end=' ')
+
+
+	80-
+
+N = int(input())
+
+while not(0<N<13):
+
+    N = int(input())
+
+fatorial = 1
+
+while N>0:
+
+    fatorial *= N
+
+    N -= 1
+
+
+print(fatorial)
+
+
+	81-
+
+soma = 0
+qtdIdades = 0
+
+while True:
+
+    idade = int(input())
+
+    if idade < 0:
+        break
+    else:
+        soma += idade
+        qtdIdades += 1
+
+
+media = soma/qtdIdades
+
+print(f'{media:.2f}')
+
+
+	82-
+
+S = 0
+
+for x in range(1, 101):
+
+    S += 1/x
+
+
+print(f'{S:.2f}')
+
+
+	83-
+
+listaDivisores = []
+
+N = int(input())
+
+for divisor in range(N, 0, -1):
+
+    if N%divisor == 0:
+
+        listaDivisores.append(divisor)
+
+
+for i in range(len(listaDivisores)-1, -1, -1):
+
+    print(listaDivisores[i])
+
+
+	84-
+
+N = int(input())
+
+for i in range(N):
+
+    soma = 0
+    
+    X, Y = map(int, input().split())
+
+    if X%2==0:
+        indiceImpar = X//2
+    else:
+        indiceImpar = (X-1)//2
+
+    for j in range(Y):
+
+        soma += 2*(j+indiceImpar) + 1
+
+    print(soma)        
+
+
+	85-
+
+while True:
+
+    soma = 0
+    
+    X = int(input())
+
+    if X==0:
+        break
+    
+    if X%2!=0:
+        
+        X += 1
+        indicePar = X//2
+
+    else:
+
+        indicePar = X//2
+
+    for i in range(5):
+
+        soma += 2*(i + indicePar)
+
+    print(soma)
+
+
+	86-
+
