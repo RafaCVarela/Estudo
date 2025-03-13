@@ -1,0 +1,1488 @@
+	Exemplo 1 - 
+
+# Aqui criamos um jogo de Pedra, Papel e Tesoura(Rock, Paper, Scissors) simples
+
+import random
+
+def get_choices():
+    player_choice = input('Enter a choice (rock, paper, scissors): ')
+    options = ['rock', 'paper', 'scissors']
+    computer_choice = random.choice(options)
+    choices = {'player': player_choice, 'computer': computer_choice}
+
+    return choices
+
+def check_win(player, computer):
+    print(f'You chose {player}, computer chose {computer}')
+    if player == computer:
+        return "It's a tie!"
+    elif player == 'rock':
+        if computer == 'scissors':
+            return 'Rock smashes scissors! You win!'
+        else:
+            return 'Paper covers rock! You lose.'
+    elif player == 'paper':
+        if computer == 'rock':
+            return 'Paper covers rock! You win!'
+        else:
+            return 'Scissors cuts paper! You lose.'
+    elif player == 'scissors':
+        if computer == 'paper':
+            return 'Scissors cuts paper! You win!'
+        else:
+            return 'Rock smashes scissors! You lose.'
+
+choices = get_choices()
+result = check_win(choices['player'], choices['computer'])
+print(result)
+
+	Exemplo 2 -
+
+# Aqui temos diferentes formas de atribuir valores, alguns eu não lembrava como "//"(divisão por piso), interessante
+
+x = 5
+print(x)
+x += 2
+print(x)
+
+y = 5
+print(y)
+y -= 2
+print(y)
+
+z = 5
+print(z)
+z *= 2
+print(z)
+
+a = 5
+print(a)
+a /= 2
+print(a)
+
+b = 5
+print(b)
+b %= 2
+print(b)
+
+c = 5
+print(c)
+c **= 2
+print(c)
+
+d = 5
+print(d)
+d //= 2
+print(d)
+
+	Exemplo 3 -
+
+print(0 or 1)
+print(False or 'hey')
+print('hi' or 'hey')
+print([] or False)
+print(False or [])
+
+print(0 and 1)
+print(False and 'hey')
+print('hi' and 'hey')
+print([] and False)
+print(False and [])
+
+	Exemplo 4 -
+
+# Operador ternário
+
+def is_adult(age):
+    if age > 18:
+        return True
+    else:
+        return False
+    
+def is_adult2(age):
+    return True if age > 18 else False
+
+age = 22
+
+if is_adult(age):
+    print("It's a adult!")
+else:
+    print("It isn't a adult.")
+
+if is_adult2(age):
+    print("It's a adult!")
+else:
+    print("It isn't a adult.")
+
+	Exemplo 5 -
+
+# Trabalhando com strings
+
+name = 'Rafael'
+phrase = 'Rafael' + ' is my name'
+phrase2 = name + ' is my name'
+name += ' is my name'
+
+print(phrase)
+print(phrase2)
+print(name)
+
+print('''Rafael
+      
+22
+      
+years old
+''')
+
+print('raFael'.lower())
+print('raFael'.upper())
+print('raFael vaREla'.title())
+print('raFael vaREla'.lower().title())
+
+print('raFael'.islower())
+print('ae' in 'rafael')
+
+# Para saber mais leai a documentação
+
+	Exemplo 5 - 
+
+# Caracters de escape em string
+
+name = 'Rafa\'el'
+# Ou
+name = "Rafa'el"
+
+name = 'Rafa\nel'
+
+name = 'Rafa\\el'
+
+	Exemplo 6 - 
+
+# Um pouco mais de strings
+
+name = 'Rafael'
+
+print(name[0])
+print(name[1])
+print(name[-1])
+
+print(name[1:2])
+print(name[1:3])
+print(name[:4])
+
+	Exemplo 7 -
+
+done = 1.14 # True para todos os números diferentes de zero '0'.
+
+if done:
+    print('yes')
+else:
+    print('no')
+
+
+done = '' # True para todas as strings diferente duma string vazia, mas o tipo de variavel não será booleano
+
+if done:
+    print('yes')
+else:
+    print('no')
+
+	Exemplo 8 -
+
+# Exemplos com funções booleanas
+
+# Função any, basta ter apenas uma verdadeira para retornar True
+book_1_read = True
+book_2_read = False
+
+read_any_book = any([book_1_read, book_2_read])
+print(read_any_book)
+
+# Função all, precisa ter todos os valores True para retornar True
+ingredients_purchased = True
+meal_cooked = False
+
+ready_to_serve = all([ingredients_purchased, meal_cooked])
+print(ready_to_serve)
+
+	Exemplo 9 -
+
+# Number Data Types - Números complexos
+
+complexo = 2 + 3j # 'j' aqui simboliza o 'i' dos complexos... seria mais fácil se usasse a notação usual
+num = complex(2, 3)
+print(complexo)
+print(num)
+
+print(num.real, num.imag)
+
+	Exemplo 10 - 
+
+#  Built-in function
+
+# 'abs' é uma função que retorna o valor absoluto(módulo) dum número
+x = -5.5
+print(abs(x))
+
+# 'round' é uma função que retorna o valor arredondado, seja para maior ou menor, isto é, para o valor inteiro ou real mais próximo
+y = 3.14
+z = 3.79
+w = 3.5
+print(round(y))
+print(round(z))
+print(round(w))
+print(round(y, 1))
+print(round(z, 1))
+print(round(w, 1))
+
+	Exemplo 11 -
+
+# Enum
+
+from enum import Enum
+
+# Enumerações servem para atrelar um valor a um nome
+
+class State(Enum):
+    INACTIVE = 0
+    ACTIVE = 1
+
+print(State.ACTIVE) # Imprime 'State.ACTIVE'
+print(State.ACTIVE.value) # Imprime o valor 1
+print(State(1)) # Imprime 'State.ACTIVE'
+print(State['ACTIVE']) # Imprime 'State.ACTIVE'
+print(State(1).value) # Imprime o valor 1
+print(State['ACTIVE'].value) # Imprime o valor 1
+print(list(State)) # Imprime suas constantes
+print(len(State)) # Imprime o tamanho de 'State'
+
+	Exemplo 12 -
+
+# User Input
+
+age = input('What is your age? ')
+print('Your age is ' + age)
+
+	Exemplo 13 - 
+
+# Control Stament
+
+condition = False
+name = 'Joao'
+
+if condition == True: # Se está se concretiza, então nenhuma outra será exucutada. Do mesmo modo, para as outras, até chegar no else.
+    print('The condition')
+    print('was True')
+elif name == 'Roger':
+    print('Hello Roger')
+elif name == 'Syd':
+    print('Hello Syd')
+elif name == 'Flavio':
+    print('Hello Flavio')
+else:
+    print('The condition')
+    print('was False')
+
+	Exemplo 14 - 
+
+# Lists
+
+dogs = ['Roger', 1, 'Syd', True, 'Quincy', 7]
+
+print('Roger' in dogs) # Checar se tem este valor na lista
+print(dogs[1]) # Pede o item de índice 1 da lista
+
+dogs[2] = 'Rafael' # Muda o valor de índice 2
+dogs[1] = 'Marcelo' # Muda o valo de índice 1, independete do tipo do valor anterior
+print(dogs) # Imprime toda a lista
+print(dogs[-1]) # Imprime o úiltimo item da lista
+print(dogs[-2]) # Imprime o  penúltimo item da lista
+print(dogs[2:4]) # Imprime os itens que atravessam os valor de 2 até 4
+print(dogs[:4]) # Imprime os itens que atravessam os valores do primeiro até 4
+print(dogs[2:]) # Imprime os itens que atravessam os valores de 2 até o último
+print(len(dogs)) # Imprime o tamanho da lista
+
+dogs.append('Judah') # Adiciona mais um valor a lista
+print(dogs)
+print(len(dogs))
+
+dogs.extend(['Camila', 5]) # Une uma lista a outra
+print(dogs)
+print(len(dogs))
+
+dogs += ['Pedrinho', 22] # Soma uma lista a outra lista
+print(dogs)
+print(len(dogs))
+
+dogs.remove('Quincy') # Remove um item da lista
+print(len(dogs))
+
+print(dogs.pop()) # Remove, neste caso sem especificação o último item, retornando o item retirado
+print(len(dogs))
+
+del dogs[3] # Deleta diretamente o item, sem retornar valor ou criar outra lista
+print(dogs)
+print(len(dogs))
+
+dogs.insert(4, 22) # Acrescenta a lista num índice um valor
+print(dogs)
+
+dogs[2:2] = ['teste1', 1784, 'teste2'] # Acrescenta mais de um valor a lista
+print(dogs)
+
+	Exemplo 15 - 
+
+# Sort
+
+# Para organizar uma lista ele precisa ser apenas strings ou apenas números, qual seja
+# Para strings letra maiúsculas vem primeiro, para ter a ordem correta precisa especificar no sort(key=str.lower)
+dogs = ['Montgomery', 'Quincy', 'Alice', 'bob','Rose', 'Zemu', 'Tiago']
+dogs_copy = dogs[:]
+
+numbers = [15, 2.5, 1784, -245, 0]
+
+dogs.sort(key=str.lower) # sort() modifica a lista original
+numbers.sort()
+
+print(dogs)
+print(dogs_copy)
+print(sorted(dogs_copy, key=str.lower)) # Organina a lista sem modifica-la
+print(numbers)
+
+	Exemplo 16 - 
+
+# Tuples are immutables
+
+names = ('Roger', 'Syd', 'Quincy') # Tuplas são muito parecidas com listas, mas elas são imutáveis, ao contrário das listas
+
+print(names[0], names[-1]) # Chamar um item pelo seu índice
+print(names[1:3]) # Do mesmo modo que uma lista, funciona para a tupla
+print(names.index('Roger')) # Pedir o índice dum item, caso ele exista
+print(len(names)) # Imprime o tamanho da tupla
+print('Roger' in names) # Confere se o valor está contido na tuplas, retornando True ou False
+
+print(sorted(names))# Sort funciona se for a função global, mas não a modifica
+
+newTuple = names + ('Joao', 'Abacate') # Combina duas tuplas, sem modifica-las
+print(newTuple)
+
+	Exemplo 17 -
+
+# Dictionaries
+
+dog = { 'name': 'Roger', 'age': 8}
+
+print(dog['name']) # Imprime o valor da chave 'name'.
+
+dog['name'] = 'Syd' # Muda o valor da chave.
+print(dog.get('name')) # Outra forma de obter o valor da chave 'name'.
+
+print(dog.get('color')) # Retorna None já que não há chave 'color'.
+print(dog.get('color', 'brown')) # Aqui ele retornará brown, então cuidado.
+
+dog['color'] = 'green' # Acrescentamos mais um item ao dicionário.
+print(dog.get('color'))
+print(len(dog))
+
+x = dog.pop('name') # Do mesmo modo que uma lista, aqui teriramos um valor e podemos atribui-lo a uma variável.
+print(x)
+print(dog)
+y = dog.popitem() # Mesmo que o pop, mas aqui é o chve-valor, no caso default, o último.
+print(y)
+
+dog = { 'name': 'Roger', 'age': 8, 'color': 'green' }
+print('color' in dog) # Confere se há a chave 'color' no dicionário 'dog'.
+print(dog.keys()) # Imprime todas as chaves.
+print(list(dog.keys())) # Lista as chaves.
+print(dog.values()) # Imprime os valores.
+print(list(dog.values())) # Lista os valores.
+print(dog.items()) # Lista os/as itens/chaves-valores do dicionário.
+
+dog['favorite food'] = 'meat'
+print(dog)
+
+del dog['color'] # Do mesmo modo que uma lista, deletamos diretamente o item.
+print(dog)
+
+dog_copy = dog.copy() # Cópia de um dicionário.
+
+	 Exemplo 18 - 
+
+# Sets
+
+# Sets se assemelham a outros tipos de variáveis de data, mas há por menores que devem ser desvendados.
+# Por alto, Sets se assememelham aos conjuntos númericos da matemática.
+
+set1 = {'Roger', 'Syd'}
+set2 = {'Roger'}
+set3 = {'Luna'}
+set4 = {'Quincy', 'Jen'}
+
+intersect = set1 & set2 # Intersecção dos set's.
+print(intersect)
+
+union = set1 | set3 # A união dos set's
+print(union)
+other_union = set1 | set3 | set4
+print(other_union)
+
+complementar = set1 - set2
+print(complementar)
+
+print(len(set1))
+print(len(set2))
+print(len(set3))
+print(len(set4))
+
+# Operadores de comparação entre set's
+
+x = set1 > set2
+y = set1 < set2
+z = set1 == set2
+o = set1 >= set2
+p = set1 <= set2
+q = set1 != set2
+print(f'\nset1 > set2: {x}')
+print(f'set1 < set2: {y}')
+print(f'set1 == set2: {z}')
+print(f'set1 >= set2: {o}')
+print(f'set1 <= set2: {p}')
+print(f'set1 != set2: {q}')
+
+a = set3 > set4
+b = set3 < set4
+c = set3 >= set4
+d = set3 <= set4
+e = set3 == set4
+f = set3 != set4
+print(f'\nset3 > set4: {a}') # Perceba que ele só é capaz de fazer tal comparação para set's que possuem uma interscção.
+print(f'set3 < set4: {b}')
+print(f'set3 >= set4: {c}')
+print(f'set3 <= set4: {d}')
+print(f'set3 == set4: {e}')
+print(f'set3 != set4: {f}')
+inter = set3 & set4
+print(inter)
+
+print(list(set1))
+print('Roger' in set1)
+print('Lunas' in set2)
+
+set5 = {'Roger', 'Syd', 'Roger'}
+print(set5) # Com dois ou mais elementos iguais, imprime-se apenas uma vez o valor repetido.
+
+	Exemplo 19 - 
+
+# Functions
+
+def hello(name='my friend'):
+    print('Hello ' + name)
+
+
+hello('Rafael')
+hello('Beau')
+hello() # Com a opção "name='my friend'", está setado para default 'my friend'.
+
+ou
+
+# Functions
+
+def hello(name, age):
+    print('Hello ' + name + ', you are ' + str(age) + ' years old!')
+
+
+hello('Rafael', 22)
+
+	Exemplo 20 -
+
+	(mutável - dicionário)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value['name'] = 'beau'
+
+
+val = { 'name': 'rafael'}
+change(val)
+
+print(val)
+
+	(imutável - lista)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value = [4, 5, 6]
+
+
+val = [1, 2, 3]
+change(val)
+
+print(val)
+
+	(imutável - inteiros)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value = 2
+
+
+val = 1
+change(val)
+
+print(val)
+
+	(imutável - strings)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value = 'joao'
+
+
+val = 'rafael'
+change(val)
+
+print(val)
+
+	(imutável - tuplas)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value = ('joao', 'quincy')
+
+
+val = ('rafael', 'beau')
+change(val)
+
+print(val)
+
+	(imutável - sets)
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+def change(value):
+    value = {'joao', 'quincy'}
+
+
+val = {'rafael', 'roger'}
+change(val)
+
+print(val)
+
+	Exemplo 21 -
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+# Para mudar é necessário retorna o valor.
+
+def hello(name):
+    if not name:
+        return
+    print('Hello ' + name + '!')
+
+
+hello('Rafael')
+
+	Exemplo 22 - 
+
+# Functions
+
+# Há certos valores que são mutáveis até dentro de funções, mas inteiros, strings, boolean, tuplas não.
+# Para mudar é necessário retorna o valor.
+
+def hello(name):
+    print('Hello ' + name + '!')
+    return name, 'Costa', 22 # Dá para retornar múltiplas coisas
+
+
+print(hello('Rafael'))
+print(type(hello('Rafael'))) # Um tupla é retornada quando temos múltiplos valores retornados.
+
+	Exemplo 23 - 
+
+	(variável global)
+# Functions
+
+age = 8 # Uma variável global que é declarada antes de tudo e pode ser impressa por todo o programa.
+
+def test():
+    print(age)
+
+
+print(age)
+test()
+
+	(variável duma função)
+# Functions
+
+
+def test():
+    age = 8 # Uma variável duma função pode apenas ser impressa por uma função.
+    print(age)
+
+
+test()
+print(age)
+
+	Exemplo 24 - 
+
+# Nested function
+
+def talk(phrase):
+    def say(word):
+        print(word)
+
+
+    words = phrase.split(' ')
+    for word in words:
+        say(word)
+
+
+talk('I am going to buy the milk')
+
+	Exemplo 25 -
+
+# Nested function
+
+def count():
+    count = 0
+
+    def increment():
+        nonlocal count
+        count += 1
+        print(count)
+
+
+    increment()
+
+
+count()
+
+
+def test():
+    age = 22
+
+    def idade():
+        ano = 2023
+
+        def imprime():
+            nonlocal age
+            nonlocal ano
+
+            print('Em ' + str(ano) + ', você tem ' + str(age) + ' anos de idade!')
+
+        imprime()
+
+
+    idade()
+
+
+test()
+
+	Exemplo 26 - 
+
+# Nested function and Closures
+
+# Closures é uma forma de chamar uma função aninhada, sem necessariamente chamar a função matriz, após chamar pelo menos uma vez a matriz.
+def counter():
+    count = 0
+
+    def increment():
+        nonlocal count
+        count = count + 1
+        return count
+    
+
+    return increment
+
+
+increment = counter()
+
+print(increment()) # 1
+print(increment()) # 2
+print(increment()) # 3
+
+	Exemplo 25 - 
+
+# Objects
+
+# Quase tudo, em Python são objetos, eles tem atributos e metódos.
+# Objetos que apresentam metódos que mudam-o, logo são mutáveis, senão, eles são imutáveis.
+
+age = 22
+
+# Diferentes metódos
+print(age.real)
+print(age.imag)
+print(age.bit_length()) # Quantos bits são necessários para escrever '22'.
+print(id(age)) # Mostra o local da memória.
+
+itens = [1, 2]
+
+itens.append(3)
+itens.pop()
+print(id(itens))
+
+# Ao mudar uma variável de objetos imutáveis, você cria um novo objeto!!!
+
+print('O local da memória de \'age\':')
+print(id(age))
+
+age += 2
+
+print('O novo local da memória de \'age\':')
+print(id(age)) # O local da memória muda, pois, ao mudar o valor, sobreescrevemos um novo objeto.
+
+dogs = { 'name': 'Roger'}
+print('O local da memória de \'dogs\':')
+print(id(dogs))
+
+dogs['favorite food'] = 'meat'
+
+print('O novo local da memória de \'dogs\':')
+print(id(dogs)) # O local de memória do dicionário não muda, pois é um objeto mutável.
+
+	Exemplo 26 -
+
+# Loops
+
+# Loops são estruturas de repetição/iteração que automatizam tarefas que seriam repetidas.
+condition = True
+while condition == True:
+    print('The condition is True!!')
+    condition = False
+
+
+print('After loop!!')
+
+count = 0
+while count < 10:
+    print('The condition is True!!')
+    count += 1
+
+
+print('After loop!!')
+
+itens = [1, 2, 3, 4]
+for item in itens:
+    print(item)
+
+
+for index, item in enumerate(itens): # Imprime os índices e os itens.
+    print(index, item)
+
+
+names = ['rafael', 'marcelo']
+for index, item in enumerate(names): # Imprime os índices e os itens.ex
+    print(index, item)
+
+for item in range(4):
+    print(item)
+
+	Exemplo 27 -
+
+# Continue and breaks
+
+# Ambas tem o propósito de manipular as iterações.
+# 'continue' pula um laço e continua os demais.
+
+itens = [1, 2, 3, 4]
+for item in itens:
+    if item == 2:
+        continue
+    print(item)
+
+
+# 'break' interrompe a iteração.
+for item in itens:
+    if item == 2:
+        break
+    print(item)
+
+	Exemplo 28 -
+
+	(versão 1)
+# Classes
+
+# A partir de classes nós podemos instaciar objetos, além dela ser um objeto também.
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    
+    def bark(self): # Aqui temos um método que nós criamos, falta entender mais sobre.
+        print('woof!!')
+
+
+roger = Dog('Roger', 8)
+print(type(roger))
+roger.bark() # Aqui o método em uso HAHAHAHA!!!.
+print(roger.name)
+print(roger.age)
+
+doggo = Dog('Doggo', 5)
+print(type(doggo))
+doggo.bark() # Como no método já dado o comando de imprimir, não há como multiplicar a string fora da origem.
+print(doggo.name)
+print(doggo.age)
+
+print('Who is older?')
+if roger.age > doggo.age:
+    print(f'{roger.name} is older then {doggo.name}!')
+elif roger.age < doggo.age:
+    print(f'{doggo.name} is older then {roger.name}!')
+else:
+    print(f'They have the same age!')
+
+
+	(versão 2)
+# Classes
+
+# A partir de classes nós podemos instaciar objetos, além dela ser um objeto também.
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    
+    def bark(self): # Aqui temos um método que nós criamos, falta entender mais sobre.
+        return 'woof!!'
+
+
+roger = Dog('Roger', 8)
+print(type(roger))
+roger.bark() # Aqui o método em uso HAHAHAHA!!!.
+print(roger.name)
+print(roger.age)
+
+doggo = Dog('Doggo', 5)
+print(type(doggo))
+print(doggo.bark() * 2) # Como ele retorna um valor dá para multiplicar a string.
+print(doggo.name)
+print(doggo.age)
+
+print('Who is older?')
+if roger.age > doggo.age:
+    print(f'{roger.name} is older then {doggo.name}!')
+elif roger.age < doggo.age:
+    print(f'{doggo.name} is older then {roger.name}!')
+else:
+    print(f'They have the same age!')
+
+	Exemplo 29 -
+
+# Classes
+
+# A partir de classes nós podemos instaciar objetos, além dela ser um objeto também.
+
+# Aqui vamos ver a classe 'Dog' herdar um metódo doutra classe e varias outras classe podem herdar de 'Animal' seus métodos.
+class Animal:
+    def walk(self): # Sem o 'self' temos o seguinte error : "TypeError: Animal.walk() takes 0 positional arguments but 1 was given".
+        print('Walking...')
+
+class Dog(Animal): # Perceba que antes, igualmente a classe 'Animal', não havia parênteses.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    
+    def bark(self): # Aqui temos um método que nós criamos, falta entender mais sobre.
+        print('woof!!')
+
+
+roger = Dog('Roger', 8)
+print(roger.name)
+print(roger.age)
+roger.bark()
+roger.walk()
+
+	Exemplo 30 -
+
+	(versão 1)
+# Modules
+
+import dog # Aqui importamos um arquivo.
+
+dog.bark() # Pelo método chamamos uma função dum outro módulo.
+
+	(versão 2)
+# Modules
+
+from dog import bark # Aqui importamos 'bark' de 'dog'.
+
+bark() # Aqui podemos chamar apenas a função diretamente.
+
+
+	Exemplo 31 -
+
+	(versão 1)
+# Modules
+
+from lib import dog # Aqui importamos da pasta 'lib'(ela contem nossos módulos) o arquivo/módulo 'dog'.
+
+dog.bark() # Aqui podemos chamar apenas a função diretamente.
+
+	(versão 2)
+# Modules
+
+from lib.dog import bark
+
+bark()
+
+	Exemplo 32 -
+
+	(versão 1)
+# Modules
+
+# Outro exemplo de módulo importado.
+import math
+
+print(math.sqrt(4))
+
+	(versão 2)
+# Modules
+
+# Outro exemplo de módulo importado.
+from math import sqrt, factorial # Importando mais de uma função.
+
+print(sqrt(4))
+print(factorial(4))
+
+	Exemplo 33 -
+
+	(versão 1)
+# Modules
+
+# Outro exemplo de módulo importado.
+import math, random # Importando dois módulos diferentes.
+
+print(math.sqrt(4))
+print(random.random())
+
+	(versão 2)
+# Modules
+
+# Outro exemplo de módulo importado.
+# Importando dois módulos diferentes.
+import math 
+import random
+
+print(math.sqrt(4))
+print(random.random())
+
+	(versão 3)
+# Modules
+
+# Outro exemplo de módulo importado.
+# Importando dois módulos diferentes.
+from math  import sqrt 
+from random import random
+print(sqrt(4))
+print(random())
+
+	Exemplo 34 -
+
+# Accepting Arguments
+
+# Do terminal digitamos 'python estudo_py.py', em alguns casos será necessário digitar 'python3' e até o Path.
+print('hello')
+
+	Exemplo 35 -
+
+# Accepting Arguments
+
+import sys
+
+# Do terminal digitamos 'python estudo_py.py', em alguns casos será necessário digitar 'python3' e até o Path.
+print(sys.argv)
+
+	Exemplo 36 -
+
+# Accepting Arguments
+
+import sys
+
+# Do terminal digitamos 'python estudo_py.py', em alguns casos será necessário digitar 'python3' e até o Path.
+
+name = sys.argv[1]
+print('Hello ' + name)
+
+	Exemplo 37 -
+
+	(versão 1)
+# Accepting Arguments
+
+import argparse
+
+parser = argparse.ArgumentParser(
+    description='This program prints the name of my dogs'
+)
+
+parser.add_argument('-c', '--color', metavar='color', required=True, help='the color to search for')
+
+args = parser.parse_args()
+
+print(args.color)
+
+	(versão 2)
+# Accepting Arguments
+
+# O módulo 'argparse' ajuda a manipular as variáveis melhor e os inputs de erro mais precisos ao user.
+import argparse
+
+parser = argparse.ArgumentParser(
+    description='This program prints the name of my dogs'
+)
+
+parser.add_argument(
+    '-c', '--color', metavar='color', required=True, choices={'red', 'yellow'}, help='the color to search for'
+)
+
+args = parser.parse_args()
+
+print(args.color)
+
+	Exemplo 38 -
+
+	(versão 1)
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+plus_two = lambda num: num * 2
+
+multiply = lambda a, b: a * b
+
+print(plus_two(5))
+print(multiply(2, 4))
+
+	(versão 2)
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+text = lambda word: 'hello ' + word + ', how are you?'
+
+print(text('rafael'))
+
+	(versão 3)
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+itens = lambda a, b, c: [a, c, b]
+
+print(itens(15, -3.14, 0))
+
+	(versão 4)
+
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+itens = lambda a, b, c: (c, a, b)
+
+print(itens('Joao', 'Maria', 'Jose'))
+
+	(versão 5)
+
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+itens = lambda chave, valor: { chave: valor }
+
+print(itens('name', 'roger'))
+print(type(itens)) # Retorna function
+
+	(versão 5)
+
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+def soma(x):
+    return x * 2
+
+itens = lambda a: soma(a)
+
+print(itens(2))
+print(type(itens)) # Retorna function
+
+	(versão 6)
+
+# Lambda Functions
+
+# São funções anônimas pequenas que apenas possuem uma única exepressão em seu corpo que retorna um valor.
+
+def soma(x):
+    return x * 2
+
+itens = lambda a: soma(a)
+
+print(itens('rafael'))
+print(type(itens)) # Retorna function
+
+	Exemplo 39 -
+
+	(versão 1)
+# map(), filter(), reduce()
+
+# 'map()' serve para recerber valores e muda-los arbitrariamente
+
+numbers = [1, 2, 3]
+
+def double(a):
+    return a * 2
+
+
+result = map(double, numbers)
+print(numbers)
+print(list(result))
+
+	(versão 2)
+# map(), filter(), reduce()
+
+# 'map()' serve para recerber valores e muda-los arbitrariamente
+
+numbers = [1, 2, 3]
+
+double = lambda a: a * 2 # Usamos 'lambda functions' conjutamente com 'map()', 'filter()' e 'reduce()'.
+
+result = map(double, numbers)
+print(numbers)
+print(list(result))
+
+	(versão 3)
+# map(), filter(), reduce()
+
+# 'map()' serve para recerber valores e muda-los arbitrariamente
+
+numbers = [1, 2, 3]
+
+# Usamos 'lambda functions' conjutamente com 'map()', 'filter()' e 'reduce()'.
+
+result = map(lambda a: a * 2, numbers)
+print(numbers)
+print(list(result))
+
+	Exemplo 40 -
+
+	(versão 1)
+# map(), filter(), reduce()
+
+# 'filter()' recebe valores e, dada uma função, filtra os valores arbitrariamente.
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+def isEven(n):
+    return n % 2 == 0
+
+
+result = filter(isEven, numbers) # Perceba que a função dá qual será o filtro.
+
+print(list(result))
+
+	(versão 2)
+# map(), filter(), reduce()
+
+# 'filter()' recebe valores e, dada uma função, filtra os valores arbitrariamente.
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+isEven = lambda a: a % 2 == 0
+
+result = filter(isEven, numbers) # Perceba que a função dá qual será o filtro.
+
+print(list(result))
+
+	(versão 3)
+# map(), filter(), reduce()
+
+# 'filter()' recebe valores e, dada uma função, filtra os valores arbitrariamente.
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+result = filter(lambda a: a % 2 == 0, numbers) # Perceba que a função dá qual será o filtro.
+
+print(list(result))
+
+	Exemplo 41 -
+
+	(versão longa)
+# map(), filter(), reduce()
+
+# reduce(), preciso pesquisar mais e ler a documentação.
+
+expenses = [ ('Dinner', 80), ('Car repair', 120) ]
+
+sum = 0
+
+for expense in expenses:
+    print(f'sum = {sum} + {expense[1]} = {sum + expense[1]}')
+    sum += expense[1]
+    # Retorna um inteiro sem conflito da Tupla, por que é uma operação para inteiros?
+
+	(versão curta)
+# map(), filter(), reduce()
+
+# reduce(), preciso pesquisar mais e ler a documentação.
+
+from functools import reduce
+
+expenses = [ ('Dinner', 80), ('Car repair', 120) ]
+
+sum = reduce(lambda a, b: a[1] + b[1], expenses)
+
+print(sum)
+
+	Exemplo 42 -
+
+	(minha versão)
+# Recursion
+
+def factorial(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    
+
+result = factorial(4)
+
+print(result)
+
+	(versão dele)
+# Recursion
+
+def factorial(n):
+    if n == 1: # Perceba que, se n = 0, ele não dará um resultado, enquanto o meu, se n < 0, não dará resultado.
+        return 1
+    else:
+        return n * factorial(n - 1)
+    
+
+result = factorial(4)
+
+print(result)
+
+	Exemplo 43 -
+
+# Decorators
+
+# Servem para mudar, melhorar ou alterar funções qual seja o modo, sem altera-la.
+
+def logtime(func):
+    def wrapper():
+        print('before')
+        val = func()
+        print('after')
+        return val
+    return wrapper
+
+
+@logtime
+def hello():
+    print('hello')
+
+
+hello()
+
+	Exemplo 44 -
+
+	(versão 1)
+# Docstring
+
+# Outra forma de escrever algo em seu código.
+
+def increment(n):
+    """Increment a number"""
+    return n + 1
+
+
+print(increment(1))
+
+	(versão 2)
+# Docstring
+
+# Outra forma de escrever algo em seu código.
+
+"""
+Dog module
+
+This module does... bla bla bla and provides the following classes:
+
+- Dog
+...
+
+"""
+
+class Dog:
+    """A claas representating a dog"""
+    def __init__(self, name, age):
+        """Inicialiaze a new dog"""
+        self.name = name
+        self.age = age
+
+    
+    def bark(self): # Aqui temos um método que nós criamos, falta entender mais sobre.
+        """Let the dog bark"""
+        print('woof!!')
+
+
+print(help(Dog)) # Dá mais informações sobre o arquivo, há muitas outros métodos que usam 'docstrings'.
+
+	Exemplo 45 -
+
+# Annotations
+
+# Permite arbitrariamente definir o tipo de valor retornado etc.
+
+# Para retornar um tipo de valor numa função.
+def increment(n: int) -> int:
+    return n + 1
+
+
+# Para variáveis.
+count: int = 5
+
+print(increment(5))
+print(count)
+
+	Exemplo 46 -
+
+# Exceptions
+
+try:
+    # some lines of code.
+except <ERROR1>: # Em <ERROR1> deve haver um erro.
+    # handler <ERROR1>
+except <ERROR2>:
+    # handler <ERROR2>
+except:  # Para os demais erros.
+
+else:
+    # no exceptions were raised, the code ran sucessfully.
+finally:
+    # do something in any case.
+
+	Exemplo 47 -
+
+# Exceptions
+
+try:
+    result = 2 / 0
+except ZeroDivisionError: # Em <ERROR1> deve haver um erro.
+    print('Cannot divide by zero!')
+finally:
+    result = 1
+
+
+print(result)
+
+	Exemplo 48 -
+
+# Exceptions
+
+try:
+    raise Exception('An error!')
+except Exception as error:
+    print(error)
+
+	Exemplo 49 -
+
+	(versão 1)
+# Exceptions
+
+class DogNotFoundException(Exception):
+    pass # 'pass' é usada para indicar quando sua classe ou função não tem comandos em seu corpo.
+
+try:
+    raise DogNotFoundException
+except DogNotFoundException:
+    print('Dog not found!')
+
+	(versão 2)
+# Exceptions
+
+class DogNotFoundException(Exception):
+    print('inside')
+    pass # 'pass' é usada para indicar quando sua classe ou função não tem comandos em seu corpo.
+
+try:
+    raise DogNotFoundException
+except DogNotFoundException:
+    print('Dog not found!')
+
+	Exemplo 50 -
+
+# With
+
+filename = 'C:\Documentos\Projetos\Python\\alfabeto.txt'
+
+with open (filename, 'r') as file:
+    content = file.read()
+    print(content)
+
+	Exemplo 51 -
+
+# List Compression
+
+numbers = [1, 2, 3, 4, 5]
+
+# Perceba que, pela compressão, temos uma expressão que determinar os elementos da lista num só comando.
+numbers_power_2 = [n**2 for n in numbers]
+
+print(numbers_power_2)
+
+# Ser ver também para mapeamento.
+numbers_power_3 = list(map(lambda n: n**3, numbers))
+
+print(numbers_power_3)
+
+	Exemplos 52 -
+
+	(sem polimorfismo)
+# Polymorphism
+
+# Polimorfismo ajuda a generalizar uma funcionalidade para que possa funcionar em diferentes tipos.
+
+# Sem polimorfismo.
+class Dog:
+    def eat(self):
+        print('Eating dog food!!!')
+
+
+class Cat:
+    def eat(self):
+        print('Eating cat food!!!')
+
+
+animal1 = Dog()
+animal2 = Cat()
+
+animal1.eat()
+animal2.eat()
+
+	(com polimorfismo)
+# Não apresentou :c
+
+	Exemplo 53 -
+
+
