@@ -1,0 +1,57 @@
+	Exemplo 1-
+
+
+print("Hello World!!!")
+
+	Exemplo 2-
+
+
+myVar = 60
+
+myVar1 = "Hello"
+
+myVar2 = 'Hello'
+
+myVar3 = "245"
+
+myVar4 = '245'
+
+print(myVar)
+
+print(myVar1)
+
+print(myVar2)
+
+print(myVar3)
+
+print(myVar4)
+
+	Exemplo 3-
+
+
+# aqui temos um variavel numerica do tipo integral ou integer
+
+myVarInteger = 2
+
+print(myVarInteger)
+
+# aqui temos uma variavel numerica do tipo ponto flutuante ou float
+
+myVarFloat = 25.54
+
+print(myVarFloat)
+
+	Exemplo 4-
+
+
+# para receber informção do usuário usamos a seguinte função
+
+name = input("Digite seu nome: ")
+
+print(name)
+
+# para receber uma entrada numerica, precisamos fazer
+
+age = int(input("Digite sua idade: "))
+
+print(age)
