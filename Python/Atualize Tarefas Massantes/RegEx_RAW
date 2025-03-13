@@ -1,0 +1,352 @@
+	Exemplo 1-
+
+# Regex
+
+# Raw strings inicia-se com o "r" ou "R", de modo que,
+# não processa um caracter de escape.
+str1 = "Hello World!"
+str2 = r"Hello\nWorld!"
+
+print(str1)
+print(str2)
+
+
+
+	Exemplo 2-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Aqui temos o número de telefone no formato Americano-Canadense.
+phoneNumberRegEx = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
+# Ou poderiamos escrever mais consisamente r"\d{3}-\d{3}-\{4}".
+
+# Vamos agora procurar numa string, retornando um objeto Match.
+mo = phoneNumberRegEx.search("My number is 415-555-4242.")
+print("Phone number found: " + mo.group())
+
+
+	Exemplo 3-
+
+(versão 1 - sem parênteses na formatação do número de telefone: (xxx)-xxx-xxxx)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Aqui temos o número de telefone no formato Americano-Canadense.
+phoneNumberRegEx = re.compile(r"(\d{3})-(\d{3}-\d{4})")  # Parênteses criam grupos em RegEx.
+
+# Vamos agora procurar numa string, retornando um objeto Match.
+mo = phoneNumberRegEx.search("My number is 415-555-4242.")
+print("Phone number found: " + mo.group())  # Sem números inteiro, retorna "0" e sai toda a correspôndencia.
+print("Phone number group(1): " + mo.group(1))
+print("Phone number group(2): " + mo.group(2))
+
+# Obter todos os grupos duma vez usamos o método groups() com "s" no final.
+areaCode, mainCode = mo.groups()
+print("Area Code: " + areaCode)
+print("Main Code: " + mainCode)
+
+
+(versão 2 - sem parênteses na formatação do número de telefone: (xxx)-xxx-xxxx)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Aqui temos o número de telefone no formato Americano-Canadense.
+phoneNumberRegEx = re.compile(r"(\(\d{3}\))-(\d{3}-\d{4})")  # Parênteses criam grupos em RegEx.
+
+# Vamos agora procurar numa string, retornando um objeto Match.
+mo = phoneNumberRegEx.search("My number is (415)-555-4242.")
+print("Phone number found: " + mo.group())  # Sem números inteiro, retorna "0" e sai toda a correspôndencia.
+print("Phone number group(1): " + mo.group(1))
+print("Phone number group(2): " + mo.group(2))
+
+# Obter todos os grupos duma vez usamos o método groups() com "s" no final.
+areaCode, mainCode = mo.groups()
+print("Area Code: " + areaCode)
+print("Main Code: " + mainCode)
+
+
+	Exemplo 4-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Para fazer a correspondência de vários grupos com pipe(|).
+heroRegEx = re.compile(r"Batman|Tina Fey")
+
+# A primeira ocorrência será retornada.
+
+mo1 = heroRegEx.search("Batman and Tina Fey.")
+print(mo1.group())
+
+mo2 = heroRegEx.search("Tina Fey and Batman.")
+print(mo2.group())
+
+
+	Exemplo 5-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Para fazer a correspondência de vários grupos com pipe(|).
+# Além disso, faremos a correspôndencia de diversos padrões de sua RegEx.
+batRegEx = re.compile(r"Bat(man|mobile|copter|bat)")
+mo = batRegEx.search("Batmobile lost a wheel")
+print(mo.group())
+print(mo.group(1))
+
+
+	Exemplo 6-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Há certos momentos que queremos um padrão opcional,
+# para tanto, usamos a "?" para destacar que o antecedente é um padrão opcional.
+
+batRegEx = re.compile(r"Bat(wo)?man")
+
+mo1 = batRegEx.search("The Adventures of Batman!")
+print(mo1.group())
+
+mo2 = batRegEx.search("The Adventures of Batwoman!")
+print(mo2.group())
+
+
+	Exemplo 7-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Há certos momentos que queremos um padrão opcional,
+# para tanto, usamos a "?" para destacar que o antecedente é um padrão opcional.
+
+phoneRegEx = re.compile(r"(\d{3}-)?\d{3}-\d{4}")
+
+mo1 = phoneRegEx.search("My number is 415-555-4242.")
+print("Phone number: " + mo1.group())
+
+mo2 = phoneRegEx.search("My number is 555-4242.")
+print("Phone number: " + mo2.group())
+
+
+	Exemplo 8-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Para uma ocorrência de zero ou mais vezes,
+# usamos o "*" para destacar que o antecedente é um padrão que ocorre zero ou mais vezes.
+
+batRegEx = re.compile(r"Bat(wo)*man")
+
+mo1 = batRegEx.search("The Adventures of Batman!")
+print(mo1.group())
+
+mo2 = batRegEx.search("The Adventures of Batwoman!")
+print(mo2.group())
+
+mo3 = batRegEx.search("The Adventures of Batwowowowoman!")
+print(mo3.group())
+
+
+	Exemplo 9-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Para uma ocorrência de uma ou mais vezes,
+# usamos o "+" para destacar que o antecedente é um padrão que ocorre uma ou mais vezes.
+
+batRegEx = re.compile(r"Bat(wo)+man")
+
+mo1 = batRegEx.search("The Adventures of Batwoman!")
+print(mo1.group())
+
+mo2 = batRegEx.search("The Adventures of Batwowowowoman!")
+print(mo2.group())
+
+try:
+    mo3 = batRegEx.search("The Adventures of Batman!")
+    print(mo3.group())
+except AttributeError:
+    print("Attibute Error: Você digitou '+', portanto deve aparecer pelomenos uma vez. Retornar 'None'.")
+
+
+	Exemplo 10-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Correspondendo a repetições específicas usando chaves.
+
+# Com um número específico.
+haRegEx = re.compile(r"(Ha){3}")
+
+mo1 = haRegEx.search("HaHaHa")
+print(mo1.group())
+
+try:
+    mo2 = haRegEx.search("Ha")
+    print(mo2.group())
+except AttributeError:
+    print("Attibute Error: Você digitou 'Ha' apenas um vez. Retornar 'None'.")
+
+try:
+    mo3 = haRegEx.search("HaHaHaHa")
+    print(mo3.group())
+except AttributeError:
+    print("Attibute Error: Você digitou 'HaHaHaHa' quatro vezes. Retornar 'None'.")
+
+try:
+    mo4 = haRegEx.search("HAHAHA")
+    print(mo4.group())
+except AttributeError:
+    print("Attibute Error: Você digitou 'HAHAHA' tudo maiúsculo. Retornar 'None'.")
+
+
+	Exemplo 11-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Correspondendo a repetições específicas usando chaves.
+
+# Com um intervalo.
+haRegEx = re.compile(r"(Ha){3,5}")  # Sem espaço em {3,5}.
+# Podemos ter com {3,} que é um intervalo x>=3.
+# Podemos ter com {,5} que é um intervalo x<=5.
+
+
+mo1 = haRegEx.search("Ha"*5)
+print(mo1.group())
+
+
+	Exemplo 12-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Correspondendo a repetições específicas usando chaves.
+
+# Com um intervalo.
+haRegEx = re.compile(r"(Ha){3,5}")  # Sem espaço em {3,5}.
+# Podemos ter com {3,} que é um intervalo x>=3.
+# Podemos ter com {,5} que é um intervalo x<=5.
+
+
+mo1 = haRegEx.search("Ha"*5)
+print(mo1.group())
+
+# Normalmente as expressões regulares são "greedy",
+# portanto, ela toma a maior correspondência possível.
+greedyHaRegEx = re.compile(r"(Ha){3,5}")
+mo2 = greedyHaRegEx.search("Ha"*5)
+print("Greedy: ", mo2.group())
+
+nongreedyHaRegEx = re.compile(r"(Ha){3,5}?")
+mo3 = nongreedyHaRegEx.search("Ha"*5)
+print("Nongreedy: ", mo3.group())
+
+
+	Exemplo 13-
+
+(versão 1)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# O método "search()" retorna o primeiro valor,
+# enquanto o método "findall()" retorna todas as ocorrências.
+phoneNumRegEx = re.compile(r"\d{3}-\d{3}-\d{4}")
+
+# Método "search()".
+mo1 = phoneNumRegEx.search("Cell: 415-555-4242. Work: 212-555-0000.")
+print(mo1.group())
+# Método "findall()".
+# Retorna uma lista de strings.
+mo2 = phoneNumRegEx.findall("Cell: 415-555-4242. Work: 212-555-0000.")
+print(mo2)
+
+(versão 2)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# O método "search()" retorna o primeiro valor,
+# enquanto o método "findall()" retorna todas as ocorrências.
+phoneNumRegEx = re.compile(r"(\d{3})-(\d{3})-(\d{4})")
+
+# Método "search()".
+mo1 = phoneNumRegEx.search("Cell: 415-555-4242. Work: 212-555-0000.")
+print(mo1.group())
+# Método "findall()".
+# Retorna uma lista de tuplas.
+mo2 = phoneNumRegEx.findall("Cell: 415-555-4242. Work: 212-555-0000.")
+print(mo2)
+
+
+	Exemplo 14-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+xmasRegEx = re.compile(r"\d+\s\w+")
+xmasList = xmasRegEx.findall("12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geeese, 5 rings, 4 birds, 3 hens, 2 doves, 1 porridge")
+
+print(xmasList)
+
+
+	Exemplo 15-
+
+(versão 1)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Vamos criar nossa própria classe de caracteres.
+vowelRegEx = re.compile(r"[aeiouAEIOU]")
+myVowelList = vowelRegEx.findall("RoboCop eats baby food. BABY FOOD.")
+
+print(myVowelList)
+
+(versão 2)
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Vamos criar nossa própria classe de caracteres.
+vowelRegEx = re.compile(r"[a-zA-Z0-9.]")  # Perceba que "." está incluso, não precisa ter o caracter de escape "\".
+myVowelList = vowelRegEx.findall("RoboCop eats baby food. BABY FOOD.")
+
+print(myVowelList)
+
+
+	Exemplo 16-
+
+# Aqui teremos mais exemplo de RegEx
+
+import re
+
+# Vamos criar nossa própria classe de caracteres, mas negando as vogais.
+noVowelRegEx = re.compile(r"[^aeiouAEIOU]")
+myNoVowelList = noVowelRegEx.findall("RoboCop eats baby food. BABY FOOD.")
+
+print(myNoVowelList)
+
+
+	Exemplo 17-
+
