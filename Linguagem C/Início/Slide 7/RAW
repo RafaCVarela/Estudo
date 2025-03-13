@@ -1,0 +1,617 @@
+	1-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    int i,cont;
+    char str[MAX];
+    printf("Digite a string: ");gets(str);
+    for(i=0,cont=0;str[i]!='\0';i++){
+        if(str[i]==' ')
+            cont++;
+    }
+    printf("Numero de espacos em branco: %d",cont);
+    return 0;
+}
+
+	2-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int lerEspacosBranco(char str[]){
+    int i,cont;
+    printf("Digite a string: ");gets(str);
+    for(i=0,cont=0;str[i]!='\0';i++){
+        if(str[i]==' ')
+            cont++;
+    }
+    return cont;
+}
+int main(){
+    int resp;
+    char string[MAX];
+    resp=lerEspacosBranco(string);
+    if(resp!=0)
+        printf("Ha %d espacos em branco.",resp);
+    else
+        printf("Nao ha espacos em branco.");
+    return 0;
+}
+
+	3 e 4-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int lerVogais(char str[]){
+    int i,cont;
+    printf("Digite a string: ");gets(str);
+    for(i=0,cont=0;str[i]!='\0';i++){
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u')
+            cont++;
+        if(str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
+            cont++;
+    }
+    return cont;
+}
+int main(){
+    int resp;
+    char string[MAX];
+    resp=lerVogais(string);
+    if(resp!=0)
+        printf("Ha %d vogais.",resp);
+    else
+        printf("Nao ha vogais.");
+    return 0;
+}
+
+	5-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void transformacao(char str[]){
+    int i;
+    for(i=0;str[i]!='\0';i++){
+        if(i==0){
+            str[0]=str[0]-'a'+'A';
+            }
+        if(str[i-1]==' '){
+            str[i]=str[i]-'a'+'A';
+            }
+    }
+}
+void imprimirString(char str[]){
+    puts(str);
+}
+int main(){
+    char string[MAX];
+    lerString(string);transformacao(string);imprimirString(string);
+    return 0;
+}
+
+	6-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+int substituir(char str[]){
+    int i,cont;
+    for(i=0,cont=0;str[i]!='\0';i++){
+        if(str[i]=='a')
+            str[i]='b';cont++;
+        if(str[i]=='A')
+            str[i]='B';cont++;
+    }
+    return cont;
+}
+void imprimirString(char str[]){
+    puts(str);
+}
+int main(){
+    int resp;
+    char string[MAX];
+    lerString(string);substituir(string);imprimirString(string);printf("\nNumero de substituicoes e: %d",resp);
+    return 0;
+}
+
+	7-
+
+
+(apenas uma palavra)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void soletrando(char str[]){
+    int i,j,contStringOriginal=strlen(str);
+    for(i=0;i<contStringOriginal*2-1;i++){
+        if(str[i]!='-'){
+            for(j=strlen(str);j>i;j--){
+                str[j+1]=str[j];
+            }
+            if(str[i+1]!='\0'){
+                str[i+1]='-';
+            }
+        }
+    }
+}
+void imprimirString(char str[]){
+    puts(str);
+}
+int main(){
+    char string[MAX];
+    lerString(string);soletrando(string);imprimirString(string);
+    return 0;
+}
+
+(para uma frase)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void soletrando(char str[]){
+    int i,j,contStringOriginal=strlen(str);
+    for(i=0;i<contStringOriginal*2-1;i++){
+        if(str[i]!='-' && str[i]!=' ' && str[i+1]!=',' && str[i+1]!='.'){
+            for(j=strlen(str);j>i;j--){
+                str[j+1]=str[j];
+            }
+            if(str[i+1]!='\0' && str[i+1]!=' '){
+                str[i+1]='-';
+            }
+        }
+    }
+}
+void imprimirString(char str[]){
+    puts(str);
+}
+int main(){
+    char string[MAX];
+    lerString(string);soletrando(string);imprimirString(string);
+    return 0;
+}
+
+
+	8-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 50
+int main(){
+    int i;
+    char string[MAX],auxCh;
+    printf("Digite uma string: ");gets(string);
+    for(i=0;i<strlen(string)/2;i++){
+        auxCh=string[i];
+        string[i]=string[strlen(string)-1-i];
+        string[strlen(string)-1-i]=auxCh;
+    }
+    printf("A string invertida e: ");puts(string);
+    return 0;
+}
+
+	9-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 50
+int main(){
+    int i;
+    char string1[MAX],string2[MAX];
+    printf("Digite uma string: ");gets(string1);printf("Digite uma string: ");gets(string2);
+    strcat(string1,string2);
+    printf("A string unida e: ");puts(string1);
+    return 0;
+}
+
+	10-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void imprimirStringCondicao(char str[]){
+    int i;
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]!=' ')
+            printf("%c",str[i]);
+    }
+}
+int main(){
+    char str[MAX];
+    lerString(str);imprimirStringCondicao(str);
+    return 0;
+}
+
+	11-
+
+
+(Rascunho)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 50
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void imprimirStringCondicao(char str[]){
+    int i;
+    int contVogais=0,contConsoante=0,contEsp=0,contNum=0,contSinais=0,contOutros=0,contSinaisNum=0;
+    int contMinuscV=0,contMaiuscV=0,contMinuscC=0,contMaiuscC=0;
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]=='a','e','i','o','u'){
+            contVogais++;contMinuscV++;
+            }
+        else{
+            if(str[i]=='A','E','I','O','U'){
+                contVogais++;contMaiuscV++;
+                }
+            else{
+                if(str[i]==',','.','?','!',';',':'){
+                    contSinais++;
+                    }
+                else{
+                    if(str[i]=='b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'){
+                        contConsoante++;contMinuscC++;
+                        }
+                    else{
+                        if(str[i]=='B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'){
+                            contConsoante++;contMaiuscC++;
+                            }
+                        else{
+                            if(str[i]=='+','-','*','/','%','='){
+                                contSinaisNum++;
+                                }
+                            else{
+                                if(str[i]==' '){
+                                    contEsp++;
+                                }
+                                else{
+                                    contOutros++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    printf("O numero de vogais e:%2d\nO numero de consoantes e:%2d\n",contVogais,contConsoante);
+    printf("O numero de vogais minusculas e:%2d\nO numero de vogais maiusculas e:%2d\n",contMinuscV,contMaiuscV);
+    printf("O numero de consoantes minusculas e:%2d\nO numero de consoantes maiusculas e:%2d\n",contMinuscC,contMaiuscC);
+    printf("O numero de letras minusculas e:%2d\n",contMinuscV+contMinuscC);
+    printf("O numero de letras maiusculas e:%2d\nO numero de sinais linguisticos e:%2d\n",contMaiuscV+contMaiuscC,contSinais);
+    printf("O numero de numeros e:%2d\nO numero de sinais numericos e:%2d\n",contNum,contSinaisNum);
+    printf("O numero de espacos e:%2d\nOutros tipos de caracteres:%2d\n\n",contEsp,contOutros);
+}
+int main(){
+    char str[MAX];
+    lerString(str);imprimirStringCondicao(str);
+    return 0;
+}
+
+(Definitivo)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 50
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void imprimirStringCondicao(char str[]){
+    int i;
+    int contVogais=0,contConsoantes=0,contOutros=0;
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u')
+            contVogais++;
+        else{
+            if(str[i]=='b' || str[i]=='c' || str[i]=='d' || str[i]=='f' || str[i]=='g' || str[i]=='h' || str[i]=='j')
+                contConsoantes++;
+            else{
+                if(str[i]=='k' || str[i]=='l' || str[i]=='m' || str[i]=='n' || str[i]=='p' || str[i]=='q' || str[i]=='r')
+                    contConsoantes++;
+                else{
+                    if(str[i]=='s' || str[i]=='t' || str[i]=='v' || str[i]=='w' || str[i]=='x' || str[i]=='y' || str[i]=='z')
+                        contConsoantes++;
+                    else{
+                        contOutros++;
+                    }
+                }
+            }
+        }
+    }
+    printf("O numero de vogais e:%2d\nO numero de consoantes e:%2d\n",contVogais,contConsoantes);
+    printf("Outros tipos de caracteres:%2d\n\n",contOutros);
+}
+int main(){
+    char str[MAX];
+    lerString(str);imprimirStringCondicao(str);
+    return 0;
+}
+
+	12-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 50
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void inicializarVetores(int vet[]){
+    int i;
+    for(i=0;i<MAX;i++)
+        vet[i]=0;
+}
+void imprimirStringCondicao(char str[],int vetV[],int vetC[]){
+    int i,j,z,contV=0,contC=0;
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u'){
+            vetV[contV]=str[i];contV++;
+        }
+        else{
+            vetC[contC]=str[i];contC++;
+        }
+    }
+    printf("O vetor vogal:\n");
+    for(i=0;i<contV;i++)
+        printf("%2c",vetV[i]);
+    printf("\nO vetor consoante:\n");
+    for(i=0;i<contC;i++)
+        printf("%2c",vetC[i]);
+}
+int main(){
+    char str[MAX];
+    int vetV[MAX],vetC[MAX];
+    lerString(str);inicializarVetores(vetV);inicializarVetores(vetC);imprimirStringCondicao(str,vetV,vetC);
+    return 0;
+}
+
+	13-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 20
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void imprimirStringCondicao(char str1[],char str2[]){
+    int i,j,contDel=0;
+    for(i=0;str1[i]!='\0';i++){
+        if(str1[i]==str2[0]){
+            for(j=i;str1[j]!='\0';j++)
+                str1[j]=str1[j+1];contDel++;
+        }
+    }
+    printf("O numero de caracteres apagados e de %d\n",contDel);
+    printf("A string com os caracteres deletados: ");puts(str1);
+}
+int main(){
+    char str1[MAX],str2[MAX];
+    lerString(str1);lerString(str2);
+    imprimirStringCondicao(str1,str2);
+    return 0;
+}
+
+	14-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+int imprimirStringCondicao(char str[]){
+    int i,j,contI=0,contD=0,contResp;
+    for(i=0,j=strlen(str)-1;i<j;i++,j--){
+        if(str[i]!=str[j])
+            contD++;
+    }
+    if(contD!=0)
+        contResp=0;
+    else
+        contResp=1;
+    return contResp;
+}
+int main(){
+    char str[MAX];
+    int resposta;
+    lerString(str);
+    resposta=imprimirStringCondicao(str);
+    if(resposta==1)
+        printf("E um palindromo (%d)!!",resposta);
+    else
+        printf("Nao e um palindromo (%d)!!",resposta);
+    return 0;
+}
+
+	15-
+
+
+(Versão 1)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void imprimirStringCondicao(char str[],int num){
+    int i;
+    for(i=0;str[i]!='\0';i++)
+        str[i]=str[i]-'a'+'a'+num;
+    puts(str);
+}
+int main(){
+    char str[MAX];
+    int K;
+    lerString(str);
+    printf("Digite um inteiro qualquer: ");scanf("%d",&K);
+    imprimirStringCondicao(str,K);
+    return 0;
+}
+
+(Versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+int lerInteiro(){
+    int num;
+    printf("Digite um inteiro qualquer: ");scanf("%d",&num);
+    return num;
+}
+void imprimirStringCondicao(char str[],int num){
+    int i;
+    for(i=0;str[i]!='\0';i++)
+        str[i]=str[i]-'a'+'a'+num;
+    puts(str);
+}
+int main(){
+    char str[MAX];
+    int K;
+    lerString(str);
+    K=lerInteiro();
+    imprimirStringCondicao(str,K);
+    return 0;
+}
+
+	Desafio 1-
+
+
+(Biblioteca-biblio.h)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void lerString(char str[]){
+    printf("Digite a string: ");gets(str);
+}
+void copiar(char str1[],char str2[]){
+    strcpy(str1,str2);
+}
+int comprimento(char str[]){
+    int num;
+    num=strlen(str);
+    return num;
+}
+int iguais(char str1[],str2[]){
+    int num;
+    num=strcmp(str1,str2;)
+    return num;
+}
+void minusculo(char str[]){
+    int i;
+    for(i=0;str[i]!='\0';i++)
+        str[i]=str[i]-'A'+'a';
+}
+void maiusculo(char str[]){
+    int i;
+    for(i=0;str[i]!='\0';i++)
+        str[i]=str[i]-'a'+'A';
+}
+int converteInteiro(char str[]){
+    int i,aux,soma=0;
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]!='1' && str[i]!='2' && str[i]!='3' && str[i]!='4' && str[i]!='5' && str[i]!='6' && str[i]!='7' && str[i]!='8' && str[i]!='9' && str[i]!='0')
+            aux=-1;
+    }
+    if(aux!=-1){
+        for(i=0;str[i]!='\0';i++)
+            soma+=str[i];
+    }
+    else
+        soma=aux;
+    return soma;
+}
+void inicialMaiuscula(char str[]){
+    int i;
+    for(i=0;str[i]!='\0';i++){
+        if(i==0)
+            str[i]=str[i]-'a'+'A';
+        else{
+            if(str[i-1]==' ')
+               str[i]=str[i]-'a'+'A';
+        }
+    }
+}
+void juntaString(char str1[],char str2[],int tam){
+    if(strlen(str1)*strlen(str2)>tam)
+        printf("A juncao de strings execede o limite duma string.");
+    else{
+        strcat(str1,str2);
+        printf("As string unidas: ");
+        imprimirString(str1);
+    }
+}
+void procuraTrecho(char str1[],char str2[]){
+    int i,j;
+    for(i=0;s1[i]!='\0';i++){
+        for(j=0;s2[j]!='\0' && s1[i+j]!='\0';j++){
+            if(s2[j]!=s1[i+j]){
+                break;
+            }
+        }
+        if(s2[j]=='\0')
+            return 1;
+    }
+    return 0;
+}
+int procurarCaracter(char str[]){
+    int i,cont=0;
+    char c;
+    printf("Digite o caracter a ser buscado: ");scanf("%c",&c);
+    for(i=0;str[i]!='\0';i++){
+        if(str[i]==c)
+            cont++;
+    }
+    return cont;
+}
+void imprimirString(char str[]){
+    puts(str);
+}
+
+
+
+
