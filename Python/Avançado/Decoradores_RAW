@@ -1,0 +1,251 @@
+	Exemplo 1-
+
+# Criando Decorators
+
+def uppercase_decorator(function):
+    def wrapper():
+        func = function()
+        make_uppercase = func.upper()
+        return make_uppercase
+    return wrapper
+
+
+def say_hi():
+    return 'hello there!!'
+
+
+decorate = uppercase_decorator(say_hi)
+print(decorate())
+
+
+	Exemplo 2-
+
+# Criando Decorators
+
+def uppercase_decorator(function):
+    def wrapper():
+        func = function()
+        make_uppercase = func.upper()
+        return make_uppercase
+    return wrapper
+
+
+@uppercase_decorator
+def say_hi():
+    return 'hello there!!'
+
+
+print(say_hi())
+
+
+	Exemplo 3-
+
+# Criando Decorators
+
+def uppercase_decorator(function):
+    def wrapper():
+        func = function()
+        make_uppercase = func.upper()
+        return make_uppercase
+    return wrapper
+
+
+def split_string(function):
+    def wrapper():
+        func = function()
+        splitted_function = func.split()
+        return splitted_function
+    return wrapper
+
+
+# Podemos usar mais de um decorador numa função.
+@split_string
+@uppercase_decorator
+def say_hi():
+    return 'hello there!!'
+
+
+print(say_hi())
+
+
+	Exemplo 4-
+
+# Criando Decorators
+
+# Decoradores com argumentos.
+def decorator_with_arguments(function):
+    def warpper_accepting_arguments(arg1, arg2):
+        print('My arguments are: {0}, {1}'.format(arg1, arg2))
+        function(arg1, arg2)
+    return warpper_accepting_arguments
+
+
+@decorator_with_arguments
+def cities(city_one, city_two):
+    print(f'Cities that i love are {city_one} and {city_two}')
+
+
+cities('Nairobi', 'Accra')
+
+
+	Exemplo 5-
+
+(versão 1)
+# Criando Decorators
+
+# Decoradores com argumentos arbitrários.
+def a_decorator_passing_arbitrary_arguments(function_to_decorate):
+    def a_wrapper_accepting_arbitrary_arguments(*args, **kwargs):
+        print('The positional arguments are', args)
+        print('The keyword arguments are', kwargs)
+        function_to_decorate(*args)
+    return a_wrapper_accepting_arbitrary_arguments
+
+
+@a_decorator_passing_arbitrary_arguments
+def function_with_no_argument():
+    print("No arguments here.")
+
+
+function_with_no_argument()
+
+(versão 2)
+# Criando Decorators
+
+# Decoradores com argumentos arbitrários.
+def a_decorator_passing_arbitrary_arguments(function_to_decorate):
+    def a_wrapper_accepting_arbitrary_arguments(*args, **kwargs):
+        print('The positional arguments are', args)
+        print('The keyword arguments are', kwargs)
+        function_to_decorate(*args)
+    return a_wrapper_accepting_arbitrary_arguments
+
+
+@a_decorator_passing_arbitrary_arguments
+def function_with_arguments(a, b, c):
+    print(a, b, c)
+
+
+function_with_arguments(1, 2, 3)
+
+
+	Exemplo 6-
+
+# Criando Decorators
+
+# Decoradores com argumentos arbitrários.
+def a_decorator_passing_arbitrary_arguments(function_to_decorate):
+    def a_wrapper_accepting_arbitrary_arguments(*args, **kwargs):
+        print('The positional arguments are', args)
+        print('The keyword arguments are', kwargs)
+        function_to_decorate(*args)
+    return a_wrapper_accepting_arbitrary_arguments
+
+
+@a_decorator_passing_arbitrary_arguments
+def function_with_keyword_arguments():
+    print("This has shown keyword arguments")
+
+
+function_with_keyword_arguments(first_name="Derrick", last_name="Mwiti")
+
+
+	Exemplo 7-
+
+# Criando Decorators
+
+# Passando argumentos para decoradores.
+def decor_maker_with_arguments(decorator_arg1, decorator_arg2, decorator_arg3):
+    def decorator(func):
+        def wrapper(function_arg1, function_arg2, function_arg3):
+            "This is the wrapper function"
+            print("The wrapper can access all the variables\n"
+                  "\t- from the decorator maker: {0} {1} {2}\n"
+                  "\t- from the function call: {3} {4} {5}\n"
+                  "and pass them to the decorated function"
+                  .format(decorator_arg1, decorator_arg2, decorator_arg3,
+                          function_arg1, function_arg2, function_arg3))
+            return func(function_arg1, function_arg2, function_arg3)
+
+        return wrapper
+
+    return decorator
+
+
+pandas = "Pandas"
+
+
+@decor_maker_with_arguments(pandas, "Numpy", "Scikit-learn")
+def decor_function_with_arguments(function_arg1, function_arg2, function_arg3):
+    print("This is the decorated function and",
+          "it only knows about its arguments:",
+          "{0} {1} {2}".format(function_arg1, function_arg2, function_arg3)
+          )
+
+
+decor_function_with_arguments(pandas, "Science", "Tools")
+
+
+	Exemplo 8-
+
+# Criando Decorators
+
+# Passando argumentos para decoradores.
+def decor_maker_with_arguments(decorator_arg1, decorator_arg2, decorator_arg3):
+    def decorator(func):
+        def wrapper(function_arg1, function_arg2, function_arg3):
+            "This is the wrapper function"
+            print("The wrapper can access all the variables\n"
+                  "\t- from the decorator maker: {0} {1} {2}\n"
+                  "\t- from the function call: {3} {4} {5}\n"
+                  "and pass them to the decorated function"
+                  .format(decorator_arg1, decorator_arg2, decorator_arg3,
+                          function_arg1, function_arg2, function_arg3))
+            return func(function_arg1, function_arg2, function_arg3)
+
+        return wrapper
+
+    return decorator
+
+
+pandas = "Pandas"
+
+
+@decor_maker_with_arguments(pandas, "Numpy", "Scikit-learn")
+def decor_function_with_arguments(function_arg1, function_arg2, function_arg3):
+    print("This is the decorated function and",
+          "it only knows about its arguments:",
+          "{0} {1} {2}".format(function_arg1, function_arg2, function_arg3)
+          )
+
+
+decor_function_with_arguments(pandas, "Science", "Tools")
+
+# Debugging
+print(decor_function_with_arguments.__name__)
+print(decor_function_with_arguments.__doc__)
+
+
+	Exemplo 9-
+
+# Class Decorators
+
+class CountCalls:
+
+    def __init__(self, func):
+        self.func = func
+        self.num_calls = 0
+
+    def __call__(self, *args, **kwargs):
+        self.num_calls += 1
+        print(f'This is executed {self.num_calls} times')
+        return self.func(*args, **kwargs)
+
+
+@CountCalls
+def say_hello():
+    print('Hello')
+
+
+say_hello()
+say_hello()
