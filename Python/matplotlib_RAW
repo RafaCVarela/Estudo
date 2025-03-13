@@ -1,0 +1,61 @@
+	Exemplo 1-
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y, label='Curva Seno')
+
+plt.xlabel('Eixo X')
+plt.ylabel('Eixo Y')
+
+plt.title('Grafico de curva')
+
+plt.legend('aqui deveria ter uma legenda')
+
+plt.show()
+
+
+	Exemplo 2-
+
+import matplotlib.pyplot as plt
+
+# Criar um gráfico simples com eixos xOy
+
+fig, ax = plt.subplots()
+
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+
+plt.show()
+
+
+	Exemplo 3-
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Criar um gráfico simples com eixos xOy
+
+fig, ax = plt.subplots()
+
+ax.spines['left'].set_position('zero')
+ax.spines['bottom'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y, label='Curva Seno')
+
+plt.xlabel('Eixo X')
+plt.ylabel('Eixo Y')
+
+plt.title('Grafico de curva')
+
+plt.show()
