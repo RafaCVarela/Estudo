@@ -1,0 +1,28 @@
+	Exemplo 1-
+
+# Generators Expressions
+
+# Expressões geradoras criam objetos a partir de uma linha de código.
+def quadrados(tamanho):
+    for n in range(tamanho):
+        yield n**2
+
+
+for quadrado in quadrados(5):
+    print(quadrado)
+
+
+tamanho2 = int(input("> Digite um número inteiro: "))
+
+# Expressão geradora em uma linha de código.
+quadrados2 = (k**2 for k in range(tamanho2))
+
+for quadrado2 in quadrados2:
+    print(quadrado2)
+
+print(quadrados,
+      quadrados2)
+
+
+	Exemplo 2-
+
