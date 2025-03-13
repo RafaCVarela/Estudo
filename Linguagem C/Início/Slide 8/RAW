@@ -1,0 +1,404 @@
+	Exemplo 1-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    int *cont,m;
+    m=&cont;
+    printf("\n\nO valor de m e: %p\n\n",m);
+    system("pause");
+    return 0;
+}
+
+	Exemplo 2-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    int num,valor,enderecop;
+    int *p;
+    num=10;
+    p=&num;
+    valor=*p;
+    printf("O conteudo do endereco apontado por p e: %d\n",*p);
+    printf("\nO endereco para onde p aponta e: %p",p);
+    printf("\n\nO conteudo de valor e: %d\n\n",valor);
+    system("pause");
+    return 0;
+}
+
+	Exemplo 3-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    float *p1;
+    printf("O endereco de p1 e: %p\n",p1);
+    printf("\nO ondereco de p1 (mas em base decimal) e: %d\n",p1);
+    p1++;
+    printf("\nO novo endereco de p1 e: %p\n",p1);
+    printf("\nO novo endereco de p1 (mas em base decimal) e: %d\n\n",p1);
+    system("pause");
+    return 0;
+}
+
+(Com base octa-eu sou muito bom)
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    float *p1;
+    printf("O endereco de p1 e: %p\n",p1);
+    printf("\nO ondereco de p1 (mas em base decimal) e: %d\n",p1);
+    printf("\nO ondereco de p1 (mas em base octa) e: %o\n",p1);
+    p1+=20;
+    printf("\nO novo endereco de p1 e: %p\n",p1);
+    printf("\nO novo endereco de p1 (mas em base decimal) e: %d\n",p1);
+    printf("\nO novo endereco de p1 (mas em base octa) e: %o\n\n",p1);
+    system("pause");
+    return 0;
+}
+
+	Exemplo 4-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    float *p1,valor=100;
+    p1=0x2000;
+    printf("O endereco de p1 e: %p\n",p1);
+    printf("\nO ondereco de p1 (mas em base decimal) e: %d\n",p1);
+    printf("\nO ondereco de p1 (mas em base octa) e: %o\n",p1);
+    p1=&valor;
+    printf("\nO novo endereco de p1 e: %p\n",p1);
+    printf("\nO novo endereco de p1 (mas em base decimal) e: %d\n",p1);
+    printf("\nO novo endereco de p1 (mas em base octa) e: %o\n\n",p1);
+    (*p1)++;
+    printf("\nO conteudo de p1 e: %f\n",*p1);
+    system("pause");
+    return 0;
+}
+
+	Exemplo 9-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "estudobiblioString.h"
+#define MAX 100
+int main(){
+    int x=10,y=10;
+    int *p1,*p2;
+    p1=&x;
+    p2=&y;
+    if(p1>p2)
+        printf("A variavel x esta armazenada num endereco acima da variavel y.\n");
+    else
+        printf("A variavel y esta armazenada num endereco acima da variavel x.\n");
+    printf("\nCertificando... \n\t\tEndereco de x: %p\n\t\tEndereco de y: %p\n\n",p1,p2);
+    system("pause");
+    return 0;
+}
+
+	Exemplo 10-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    char str[10],*p;
+    int i;
+    for(i=0;i<10;i++)
+        str[i]=rand()%1000;
+    printf("Na string diretamente:\n");
+    for(i=0;i<10;i++)
+        printf("%4c",str[i]);
+    printf("\n\n");
+    p=str;
+    printf("O conteudo apontado por p e:\n");
+    for(i=0;i<10;i++)
+        printf("%4c",*(p+i));
+    printf("\n\n");
+    system("pause");
+    return 0;
+}
+
+	Exemplo 11-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    char str[30],*p;
+    p=str;
+    printf("Este programa demonstra a varredura sequencial duma matriz com ponteiro.");
+    printf("\n\nDigite um nome: ");gets(str);
+    printf("O nome digitado foi:\n");
+    while(*p)
+        printf("%c",*p++);
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+	Exemplo 12-
+
+
+(Comparativo)
+(Matriz)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    int i,j;float mat[15][15],*p;
+    p=&mat;
+    printf("Este programa demonstra a varredura sequencial duma matriz com ponteiro.\n");
+    for(i=0;i<15;i++){
+        for(j=0;j<15;j++)
+            mat[i][j]=rand()%100;
+    }
+    for(i=0;i<15;i++){
+        for(j=0;j<15;j++)
+            printf("%6.2f",mat[i][j]);
+        printf("\n");
+    }
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+(Ponteiro)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    int i;float mat[15][15],*p;
+    p=mat;
+    printf("Este programa demonstra a varredura sequencial duma matriz com ponteiro.\n");
+    for(i=0;i<225;i++){
+        *(p+i)=rand()%100;
+    }
+    printf("Vamos imprimir:\n");
+    for(i=0;i<225;i++){
+        printf("%4.3f\n",*(p+i));
+    }
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+(Outra versão do ponteiro)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    float mat[15][15],*p,i;
+    p=mat;
+    printf("Este programa demonstra a varredura sequencial duma matriz com ponteiro.\n");
+    for(i=0;i<225;i++){
+        *p=i;
+        p++;
+    }
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+	Exemplo 13-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    int mat[2][3],*p,i,j,var,menor;
+    p=mat;
+    for(i=0;i<6;i++,p++){
+        printf("Digite o %do elemento: ",i+1);scanf("%d",&var);
+        *p=var;
+        if(i==0)
+            menor=*p;
+        if(*p<=menor)
+            menor=*p;
+    }
+    printf("\nO menor valor da matriz e: %4d",menor);
+    printf("\nOs elementos da matriz sao:\n");
+    for(i=0;i<2;i++){
+        for(j=0;j<3;j++)
+            printf("%4d",mat[i][j]);
+        printf("\n");
+    }
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+	Exemplo 14-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+int main(){
+    int num,*p;
+    p=&num;
+    printf("Digite o um numero inteiro: ");scanf("%d",&num);
+    printf("\nnum(hexa):%8p\n",&num);
+    printf("\np:%8p\n",p);
+    printf("\n*p:%8d\n",*p);
+    printf("\n\n\n");
+    system("pause");
+    return 0;
+}
+
+	Exemplo 15-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p,valor=10;
+    p=&valor;
+    printf("\t\tEndereco = %p",&valor);
+    printf("\n\t\tEndereco = %x",p);
+    printf("\n\t\tvalor = %d",valor);
+    return 0;
+}
+
+	Exemplo 16-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p,**pp,valor=10;
+    p=&valor;
+    pp=&p;
+    printf("\t\tEndereco = %p",p);
+    printf("\n\t\tEndereco = %x",pp);
+    printf("\n\t\tvalor = %d",*p);
+    printf("\n\t\tvalor = %d",**pp);
+    return 0;
+}
+
+	Exemplo 17-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 3
+#define PROVAS 7
+int main(){
+    int *p;
+    int i,j,vet[MAX];
+    p=&vet;
+    for(i=0;i<MAX;i++,*p++){
+        printf("Digite um valor inteiro para o vetor: ");scanf("%d",&*p);
+    }
+    printf("\n\n");
+    for(i=0;i<MAX;i++){
+        printf("%4d\n",*p);*p++;
+    }
+    printf("\n\nVamos imprimir os enderecos do ponteiro:\n\n");
+    for(i=0;i<MAX;i++,p++){
+        printf("%p\t",*p);
+        printf("%p\t\n",p);
+    }
+    return 0;
+}
+
+	Exemplo 18-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    float mat[5][5],*f,cont;int i,j;
+    f=mat;
+    for(cont=0;cont<25;cont++){
+        *f=cont;
+        f++;
+    }
+    for(cont=0;cont<25;cont++){
+        printf("%.2f\n",*f);
+    }
+    printf("\n\nVamos imprimir pela matriz:\n");
+    for(i=0;i<5;i++){
+        for(j=0;j<5;j++){
+            printf("%.2f\n",mat[i][j]);
+        }
+    }
+    return 0;
+}
+
+(Versão 2)
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    float mat[5][5],*f,cont;int i,j;
+    f=mat;
+    for(cont=0;cont<25;cont++){
+        *f=cont;
+        f++;
+    }
+    for(cont=0;cont<25;cont++){
+        printf("%.2f\n",*f);
+    }
+    printf("\n\n%.2f",*f);printf("\n\n%.2f\n\n",*(f+10));
+    printf("\n\nVamos imprimir pela matriz:\n");
+    for(i=0;i<5;i++){
+        for(j=0;j<5;j++){
+            printf("%.2f\n",mat[i][j]);
+        }
+    }
+    return 0;
+}
+
+	Exemplo 19-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p,num;
+    p=num;
+    printf("Endereco do num %p\n\n",&num);
+    printf("Endereco do p %p\n\n",&p);
+    printf("Endereco do *p %p\n\n",&*p);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p,num;
+    p=&num;
+    printf("Endereco do num %p\n\n",&num);
+    printf("Endereco do p %p\n\n",&p);
+    printf("Endereco do *p %p\n\n",&*p);
+    return 0;
+}
+
