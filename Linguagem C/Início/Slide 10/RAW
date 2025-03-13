@@ -1,0 +1,113 @@
+	1-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int potencia(int x,int y){
+    if(y==0)
+        return 1;
+    else return x*potencia(x,y-1);
+}
+int main(){
+    int base,expoente;
+    printf("Digite um valor inteiro para a base: ");scanf("%d",&base);
+    printf("Digite um valor inteiro para o expoente: ");scanf("%d",&expoente);
+    printf("%d elevado a %d e igual a %d",base,expoente,potencia(base,expoente));
+    return 0;
+}
+
+	2-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int tamstring(char str[]){
+    if(str[0]=='\0')
+        return 0;
+    else return tamstring(&str[1])+1;
+}
+int main(){
+    char string[]="Salvador";
+    printf("O tamanho da string e igual a %d",tamstring(string));
+    return 0;
+}
+
+	3-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int tamstring(char str[]){
+    if(str[0]=='\0')
+        return 0;
+    else return tamstring(&str[1])+1;
+}
+int main(){
+    char string[]="Salvador";
+    printf("O tamanho da string e igual a %d",tamstring(string));
+    return 0;
+}
+
+	4-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+int caract(char c,char str[]){
+    if(str[0]=='\0')
+        return 0;
+    else if(str[1]==c)
+            return 1+caract(c,&str[1]);
+    return caract(c,&str[1]);
+}
+int main(){
+    char c,string[MAX];
+    printf("Digite numa string: ");gets(string);
+    printf("Digite um caracter: ");scanf("%c",&c);
+    printf("O numero de caracteres e igual a %d.",caract(c,string));
+    return 0;
+}
+
+	5-
+
+
+(Versão 1)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+void reverse(char str[]){
+    if(str[0]!='\0'){
+        reverse(&str[1]);
+        printf("%c",str[0]);
+    }
+}
+int main(){
+    char string[MAX];
+    printf("Digite numa string: ");gets(string);
+    reverse(string);
+    return 0;
+}
+
+(Versão 2)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+void reverse(char str[]){
+    if(str[0]!='\0'){
+        reverse(str+1);
+        printf("%c",str[0]);
+    }
+}
+int main(){
+    char string[MAX];
+    printf("Digite numa string: ");gets(string);
+    reverse(string);
+    return 0;
+}
+
+
