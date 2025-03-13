@@ -1,0 +1,121 @@
+	Exemplo 1-
+
+import fibonacci as fibo
+
+
+# Para crair outros arquivos a serem chamados,
+# basta criar um novo arquivo terminado com ".py" e importa-lo.
+print(fibo.fib(10))
+print(fibo.fib2(10))
+print(fibo.__name__)
+
+
+	Exemplo 2-
+
+import fibonacci as fibo
+
+
+# Para crair outros arquivos a serem chamados,
+# basta criar um novo arquivo terminado com ".py" e importa-lo.
+fib = fibo.fib
+fib2 = fibo.fib2
+
+print(fib(500))
+print(fib2(500))
+
+
+	Exemplo 3-
+
+from fibonacci import *
+
+
+# Para crair outros arquivos a serem chamados,
+# basta criar um novo arquivo terminado com ".py" e importa-lo.
+print(fib(500))
+print(fib2(500))
+
+
+	Exemplo 4-
+
+# Teste de dois imports.
+
+import fibonacci as fibo, teste_module as tm
+
+print(fibo.fib(10))
+tm.print_algo()
+
+
+	Exemplo 5-
+
+# Para não criar problemas quando rodar o arquivo como script ou
+# importar-lo como módulo, usamos o seguinte "if".
+
+(versão 1)
+s = "If Comrade Napoleon says it, it must be right."
+a = [100, 200, 300]
+
+def foo(arg):
+    print(f'arg = {arg}')
+
+class Foo:
+    pass
+
+if (__name__ == '__main__'):
+    print('Executing as standalone script')
+    print(s)
+    print(a)
+    foo('quux')
+    x = Foo()
+    print(x)
+
+(versão 2)
+def fact(n):
+    return 1 if n == 1 else n * fact(n-1)
+
+if (__name__ == '__main__'):
+    import sys
+    if len(sys.argv) > 1:
+        print(fact(int(sys.argv[1])))
+
+
+	Exemplo 6-
+
+# Como importar um package.
+
+from teste import package_test
+
+package_test.print_something()
+
+
+	Exemplo 7-
+
+(arquivo - init)
+import teste.package_test
+
+print(f'Invoking __init__.py for {__name__}')
+
+
+(arquivo - main)
+# Como importar um package.
+
+import teste
+
+teste.package_test.print_something()
+
+
+	Exemplo 8-
+
+(versão 1)
+# Como importar um subpackage de um package.
+
+import teste.subp.subp_teste
+
+teste.subp.subp_teste.print_algo()
+
+(versão 2)
+# Como importar um package.
+
+from teste.subp import subp_teste
+
+subp_teste.print_algo()
+
