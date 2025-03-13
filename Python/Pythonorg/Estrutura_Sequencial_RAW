@@ -1,0 +1,135 @@
+- Estrutura Sequencial
+
+
+	1.
+print("Alo Mundo")
+
+	2.
+x = int(input())
+
+print(f"O número informado foi {x}")
+
+	3.
+x = int(input("> "))
+y = int(input("> "))
+
+print(x+y)
+
+	4.
+n1 = float(input("> "))
+n2 = float(input("> "))
+n3 = float(input("> "))
+n4 = float(input("> "))
+
+print(f"{(n1+n2+n3+n4)/4:.2f}")
+
+	5.
+c = float(input("> "))
+
+print(f"{c*100:.2f} cm")
+
+	6.
+R = float(input("> "))
+
+A = 3.14*(R**2)
+
+print(f"{A:.2f}")
+
+	7.
+l = float(input("> "))
+
+A = l**2
+
+print(f"{2*A:.2f}")
+
+	8.
+salarioHora = float(input("> Quanto ganhas por hora: "))
+horasTrabalhadas = int(input("> Quantas horas trabalhadas: "))
+
+salario = salarioHora*horasTrabalhadas
+
+print(f"R$ {salario:.2f}")
+
+	9.
+tempFahrenheit = float(input("> "))
+
+tempCelcius = 5*((tempFahrenheit-32)/9)
+
+print(f"{tempCelcius:.2f} ºC")
+
+	10.
+tempCelcius = float(input("> "))
+
+tempFahrenheit = 9*(tempCelcius/5)
+
+print(f"{tempFahrenheit:.2f} ºF")
+
+	11.
+A = int(input("> Digite um inteiro: "))
+B = int(input("> Digite um inteiro: "))
+C = float(input("> Digite um real: "))
+
+# a)
+print(f"2*{A}*{B}/2 =", 2*A*B/2)
+
+# b)
+print(f"3*{A}+{C} =", 3*A+C)
+
+# c)
+print(f"{C}^3 =", C**3)
+
+	12.
+h = float(input("> Digite sua altura: "))
+
+PI = (72.7*h)-58
+
+print(f"O seu peso ideal é {PI:.2f}")
+
+	13.
+h = float(input("> Digite sua altura: "))
+s = input("> Digite 'F' para o sexo feminino e 'M' para masculino: ")
+
+if s == 'F':
+    PI = (62.1*h)-44.7
+elif s == 'M':
+    PI = (72.7*h)-58
+
+print(f"O seu peso ideal é {PI:.2f}")
+
+	14.
+# Sem a estrutura de repetição.
+peso = float(input("> Digite o peso do peixe: "))
+
+if peso > 50.0:
+    excesso = peso-50.0
+    multa = 4.00*excesso
+    print(f"O peso em excesso total: {excesso:.2f} Kg.")
+    print(f"O preço total da multa a ser paga: R$ {multa:.2f}.")
+
+# Com estrutura de repetição.
+peso = float(input("> Digite o peso do peixe: "))
+excesso = 0
+multa = 0
+
+while peso != -1:
+    if peso > 50.0:
+        excesso = (peso-50.0) + excesso
+        multa = 4.00*excesso + multa
+    peso = float(input("> Digite o peso do peixe(digite '-1' para finalizar a contagem): "))
+
+print(f"O peso em excesso total: {excesso:.2f} quilos.")
+print(f"O preço total da multa a ser paga: R$ {multa:.2f}.")
+
+	15.
+SB = float(input("> Digite seu salário bruto: "))
+
+IR = SB*0.11
+INSS = SB*0.08
+sindicato = SB*0.05
+SL = SB - IR - INSS - sindicato
+
+print(f"Seu salário bruto(SB): R$ {SB:.2f}\nImposto de Renda(IR): R$ {IR:.2f}")
+print(f"INSS: R$ {INSS:.2f}\nSindicato: R$ {sindicato:.2f}")
+print(f"Seu salário liquído(SL): R$ {SL:.2f}")
+
+	16.
