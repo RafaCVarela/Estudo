@@ -1,0 +1,114 @@
+	Exemplo 1-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+print(f.read())
+
+
+	Exemplo 2-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+# Se o local de arquivo for outro, especifique o Path:"D:\\myfiles\welcome.txt"
+print(f.read(6))
+
+
+	Exemplo 3-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+# Se o local de arquivo for outro, especifique o Path:"D:\\myfiles\welcome.txt"
+print(f.readline())  # Lê apenas uma linha
+
+
+	Exemplo 4-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+# Se o local de arquivo for outro, especifique o Path:"D:\\myfiles\welcome.txt"
+print(f.readline())  # Lê apenas uma linha
+print(f.readline())  # Lê a segunda se já houver uma instrução igual anterior.
+
+
+	Exemplo 5-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+# Se o local de arquivo for outro, especifique o Path:"D:\\myfiles\welcome.txt"
+# Dá para ler o arquivo por um loop.
+for x in f:
+    print(x)
+
+
+	Exemplo 6-
+
+
+# File Handling
+
+f = open("demonstration.txt", "rt")
+# Se o local de arquivo for outro, especifique o Path:"D:\\myfiles\welcome.txt"
+# Dá para ler o arquivo por um loop.
+for x in f:
+    print(x)
+
+# Fecha um arquivo.
+f.close()
+
+
+	Exemplo 7-
+
+
+# File Handling
+
+f = open("demonstration.txt", "a")
+
+# Vamos escrever uma nova linha.
+f.write("\nAgora temos mais uma linha!")
+f.close()
+
+f = open("demonstration.txt", "r")
+print(f.read())
+
+
+	Exemplo 8-
+
+
+# File Handling
+
+f = open("demonstration2.txt", "w")
+
+# Vamos escrever uma nova linha.
+f.write("Sobrescrevi o texto do arquivo anterior!")
+f.close()
+
+f = open("demonstration2.txt", "r")
+print(f.read())
+
+
+	Exemplo 9-
+
+
+# File Handling
+
+# Crie um novo arquivo.
+f = open("Meu_Arquivo.txt", "x")
+f.write("Meu arquivo de texto!")
+f.close()
+f = open("Meu_Arquivo.txt", "r")
+print(f.read())
+f.close()
+
+
+	Exemplo 10-
+
+
