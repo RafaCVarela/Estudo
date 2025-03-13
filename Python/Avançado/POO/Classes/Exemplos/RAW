@@ -1,0 +1,417 @@
+	Exemplo 1-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+tobias = Dog('Tobias', '4')
+print('Endereço na memória: ', tobias)
+print('Nome do cachorro: ', tobias.name,
+      '\nIdade do cachorro: ', tobias.age,
+      '\nEspécie : ', tobias.species)
+
+
+	Exemplo 2-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Agora criaremos outros metódos para ela.
+    def description(self):
+        return f'{self.name} is {self.age} years old'
+
+    def speak(self, sound):
+        return f'{self.name} says {sound}'
+
+
+tobias = Dog('Tobias', '4')
+print('Endereço na memória: ', tobias)
+print('Nome do cachorro: ', tobias.name,
+      '\nIdade do cachorro: ', tobias.age,
+      '\nEspécie : ', tobias.species)
+print(tobias.description())
+print(tobias.speak('WOOF !!!'))
+
+
+	Exemplo 3-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Agora criaremos outros metódos para ela.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old'
+
+    def speak(self, sound):
+        return f'{self.name} says {sound}'
+
+
+tobias = Dog('Tobias', '4')
+print('Endereço na memória: ', tobias)
+print('Nome do cachorro: ', tobias.name,
+      '\nIdade do cachorro: ', tobias.age,
+      '\nEspécie : ', tobias.species)
+print(tobias)
+print(tobias.speak('WOOF !!!'))
+
+
+	Exemplo 4-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+# Classe mãe.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Agora criaremos outros metódos para ela.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old'
+
+    def speak(self, sound):
+        return f'{self.name} says {sound}'
+
+
+# Classes filhas que herdam das classes mães todos os seus método.
+class Bulldog(Dog):
+    # Aqui iremos sobreescrever o método da classe mãe.
+    def speak(self, sound='WOOF!!'):
+        return f'{self.name} says {sound}'
+
+
+tobias = Bulldog('Tobias', '4')
+print(tobias)
+print(tobias.speak())
+
+
+	Exemplo 5-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+# Classe mãe.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Agora criaremos outros metódos para ela.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old'
+
+    def speak(self, sound):
+        return f'{self.name} says {sound}'
+
+
+# Classes filhas que herdam das classes mães todos os seus método.
+class Bulldog(Dog):
+    # Aqui iremos sobreescrever o método da classe mãe.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old and its a Bulldog.'
+
+    def speak(self, sound='WOOF!!'):
+        return f'{self.name} says {sound}'
+
+
+class JackRussellTerrier(Dog):
+    # Aqui iremos sobreescrever o método da classe mãe.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old and its a Jack Russell Terrier.'
+
+    def speak(self, sound='ARF!!'):
+        return f'{self.name} says {sound}'
+
+
+tobias = Bulldog('Tobias', '4')
+miles = JackRussellTerrier('Miles', '3')
+
+
+print(tobias)
+print(tobias.speak())
+print(miles)
+print(miles.speak())
+
+
+	Exemplo 6-
+
+# Classes
+
+# Classes são estruturas que servem para crair objetos.
+# Objetos são valores primitivos ou instruções para os valores,
+# os quais serão usados ao longo do programa.
+
+
+# Criamos uma classe que irá padronizar os dados dos cachorros.
+# Criaremos objetos distintos que serão os cachorros,
+# cada um deles terá inicialização que conterá seu nome e idade.
+# Classe mãe.
+class Dog():
+    # Aqui temos um atributo da classe e aparecerá em todos os objetos dela.
+    species = "Canis familiaris"
+
+    # Aqui temos um metódo da classe com dois atributos instaciados
+    # e cada objetos terá suas propriedades.
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Agora criaremos outros metódos para ela.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old'
+
+    def speak(self, sound):
+        return f'{self.name} says {sound}'
+
+
+# Classes filhas que herdam das classes mães todos os seus método.
+class Bulldog(Dog):
+    # Aqui iremos sobreescrever o método da classe mãe.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old and its a Bulldog.'
+
+    def speak(self, sound='WOOF!!'):
+        # Com o método 'super()' podemos herdar e modificar os métodos
+        # sem sobreecrever tudo.
+        return super().speak(sound)
+
+
+class JackRussellTerrier(Dog):
+    # Aqui iremos sobreescrever o método da classe mãe.
+    def __str__(self):
+        # Com esse "dunder method" é mais Pythonico.
+        return f'{self.name} is {self.age} years old and its a Jack Russell Terrier.'
+
+    def speak(self, sound='ARF!!'):
+        # Com o método 'super()' podemos herdar e modificar os métodos
+        # sem sobreecrever tudo.
+        return super().speak(sound)
+
+
+tobias = Bulldog('Tobias', '4')
+miles = JackRussellTerrier('Miles', '3')
+
+
+print(tobias)
+print(tobias.speak())
+print(miles)
+print(miles.speak())
+
+
+	Exemplo 7-
+
+(versão 1)
+class Dog:
+
+    # class attribute
+    attr1 = "mammal"
+
+    # Instance attribute
+    def __init__(self, name):
+        self.name = name
+
+
+# Driver code
+# Object instantiation
+Rodger = Dog("Rodger")
+Tommy = Dog("Tommy")
+
+# Accessing class attributes
+print("Rodger is a {}".format(Rodger.__class__.attr1))
+print("Tommy is also a {}".format(Tommy.__class__.attr1))
+
+# Accessing instance attributes
+print("My name is {}".format(Rodger.name))
+print("My name is {}".format(Tommy.name))
+
+(versão 2)
+class Dog:
+
+    # class attribute
+    attr1 = "mammal"
+
+    # Instance attribute
+    def __init__(self, name):
+        self.name = name
+
+
+# Driver code
+# Object instantiation
+Rodger = Dog("Rodger")
+Tommy = Dog("Tommy")
+
+# Accessing class attributes
+print("Rodger is a {}".format(Rodger.attr1))
+print("Tommy is also a {}".format(Tommy.attr1))
+
+# Accessing instance attributes
+print("My name is {}".format(Rodger.name))
+print("My name is {}".format(Tommy.name))
+
+
+	Exemplo 8-
+
+# Python code to demonstrate how parent constructors
+# are called.
+
+# parent class
+class Person(object):
+
+	# __init__ is known as the constructor
+	def __init__(self, name, idnumber):
+		self.name = name
+		self.idnumber = idnumber
+
+	def display(self):
+		print(self.name)
+		print(self.idnumber)
+		
+	def details(self):
+		print("My name is {}".format(self.name))
+		print("IdNumber: {}".format(self.idnumber))
+	
+# child class
+class Employee(Person):
+	def __init__(self, name, idnumber, salary, post):
+		self.salary = salary
+		self.post = post
+
+		# invoking the __init__ of the parent class
+		Person.__init__(self, name, idnumber)
+		
+	def details(self):
+		print("My name is {}".format(self.name))
+		print("IdNumber: {}".format(self.idnumber))
+		print("Post: {}".format(self.post))
+
+
+# creation of an object variable or an instance
+a = Employee('Rahul', 886012, 200000, "Intern")
+
+# calling a function of the class Person using
+# its instance
+a.display()
+a.details()
+
+
+	Exemplo 9-
+
+# Polimorfismo
+
+class Bird:
+
+	def intro(self):
+		print("There are many types of birds.")
+
+	def flight(self):
+		print("Most of the birds can fly but some cannot.")
+
+class sparrow(Bird):
+
+	def flight(self):
+		print("Sparrows can fly.")
+
+class ostrich(Bird):
+
+	def flight(self):
+		print("Ostriches cannot fly.")
+
+obj_bird = Bird()
+obj_spr = sparrow()
+obj_ost = ostrich()
+
+obj_bird.intro()
+obj_bird.flight()
+
+obj_spr.intro()
+obj_spr.flight()
+
+obj_ost.intro()
+obj_ost.flight()
+
+
+	Exemplo 10-
+
