@@ -1,0 +1,17 @@
+	1-
+
+# 1- Fibonnaci
+
+def fibonnaci(n):
+    if n < 0:
+        return 'O número precisa percetencer ao conjuto dos naturais.'
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonnaci(n-2) + fibonnaci(n-1)
+
+x = int(input('> '))
+
+print(fibonnaci(x))
+
