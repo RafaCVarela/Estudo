@@ -1,0 +1,123 @@
+	Exemplo 1-
+
+# Encapsulation ou encapsulamento
+
+# Encapsular é privar uma variável do acesso externo,
+# de modo que, apenas alguns possam acessa-lá ou muda-lá ou
+# o código pode acessa-lá.
+
+
+class SoftawareEngineer:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        # "_" são objetos seguros, enquanto "__".
+        self.__salary = None
+        self._num_bugs_solved = 0
+
+    # getter
+    def get_salary(self):
+        return self.__salary
+
+    # setter
+    def set_salary(self, value):
+        self.__salary = value
+
+
+se = SoftawareEngineer("Max", 25)
+print(se.name, se.age)
+
+# Funciona tanto para "_" quanto para "__", também é alterável.
+se.set_salary(6000)
+print(se.get_salary())
+se.set_salary(7000)
+print(se.get_salary())
+
+
+	Exemplo 2-
+
+# Encapsulation ou encapsulamento
+
+# Encapsular é privar uma variável do acesso externo,
+# de modo que, apenas alguns possam acessa-lá ou muda-lá ou
+# o código pode acessa-lá.
+
+
+class SoftawareEngineer:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        # "_" são objetos seguros, enquanto "__".
+        self.__salary = None
+        self._num_bugs_solved = 0
+
+    # Perceba que os códigos podem apenas ser acessados ou
+    # alterados dentro da classe.
+    def code(self):
+        self._num_bugs_solved += 1
+
+    # getter
+    def get_salary(self):
+        return self.__salary
+
+    # setter
+    def set_salary(self, base_value):
+        self.__salary = self._calculate_salary(base_value)
+
+    # Aqui está uma função que pode ser usada internamente.
+    def _calculate_salary(self, base_value):
+        if self._num_bugs_solved < 10:
+            return base_value
+        elif self._num_bugs_solved < 100:
+            return base_value * 2
+        else:
+            return base_value * 3
+
+
+se = SoftawareEngineer("Max", 25)
+print(se.name, se.age)
+
+for i in range(70):
+    se.code()
+
+# Precisa vim depois do "for", senão a função calcula sem "se.code()".
+se.set_salary(6000)
+
+print(se.get_salary())
+
+
+	Exemplo 3-
+
+# Encapsulation ou encapsulamento
+
+# Encapsular é privar uma variável do acesso externo,
+# de modo que, apenas alguns possam acessa-lá ou muda-lá ou
+# o código pode acessa-lá.
+
+
+class SoftawareEngineer:
+    def __init__(self):
+        self.__salary = None
+
+    # Uma forma mais Pythonica de se definir um getter/setter.
+    # getter
+    @property
+    def salary(self):
+        return self.__salary
+
+    # setter
+    @salary.setter
+    def salary(self, value):
+        self.__salary = value
+
+    @salary.deleter
+    def salary(self):
+        del self.__salary
+
+
+se = SoftawareEngineer()
+
+se.salary = 6000
+print(se.salary)
+# del se.salary
+# Agora podemos também deletar o valor.
