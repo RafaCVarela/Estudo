@@ -1,0 +1,27 @@
+	Exemplo 1-
+
+import sys
+
+print(sys.path)
+
+
+	Exemplo 2-
+
+import sys
+
+# Para adicionar um Path novo
+
+sys.path.append(r'Path do arquivo')
+
+
+	Exemplo 3-
+
+import fibonacci as fibo
+
+# Para determinar o Path do arquivo.
+
+print(fibo.__file__)
+
+
+	Exemplo 4-
+
