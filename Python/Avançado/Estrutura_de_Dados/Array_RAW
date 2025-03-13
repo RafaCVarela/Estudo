@@ -1,0 +1,169 @@
+	Exemplo 1-
+
+(versão 1)
+import array
+
+# Importar e criar seu próprio array.
+array.array()
+
+(versão 2)
+import array as arr
+
+# Importar e criar seu próprio array.
+arr.array()
+
+(versão 3)
+from array import *
+
+# Importar e criar seu próprio array.
+array()
+
+
+	Exemplo 2-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+print(x)
+print(len(x))
+
+
+	Exemplo 3-
+
+(versão 1)
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+print(x[1])
+
+(versão 2)
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+print(x[-1])
+
+
+	Exemplo 4-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+print(x.index(3))
+
+
+	Exemplo 5-
+
+(versão 1)
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+for y in x:
+    print(y)
+
+(versão 2)
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+for y in range(len(x)):
+    print(x[y])
+
+
+	Exemplo 6-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+
+print(x[:2])
+
+
+	Exemplo 7-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x[0] = 4
+print(x)
+
+
+	Exemplo 8-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x.append(4)
+print(x)
+
+
+	Exemplo 9-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x.extend([4, 5, 6])
+print(x)
+
+
+	Exemplo 10-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x.insert(1, 4)
+print(x)
+
+
+	Exemplo 11-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x.remove(2)
+print(x)
+
+
+	Exemplo 12-
+
+import array as arr
+
+# Importar e criar seu próprio array.
+x = arr.array('i', [1, 2, 3])
+print(x)
+
+x.pop(2)
+print(x)
+
+y = x.pop(0)
+print(y)
+
+
+	Exemplo 13-
+
