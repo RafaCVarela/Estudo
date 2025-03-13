@@ -1,0 +1,17 @@
+	Exemplo 1-
+
+import camelot as cam
+
+#  Para extrair uma tabela dum pdf precisamos do módulo "camelot".
+# Vamos começar lendo quantas tabelas tem numa determinada página.
+# Mais detalhes, vá estudar mais a respeito.
+tables = cam.read_pdf('(nome do pdf)', pages=(digite um número inteiro))
+
+print(tables) # Aqui ele deve dar quantas tabelas há numa página.
+
+tables.export('(nome do pdf).csv', f='csv', compress=True) # Vamos extrair uma tabela. "f='cvs'" significa o formato do arquivo.
+tables[0].to_csv('(nome do pdf).csv') # Aqui extraíremos a primeira tabela, caso haja outra de seu interesse mude o índice.
+
+
+	Exemplo 2-
+
