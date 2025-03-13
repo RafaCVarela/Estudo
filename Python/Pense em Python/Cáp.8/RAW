@@ -1,0 +1,326 @@
+	1-
+
+# Exercício 1 - Teste com replace
+
+# (versão 1)
+
+word = 'Eu gosto de bananas'
+
+z = word.replace('bananas', 'maçãs')
+
+print(z)
+
+# (versão 2)
+
+word = 'Eu gosto de bananas, bananas são muito boas'
+
+z = word.replace('bananas', 'maçãs'[0:5])
+
+print(z)
+
+# (versão 3)
+
+z = 'Eu gosto de bananas, bananas são muito boas'.replace('bananas', 'maçãs'[0:5])
+
+print(z)
+
+# (versão 4)
+
+word = 'Eu gosto de bananas, bananas são muito boas'
+
+z = word.replace('bananas', 'maçãs', 1)
+
+print(z)
+
+	2-
+
+# Exercício 1 - Teste com strip
+
+# (versão 1)
+word = '     espaço     '
+
+x = word.strip() # Por padrão, ele deve retirar o espaço em branco.
+
+print(x)
+
+
+# (versão 2)
+
+word = '###.olha só,'
+
+x = word.strip('#.,') # Agora retirar os caracteres.
+
+print(x)
+
+
+# (versão 3)
+
+x = '###.olha só,'.strip('#.,') # Aplicando a função diretamente.
+
+print(x)
+
+	3-
+
+# Exercício 1 - Teste com find
+
+# (versão 1)
+
+word = 'Eu gosto de bananas, bananas são muito boas' # Ele conta os espaços.
+
+z = word.find('bananas') # Retorna o índice do primeiro valor correspondente.
+
+print(z)
+
+
+# (versão 2)
+
+txt = "Hello, welcome to my world."
+
+x = txt.find("e", 5, 10) # Retorna o primeiro índice correspondente dentro do intervalo [5,10].
+
+print(x)
+
+
+	4-
+
+# Exercício 2
+
+palavra = 'banana'
+
+x = palavra.count('a')
+
+print(x)
+
+	5-
+
+(versão 1)
+# Exercício 3
+
+def palindromo(word):
+
+    i = 0
+
+    print(i)
+
+    word2 = word[::-1]
+
+    print(word, ' ', word2)
+
+    while i <= len(word):
+
+        print(i)
+        
+        if word[i] != word2[i]:
+            return False
+
+        i += 1
+
+        return True
+
+word = input('> Digite uma string: ')
+
+x = palindromo(word)
+
+if x == False:
+    print('Não é palindromo')
+else:
+    print('É palindromo')
+
+(versão 2)
+# Exercício 3
+
+def palindromo(word):
+
+    i = 0
+
+    word2 = word[::-1]
+
+    while i <= len(word):
+
+        if word[i] != word2[i]:
+            return 'Não é palindromo'
+
+        i += 1
+
+        return 'É palindromo'
+
+word = input('> Digite uma string: ')
+
+print(palindromo(word))
+
+	6-
+
+(com erros e com a explicação dos erros)
+# Exercício 4
+
+# 1. Aqui ele não atravessa a string toda parando no primeiro índice.
+
+def any_lowercase1(s):
+    for c in s:
+        if c.islower():
+            return True
+        else:
+            return False
+
+# 2. Mesmo que o primeiro caso, mas, ele colocou algumas coisas como string, desse modo, ele analisará 'c' como string própria gerando erros.
+
+def any_lowercase2(s):
+    for c in s:
+        if 'c'.islower():
+            return 'True'
+        else:
+            return 'False'
+
+# 3. Aqui ele atravessa a string e a cada item atribuirá um valor booleano, "True" para letra minúscula e "False" para não minúscula.
+# Gerará num problema, uma vez que, a string pode terminar com um caráter não minúsculo.
+
+def any_lowercase3(s):
+    for c in s:
+          flag = c.islower()
+    return flag
+
+# 4. Mesmo que o terceiro caso não mantendo o erro, pois, adiciona uma atribuição inicial para flag e um "or" que caso o índice
+# anterior seja True e seguinte seja False, a flag será True perpetuamente, independete do item analisado.
+
+def any_lowercase4(s):
+    flag = False
+    for c in s:
+        flag = flag or c.islower()
+    return flag
+
+# 5. Atravessa a string e no primeiro índice que não apresenta um item minúsculo interrompe a iteração e retorna False.
+
+def any_lowercase5(s):
+    for c in s:
+        if not c.islower():
+            return False
+    return True
+
+s = input('> ')
+
+print('1.', any_lowercase1(s))
+
+print('2.', any_lowercase2(s))
+
+print('3.', any_lowercase3(s))
+
+print('4.', any_lowercase4(s))
+
+print('5.', any_lowercase5(s))
+
+(versão corrigida)
+# Exercício 4
+
+# 1. Aqui ele não atravessa a string toda parando no primeiro índice.
+
+def any_lowercase1(s):
+    
+    x = 0
+    
+    for c in s:
+        if c.islower():
+            x += 1
+
+    if x == 0:
+        return False
+    else:
+        return True
+
+# 2. Mesmo que o primeiro caso, mas, ele colocou algumas coisas como string, desse modo, ele analisará 'c' como string própria gerando erros.
+
+def any_lowercase2(s):
+    
+    x = 0
+
+    for c in s:
+        if c.islower():
+            x += 1
+
+    if x != 0:
+        return 'True'
+    else:
+        return 'False'
+
+# 3. Aqui ele atravessa a string e a cada item atribuirá um valor booleano, "True" para letra minúscula e "False" para não minúscula.
+# Gerará num problema, uma vez que, a string pode terminar com um caráter não minúsculo.
+
+def any_lowercase3(s):
+    
+    x = 0
+    
+    for c in s:
+        flag = c.islower()
+        if flag == True:
+            x += 1
+
+    if x != 0:
+        return True
+    else:
+        return False
+
+# 4. Mesmo que o terceiro caso não mantendo o erro, pois, adiciona uma atribuição inicial para flag e um "or" que caso o índice
+# anterior seja True e seguinte seja False, a flag será True perpetuamente, independete do item analisado. Unico item correto.
+
+def any_lowercase4(s):
+    flag = False
+    for c in s:
+        flag = flag or c.islower()
+    return flag
+
+# 5. Atravessa a string e no primeiro índice que não apresenta um item minúsculo interrompe a iteração e retorna False.
+
+def any_lowercase5(s):
+    
+    x = 0
+
+    for c in s:
+        if not c.islower():
+            x += 1
+    if len(s) - x == 0:
+        return False
+    else:
+        return True
+
+s = input('> ')
+
+print('1.', any_lowercase1(s))
+
+print('2.', any_lowercase2(s))
+
+print('3.', any_lowercase3(s))
+
+print('4.', any_lowercase4(s))
+
+print('5.', any_lowercase5(s))
+
+	7-
+
+# Exercício 5
+
+def rotate_word(s, n):
+
+    cont = 0
+
+    for c in s:
+
+        x = ord(c) + n
+
+        if cont == 0:
+            
+            w = chr(x)
+
+        else:
+
+            w += chr(x)
+
+        cont += 1
+
+    return w
+
+print('Digite uma string:')
+s = input('> ')
+
+print('Digite um número inteiro:')
+n = int(input('> '))
+
+print(rotate_word(s, n))
