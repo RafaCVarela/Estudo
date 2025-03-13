@@ -1,0 +1,793 @@
+	1-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct{
+    int idCartao;
+    char nomeProprietario[100];
+    int senhaCartao;
+}CartaoCredito;
+
+	2-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct{
+    int peso;
+    float altura;
+}medidas;
+
+
+	3-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct{
+    int peso;
+    float altura;
+}medidas;
+int main(){
+    medidas joao,maria;
+    printf("Digite a altura de Joao: ");scanf("%f",&joao.altura);
+    printf("Digite seu peso: ");scanf("%d",&joao.peso);
+    printf("Digite a altura de Maria: ");scanf("%f",&maria.altura);
+    printf("Digite seu peso: ");scanf("%d",&maria.peso);
+    printf("A altura de Joao e:%4.3f\n",joao.altura);printf("A altura de Maria e:%4.3f\n",maria.altura);
+    printf("A media entre os pesos e:%4d",(joao.peso+maria.peso)/2);
+    return 0;
+}
+
+	4-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct{
+    float altura;
+    int peso;
+}Medidas;
+typedef struct{
+    char nome[100],esporte[100];
+    int idade;
+    Medidas altura,peso;
+}Atleta;
+int main(){
+    Atleta atleta1;
+    printf("Digite o nome do atleta: ");gets(atleta1.nome);
+    printf("Digite o esporte praticado pelo atleta: ");gets(atleta1.esporte);
+    printf("Digite a idade do atleta: ");scanf("%d",&atleta1.idade);
+    printf("Digite a altura do atleta: ");scanf("%f",&atleta1.altura.altura);
+    printf("Digite o peso do atleta: ");scanf("%d",&atleta1.peso.peso);
+    printf("-Dados do atleta:\n");
+    printf("  -Nome: ");puts(atleta1.nome);
+    printf("  -Esporte praticado: ");puts(atleta1.esporte);
+    printf("  -Idade:%8d\n",atleta1.idade);
+    printf("  -Altura:%8.3f\n",atleta1.altura.altura);
+    printf("  -Peso:%8d\n",atleta1.peso.peso);
+    return 0;
+}
+
+	5-
+
+
+(Pontos colineares)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct{
+    int x,y;
+}Ponto;
+int distanciaPontos(Ponto a, Ponto b){
+    int d;
+    if(a.x>b.y)
+        d=a.x-b.y;
+    else
+        d=b.y-a.x;
+    return d;
+}
+int main(){
+    Ponto c1,c2;
+    int distancia;
+    printf("Digite a coordenada: ");scanf("%d",&c1.x);
+    printf("Digite a coordenada: ");scanf("%d",&c2.y);
+    distancia=distanciaPontos(c1,c2);
+    printf("A distancia entre pontos e: %d",distancia);
+    return 0;
+}
+
+(Pontos não coplanares)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+typedef struct{
+    int x,y;
+}Ponto;
+float distanciaPontos(Ponto a, Ponto b){
+    float d;
+    d=(float)sqrt(pow(a.x,2)+pow(b.y,2));
+    return d;
+}
+int main(){
+    Ponto c1,c2;
+    float distancia;
+    printf("Digite a coordenada: ");scanf("%d",&c1.x);
+    printf("Digite a coordenada: ");scanf("%d",&c2.y);
+    distancia=distanciaPontos(c1,c2);
+    printf("A distancia entre pontos e: %.3f",distancia);
+    return 0;
+}
+
+	6-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+typedef struct{
+    int x,y;
+}Ponto;
+int distanciaPontos(Ponto a, Ponto b){
+    int d;
+    if(abs(a.x)>abs(b.y))
+        d=b.y;
+    else
+        d=a.x;
+    return d;
+}
+int main(){
+    Ponto c1,c2;
+    int distancia;
+    printf("Digite a coordenada: ");scanf("%d",&c1.x);
+    printf("Digite a coordenada: ");scanf("%d",&c2.y);
+    distancia=distanciaPontos(c1,c2);
+    printf("O ponto mais proximo da origem e: %d",distancia);
+    return 0;
+}
+
+	7-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+typedef struct{
+    float peso,altura;
+}Medidas;
+void mediasPesoEAltura(Medidas g[],int tam){
+    int i;
+    float mediaPeso=0.0,mediaAltura=0.0;
+    for(i=0;i<tam;i++)
+        mediaPeso+=g[i].peso;
+    printf("A media dos pesos do grupo e: %.3f\n",mediaPeso/tam);
+    for(i=0;i<tam;i++)
+        mediaAltura+=g[i].altura;
+    printf("A media das alturas do grupo e: %.3f\n",mediaAltura/tam);
+}
+void lerMedidas(Medidas g[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("Peso: ");scanf("%f%*c",&g[i].peso);
+        printf("Altura: ");scanf("%f%*c",&g[i].altura);
+    }
+}
+int main(){
+    Medidas grupo[10];
+    lerMedidas(grupo,2);
+    mediasPesoEAltura(grupo,2);
+    return 0;
+}
+
+	8-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 2
+typedef struct{
+    char nome[100];
+    int idade;
+}Catalogo;
+void lerCatalogo(Catalogo cat[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("Nome: ");gets(cat[i].nome);
+        printf("Idade: ");scanf("%d%*c",&cat[i].idade);
+    }
+}
+void ordenacaoIdades(Catalogo cat[],int tam){
+    int i,j,auxI;
+    char auxN[100],auxD[100];
+    for(i=0;i<tam;i++){
+        for(j=i+1;j<tam;j++){
+            if(cat[i].idade>cat[j].idade){
+                auxI=cat[i].idade;cat[i].idade=cat[j].idade;cat[j].idade=auxI;
+                strcpy(auxN,cat[i].nome);strcpy(cat[i].nome,auxD);
+                strcpy(cat[i].nome,cat[j].nome);strcpy(cat[j].nome,auxD);
+                strcpy(cat[j].nome,auxN);
+            }
+        }
+    }
+    printf("A ordem crescente das idades e seus respctivos nomes sao:\n");
+    for(i=0;i<tam;i++){
+        printf("Idade:%3d\tNome: ",cat[i].idade);
+        puts(cat[i].nome);
+    }
+}
+int main(){
+    Catalogo grupo[MAX];
+    lerCatalogo(grupo,MAX);
+    ordenacaoIdades(grupo,MAX);
+    return 0;
+}
+
+	9-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 2
+typedef struct{
+    char nome[100];
+    char comida[100];
+    int nota;
+}Restaurante;
+void lerRestaurante(Restaurante r[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("Digite o nome do restaurante: ");gets(r[i].nome);
+        printf("Digite a culinaria: ");gets(r[i].comida);
+        printf("Digite uma nota para cozinha: ");scanf("%d%*c",&r[i].nota);
+        printf("\n");
+    }
+}
+void imprimirRestaurante(Restaurante r[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("O nome do restaurante: ");puts(r[i].nome);
+        printf("A culinaria: ");puts(r[i].comida);
+        printf("A nota para cozinha:%3d\n\n",r[i].nota);
+    }
+}
+void maiorNota(Restaurante r[],int tam){
+    int i,maior;
+    maior=r[0].nota;
+    for(i=1;i<tam;i++){
+        if(r[i].nota>maior)
+            maior=r[i].nota;
+    }
+    imprimirRestaurante(r,tam);
+    printf("\nA(s) culinaria(s) e seu(s) respectivo(s) restaurante(s) que possuem a maior nota:\n");
+    for(i=0;i<tam;i++){
+        if(r[i].nota==maior){
+            printf("Restaurante: ");puts(r[i].nome);
+            printf("Culinaria: ");puts(r[i].comida);
+        }
+    }
+}
+int main(){
+    Restaurante restaurante[MAX];
+    lerRestaurante(restaurante,MAX);
+    maiorNota(restaurante,MAX);
+    return 0;
+}
+
+	10-
+
+(main)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cadastroCarro.h"
+#define MAX 100
+int main(){
+    Cadastro cadCarros[MAX];
+    int tamanho;
+    tamanho=cadastrarCarro(cadCarros);
+    menu(cadCarros,tamanho);
+    return 0;
+}
+
+(biblioteca do cadastro)
+#ifndef CADASTROCARRO_H_INCLUDED
+#define CADASTROCARRO_H_INCLUDED
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct{
+    char placa[8];
+    char marca[100];
+    char modelo[150];
+    int ano;
+}Cadastro;
+int cadastrarCarro(Cadastro cad[]){
+    int i,numCarrosCad;
+    printf("Digite o numero de carros que deseja cadastrar: ");scanf("%d%*c",&numCarrosCad);
+    for(i=0;i<numCarrosCad;i++){
+        printf("Cadastre o %do carro:\n",i+1);
+        printf("Placa: ");gets(cad[i].placa);
+        printf("Marca: ");gets(cad[i].marca);
+        printf("Modelo: ");gets(cad[i].modelo);
+        printf("Ano: ");scanf("%d%*c",&cad[i].ano);
+    }
+    return numCarrosCad;
+}
+void menu(Cadastro cad[],int tam){
+    int indice;
+    printf("\nMenu:");
+    printf("\n\t1-Modificar informacoes dum veiculo\n\t2-Verificar se o formato da placa dum veiculo(AAADDDD) esta correto");
+    printf("\n\t3-Imprimir cadastros das placas pertencentes a um intervalo de anos");
+    printf("\n\t4-Pela placa, pesquisar um veiculo\n\t5-Imprimir todas as placas");
+    printf("\n\t0-Sair\n");
+    printf("Digite um numero: ");scanf("%d%*c",&indice);
+    while(indice!=0){
+        switch(indice){
+            case 1: imprimirCadastroModificar(cad);
+                    break;
+            case 2: formatoPlaca(cad);
+                    break;
+            case 3: imprimirAnoAno(cad,tam);
+                    break;
+            case 4: imprimirPlaca(cad,tam);
+                    break;
+            case 5: imprimirTodasPlacas(cad,tam);
+                    break;
+            default: printf("Numero invalido.");
+        }
+        printf("\nMenu:");
+        printf("\n\t1-Modificar informacoes dum veiculo\n\t2-Verificar se o formato da placa dum veiculo(AAADDDD) esta correto");
+        printf("\n\t3-Imprimir cadastros das placas pertencentes a um intervalo de anos");
+        printf("\n\t4-Pela placa, pesquisar um veiculo\n\t5-Imprimir todas as placas");
+        printf("\n\t0-Sair\n");
+        printf("Digite um numero: ");scanf("%d%*c",&indice);
+    }
+}
+void imprimirCadastroModificar(Cadastro cad[]){
+    int i,indice;
+    printf("\n\nDigite o indice do cadastro que deseja modificar: ");scanf("%d%*c",&i);i=i-1;
+    imprimirCadastro(cad,i);
+    listaModificar();
+    printf("\n\tDigite um numero: ");scanf("%d%*c",&indice);
+    menuModificar(cad,i,indice);
+    imprimirCadastro(cad,i);
+}
+void listaModificar(){
+    printf("\nLeia a lista abaixo e digite um numero.\n\tLista:");
+    printf("\n\t\t1-Alterar placa\n\t\t2-Alterar marca\n\t\t3-Alterar modelo\n\t\t4-Alterar ano\n\t\t5-Recadastrar tudo");
+}
+void menuModificar(Cadastro cad[],int i,int ind){
+    switch(ind){
+        case 1: printf("Nova placa: ");gets(cad[i].placa);
+                break;
+        case 2: printf("Nova marca: ");gets(cad[i].marca);
+                break;
+        case 3: printf("Nova modelo: ");gets(cad[i].modelo);
+                break;
+        case 4: printf("Novo ano: ");scanf("%d%*c",&cad[i].ano);
+                break;
+        case 5: printf("Recadastre todas as informacoes:\n");
+                printf("Placa: ");gets(cad[i].placa);
+                printf("Marca: ");gets(cad[i].marca);
+                printf("Modelo: ");gets(cad[i].modelo);
+                printf("Ano: ");scanf("%d%*c",&cad[i].ano);
+                break;
+        default: printf("Numero invalido.");
+    }
+}
+void formatoPlaca(Cadastro cad[]){
+    int i,j,contErros=0;
+    printf("\n\nDigite o indice do cadastro: ");scanf("%d",&i);i=i-1;
+    for(j=0;j<7;j++){
+        if(j<3){
+            if(!(cad[i].placa[j]>=65 && cad[i].placa[j]<=90)){
+            printf("O %do(%c) da placa esta fora do formato(AAADDDD)e precisa ser alterado, o novo elemento: ",j+1,cad[i].placa[j]);
+            scanf("%c%*c",&cad[i].placa[j]);contErros++;
+            }
+        }
+        else if(!(cad[i].placa[j]>=48 && cad[i].placa[j]<=57)){
+            printf("O %d(%c) da placa esta fora do formato(AAADDD) e precisa ser alterado, o novo elemento: ",j+1,cad[i].placa[j]);
+            scanf("%c%*c",&cad[i].placa[j]);contErros++;
+        }
+    }
+    printf("Contagem de erros nas placas %d.",contErros);
+}
+void imprimirAnoAno(Cadastro cad[],int tam){
+    int i,k,w;
+    printf("\n\nDigite o intervalo de anos das placas(Menor ano-Maior ano): ");scanf("%d%d",&k,&w);
+    for(i=0;i<tam;i++){
+        if(cad[i].ano>=k && cad[i].ano<=w)
+            imprimirCadastro(cad,i);
+    }
+}
+void imprimirPlaca(Cadastro cad[],int tam){
+    int i;
+    char placa[8];
+    printf("\n\nDigite a placa: ");gets(placa);
+    for(i=0;i<tam;i++){
+        if(!(strcmp(cad[i].placa,placa)))
+            imprimirCadastro(cad,i);
+    }
+}
+void imprimirTodasPlacas(Cadastro cad[],int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("\n\n%da placa: ",i+1);puts(cad[i].placa);
+    }
+}
+void imprimirCadastro(Cadastro cad[],int ind){
+    printf("\nAs informacoes do cadastro de indice %d:\n",ind+1);
+    printf("Placa: ");puts(cad[ind].placa);
+    printf("Marca: ");puts(cad[ind].marca);
+    printf("Modelo: ");puts(cad[ind].modelo);
+    printf("Ano:%4d\n",cad[ind].ano);
+}
+
+#endif // CADASTROCARRO_H_INCLUDED
+
+	11-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef struct{
+    int ingTotal,ingVendidos;
+    float ingPreco;
+}Categoria;
+void lerPrecos(float *p1,float *p2,float *p3){
+    printf("Digite os precos dos ingressos\n");
+    printf("Digite o preco do ingreco da plateia: RS ");scanf("%f",&*p1);
+    printf("Digite o preco do ingreco da lateral: RS ");scanf("%f",&*p2);
+    printf("Digite o preco do ingreco do balcao: RS ");scanf("%f",&*p3);
+}
+void lerIngTotal(int *p1,int *p2,int *p3){
+    printf("Digite as quantidades totais de ingressos\n");
+    printf("Digite a quantidade de ingressos da plateia: ");scanf("%d",&*p1);
+    printf("Digite a quantidade de ingressos da lateral: ");scanf("%d",&*p2);
+    printf("Digite a quantidade de ingressos do balcao: ");scanf("%d",&*p3);
+}
+void vendasIng(float *p1,float *p2,float *p3,int *p4,int *p5,int *p6,int *p7,int *p8,int *p9){
+    int indice;
+    printf("Veja abaixo as opcoes de compra.");
+    listaVendas();
+    printf("\n\tDigite um numero: ");scanf("%d",&indice);
+    while(indice!=0){
+        switchVendas(p1,p2,p3,p4,p5,p6,p7,p8,p9,indice);
+        listaVendas();
+        printf("\n\tDigite um numero: ");scanf("%d",&indice);
+    }
+}
+void listaVendas(){
+    printf("\n\tOpcoes:");
+    printf("\n\t\t1-Comprar na plateia\n\t\t2-Comprar na lateral\n\t\t3-Comprar no balcao");
+    printf("\n\t\t0-Para sair");
+}
+void switchVendas(float *p1,float *p2,float *p3,int *p4,int *p5,int *p6,int *p7,int *p8,int *p9,int ind){
+    switch(ind){
+        case 1: comprarIng(p1,p4,p7);
+                break;
+        case 2: comprarIng(p2,p5,p8);
+                break;
+        case 3: comprarIng(p3,p6,p9);
+                break;
+        default: printf("Numero invalido.\n\n");
+    }
+
+}
+void comprarIng(float *p1,int *p2,int *p3){
+    int numIngComprar;
+    char conf[4];
+    printf("\nHa um total de %d ingressos pelo preco de RS %.2f\n",*p2,*p1);
+    printf("Digite o numero de ingressos a ser comprados: ");scanf("%d%*c",&numIngComprar);
+    printf("Valor total: RS %.2f\n",*p1*numIngComprar);
+    printf("Se deseja concluir a compra digite 'sim', senao digite 'nao': ");gets(conf);
+    if(!(strcmp(conf,"sim"))){
+        *p3=*p3+numIngComprar;
+        *p2=*p2-*p3;
+        printf("\n");
+    }
+    else
+        printf("Infelizmente voce nao concluiu a compra.\n");
+}
+int main(){
+    Categoria plateia,lateral,balcao;
+    float *p1,*p2,*p3;
+    int *p4,*p5,*p6;
+    int *p7,*p8,*p9;
+    float valArrecadado;
+    p1=&plateia.ingPreco;p2=&lateral.ingPreco;p3=&balcao.ingPreco;
+    p4=&plateia.ingTotal;p5=&lateral.ingTotal;p6=&balcao.ingTotal;
+    p7=&plateia.ingVendidos;p8=&lateral.ingVendidos;p9=&balcao.ingVendidos;*p7=0;*p8=0;*p9=0;
+    lerPrecos(p1,p2,p3);
+    lerIngTotal(p4,p5,p6);
+    vendasIng(p1,p2,p3,p4,p5,p6,p7,p8,p9);
+    printf("Sobraram %d ingressos da plateia, %d da lateral e %d do balcao.",*p4,*p5,*p6);
+    valArrecadado=*p1*(*p7)+*p2*(*p8)+*p3*(*p9);
+    printf("\nO valor arrecado com as vendas de ingressos e de RS %.2f\n\n",valArrecadado);
+    return 0;
+}
+
+	12-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define ALUNOS 150
+#define PROVAS 7
+typedef struct{
+    char nome[100];
+    int numProvas,numAlunos;
+    float notas[ALUNOS][PROVAS+2];
+}Disciplinas;
+
+int main(){
+    Disciplinas materias[1];
+    int i,j,k;
+    float somaNotas,mediaNotas;
+    for(i=0;i<1;i++){
+        printf("Digite o nome da %da materia: ",i+1);gets(materias[i].nome);
+        printf("Digite o numero de avaliações de %s feitas: ",materias[i].nome);scanf("%d%*c",&materias[i].numProvas);
+        printf("Digite o numero de alunos de %s: ",materias[i].nome);scanf("%d%*c",&materias[i].numAlunos);
+        for(j=0;j<materias[i].numAlunos;j++){
+            for(k=0,somaNotas=0;k<materias[i].numProvas;k++){
+                printf("Em %s, digite a %da nota do %do aluno: ",materias[i].nome,k+1,j+1);scanf("%f%*c",&materias[i].notas[j][k]);
+                somaNotas+=materias[i].notas[j][k];
+                if(k==materias[i].numProvas-1)
+                    materias[i].notas[j][k+1]=somaNotas;
+                    mediaNotas=somaNotas/materias[i].numProvas;materias[i].notas[j][k+2]=mediaNotas;
+            }
+        }
+    }
+    printf("\n\nVamos imprimir os dados das materias:\n");
+    for(i=0;i<1;i++){
+        printf("A materia %s tivemos %d provas e %d alunos.",materias[i].nome,materias[i].numProvas,materias[i].numAlunos);
+        printf("As notas foram:\n");
+        for(j=0;j<materias[i].numAlunos;j++){
+            for(k=0;k<materias[i].numProvas;k++){
+                printf("%do aluno, %da prova, tirou nota igual %.2f\n",j+1,k+1,materias[i].notas[j][k]);
+            }
+            printf("A soma das notas e igual a %.2f e media final e %.2f\n\n",materias[i].notas[j][k],materias[i].notas[j][k+1]);
+        }
+    }
+
+    return 0;
+}
+
+	13-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define NUM_ING 3
+typedef struct{
+    float preco;
+    char local[150],atracao[150];
+}Evento;
+int main(){
+    Evento evento[NUM_ING];
+    int i,j,k;
+    float vMax,vMin;
+    printf("Digite os dados relacionado ao ingresso:\n");
+    for(i=0;i<NUM_ING;i++){
+        printf("Digite o nome da atracao do evento: ");gets(evento[i].atracao);
+        printf("Digite o preco da atracao: RS ");scanf("%f%*c",&evento[i].preco);
+        if(i==0){
+            vMax=evento[i].preco;vMin=evento[i].preco;j=i;k=i;
+            }
+        else{
+            if(vMax<evento[i].preco){
+                vMax=evento[i].preco;j=i;
+                }
+            if(vMin>evento[i].preco){
+                vMin=evento[i].preco;k=i;
+                }
+            }
+        printf("Digite o local onde ocorrera a atracao: ");gets(evento[i].local);
+    }
+    printf("\n\nA atracao de maior valor e %s e a atracao de menor valor e %s.",evento[j].atracao,evento[k].atracao);
+    return 0;
+}
+
+	14-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define NUM_ING 3
+typedef struct{
+    float preco;
+    char local[150],atracao[150];
+}Evento;
+void novoPreco(Evento e[],char *c){
+    int i;
+    float *f;
+    printf("\nVamos atualizar o preco da atracao %s:\n",c);
+    for(i=0;i<NUM_ING;i++){
+        if(!(strcmp(e[i].atracao,c))){
+            f=&e[i].preco;printf("Digite o novo preco: RS ");scanf("%f%*c",f);
+        }
+    }
+}
+void imprimirIng(Evento e[],char *c){
+    int i,j;
+    for(i=0;i<NUM_ING;i++){
+        if(!(strcmp(c,e[i].atracao)))
+            j=i;
+    }
+    printf("Dados da atracao:\n");
+    printf("\t-Nome da atracao: %s\n\t-Local da atracao: %s",e[j].atracao,e[j].local);
+    printf("\n\t-Preco do ingresso: RS %.2f\n\n",e[j].preco);
+}
+void imprimirTudo(Evento e[]){
+    int i=0;
+    for(i=0;i<NUM_ING;i++){
+        printf("Dados da atracao:\n");
+        printf("\t-Nome da atracao: %s\n\t-Local da atracao: %s",e[i].atracao,e[i].local);
+        printf("\n\t-Preco do ingresso: RS %.2f\n\n",e[i].preco);
+    }
+}
+int main(){
+    Evento evento[NUM_ING];
+    char *c;
+    int i,j,k;
+    float vMax,vMin;
+    char auxC[150];
+    printf("Digite os dados relacionado ao ingresso:\n");
+    for(i=0;i<NUM_ING;i++){
+        printf("Digite o nome da atracao: ");gets(evento[i].atracao);
+        printf("Digite o preco da atracao: RS ");scanf("%f%*c",&evento[i].preco);
+        printf("Digite o local onde ocorrera a atracao: ");gets(evento[i].local);
+        printf("\n");
+    }
+    for(i=0;i<1;i++){
+        printf("\nDigite a atracao a qual vai ter seu preco atualizado: ");gets(auxC);
+        novoPreco(evento,&auxC);
+    }
+    printf("\n\nDigite a atracao que voce deseja ver os dados: ");gets(auxC);
+    imprimirIng(evento,&auxC);
+    system("pause");
+    printf("\n\nVamos ver todos as atracoes:\n");
+    imprimirTudo(evento);
+    for(i=0;i<NUM_ING;i++){
+        if(i==0){
+            vMax=evento[i].preco;vMin=evento[i].preco;j=i;k=i;
+            }
+        else{
+            if(vMax<evento[i].preco){
+                vMax=evento[i].preco;j=i;
+                }
+            if(vMin>evento[i].preco){
+                vMin=evento[i].preco;k=i;
+                }
+            }
+    }
+    printf("\n\nA atracao de maior valor e %s e a atracao de menor valor e %s.\n\n",evento[j].atracao,evento[k].atracao);
+    return 0;
+}
+
+	15-
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 3
+typedef struct{
+    char nomeLoja[150];
+    char rua[200],CEP[10],bairro[200];
+    char telefone[14];
+    float preco;
+}Loja;
+void lerTodosDados(Loja dL[]){
+    int i;
+    printf("\nPreencha todos os dados de todas as lojas:");
+    for(i=0;i<MAX;i++){
+        printf("\n");
+        printf("Digite o nome completo da %da loja: ",i+1);gets(dL[i].nomeLoja);
+        printf("Digite o endereco da %da loja:\n\t-Nome da rua: ",i+1);gets(dL[i].rua);
+        printf("\t-CEP(00000-000): ");gets(dL[i].CEP);
+        printf("\t-Nome do bairo: ");gets(dL[i].bairro);
+        printf("Digite o telefone da %da loja((00)000000000): ",i+1);gets(dL[i].telefone);
+        printf("Digite o preco do eletrodomentico da %da loja: RS ",i+1);scanf("%f%*c",&dL[i].preco);
+    }
+}
+void imprimirDadosLoja(Loja dL[]){
+    char c[150];
+    int i;
+    printf("\nDigite o nome da loja que voce deseja ver os dados: ");gets(c);
+    for(i=0;i<MAX;i++){
+        if(!(strcmp(c,dL[i].nomeLoja))){
+            printf("-Nome da loja: %s\n-Endereco:",dL[i].nomeLoja);
+            printf("\n\t-Rua: %s\n\t-CEP: %s\n\t-Nome do bairro: %s",dL[i].rua,dL[i].CEP,dL[i].bairro);
+            printf("\n-Numero do telefone: %s",dL[i].telefone);
+            printf("\n-Preco do eletrodomestico: RS %.2f\n",dL[i].preco);
+        }
+    }
+}
+int calcularMediaPrecos(Loja dL[]){
+    int i;
+    float soma=0,media;
+    for(i=0;i<MAX;i++)
+        soma+=dL[i].preco;
+    media=soma/MAX;
+    printf("\nA media de precos do eletrodomestico e RS %.2f\n",media);
+    return media;
+}
+void imprimirTelefonesAbM(Loja dL[]){
+    int i;
+    float media;
+    media=calcularMediaPrecos(dL);
+    printf("Vamos imprimir as lojas, cujo preco esta abaixo da media:\n");
+    for(i=0;i<MAX;i++){
+        if(dL[i].preco<media){
+            printf("\t-Loja: %s\tTelefone: %s\n",dL[i].nomeLoja,dL[i].telefone);
+        }
+    }
+}
+void imprimirLojaValMen(Loja dL[]){
+    int i;
+    float valMenor;
+    valMenor=dL[0].preco;
+    for(i=1;i<MAX;i++){
+        if(valMenor>dL[i].preco)
+            valMenor=dL[i].preco;
+    }
+    for(i=0;i<MAX;i++){
+        if(dL[i].preco==valMenor){
+            printf("-Nome da loja: %s\n-Endereco:",dL[i].nomeLoja);
+            printf("\n\t-Rua: %s\n\t-CEP: %s\n\t-Nome do bairro: %s",dL[i].rua,dL[i].CEP,dL[i].bairro);
+            printf("\n-Numero do telefone: %s",dL[i].telefone);
+            printf("\n-Preco do eletrodomestico: RS %.2f\n",dL[i].preco);
+        }
+    }
+}
+int main(){
+    Loja dadosLojas[MAX];
+    int indice;
+    char aux[4];
+    printf("Veja a lista abaixo e digite um numero:\n");
+    printf("-Lista:\n\t1-Escrever os dados das lojas\n\t2-Imprimir dados duma loja");
+    printf("\n\t3-Calcular a media dos preco\n\t4-Mostrar quais lojas estao abaixo da media dos precos");
+    printf("\n\t5-Mostrar ifformacoes da loja com menor preco");
+    printf("\n\t0-Sair");
+    printf("\n-Digite um numero: ");scanf("%d%*c",&indice);
+    while(indice!=0){
+        switch(indice){
+            case 1: lerTodosDados(dadosLojas);;
+                    break;
+            case 2: imprimirDadosLoja(dadosLojas);
+                    break;
+            case 3: calcularMediaPrecos(dadosLojas);
+                    break;
+            case 4: imprimirTelefonesAbM(dadosLojas);
+                    break;
+            case 5: imprimirLojaValMen(dadosLojas);
+                    break;
+            default: printf("Numero invalido.\n");
+        }
+        printf("\nDeseja rever a lista digite 'sim', senao digite 'nao': ");gets(aux);
+        if(!(strcmp(aux,"sim"))){
+            printf("-Lista:\n\t1-Escrever os dados das lojas\n\t2-Imprimir dados duma loja");
+            printf("\n\t3-Calcular a media dos preco\n\t4-Mostrar quais lojas estao abaixo da media dos precos");
+            printf("\n\t5-Mostrar informacoes da loja com menor preco");
+            printf("\n\t0-Sair");
+        }
+        printf("\n-Digite um numero: ");scanf("%d%*c",&indice);
+    }
+    return 0;
+}
+
+	16-
+
+
+
