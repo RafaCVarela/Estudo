@@ -1,0 +1,16 @@
+	Exemplo 1-
+
+# Regex
+
+# Raw strings inicia-se com o "r" ou "R", de modo que,
+# não processa um caracter de escape.
+str1 = "Hello World!"
+str2 = r"Hello\nWorld!"
+
+print(str1)
+print(str2)
+
+
+
+	Exemplo 2-
+
