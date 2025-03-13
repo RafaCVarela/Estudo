@@ -1,0 +1,14 @@
+	Exemplo 1-
+
+import pandas as pd
+
+simpson = pd.read_html('https://en.wikipedia.org/wiki/List_of_The_Simpsons_episodes_(seasons_1%E2%80%9320)')
+
+print(len(simpson))
+
+print(simpson[1])
+
+
+	Exemplo 2-
+
+
