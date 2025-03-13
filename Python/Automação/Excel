@@ -1,0 +1,233 @@
+	Exemplo 1-
+
+# Criando pivot tables para excel.
+
+import pandas as pd
+
+df = pd.read_excel('(nome do arquivo).xlsx')
+# Para escolher mais de uma coluna
+df = df[['(nome da coluna 1)', '(nome da coluna dois)', '(nome da coluna três)']]
+# Para uma coluna
+# df = df['(nome da coluna)']
+
+
+# Aqui vamos crias a pivot table que é uma planilha dinâmica, nela contém o que queremos.
+# No exemplo do video o cara quer somar vários valores, daí defina como será sua planilha.
+pivot_table = df.pivot_table(index='(nome da coluna 1)', columns='(nome da coluna dois)', values='(nome da coluna três)', aggfunc='sum')
+
+# Agora para criar um arquivo em excel
+# O terceiro argumento em qual row será suportado.
+pivot_table.to_excel('(nome do arquvio).xlsx', '(nome do sheet/da folha)', startrow=4)
+
+
+	Exemplo 2-
+
+# Vamos criar um barchart/gráfico de colunas.
+
+from openpyxl import load_workbook
+from openpyxl.chart import BarChart
+
+wb = load_workbook('(nome do arquivo).xlsx')
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos identificar as rows/linhas e colunas(máx. e mín.).
+min_column = wb.active.min_column
+max_column = wb.active.max_column
+min_row = wb.active.min_row
+max_row = wb.active.max_row
+
+barchart = BarChart()
+
+# Preste atenção, pois a depender da planilha precisaremos adequar suas informações,
+# como, por exemplo, para não somarmos títulos ou referências, somar mais um.
+data = Reference(sheet, min_col=min_column+1, max_col=max_column, min_row=min_row, max_row=max_row)
+# Agora vamos fazer o mesmo para as categorias, observe que, geralmente,
+# elas se concentram numa coluna etc. Portanto, preste atenção na formatação da planilha.
+categories = Reference(sheet, min_col=min_column, max_col=min_column, min_row=min_row+1, max_row=max_row)
+
+barchart.add_data(data, titles_from_data=True)
+barchart.set_categories(categories)
+sheet.add_chart(barchart, "(nome célula que começa o gráfico, ex.: B12)")
+barchart.title = "Nome do título"
+barchart.style = 5 # Aqui entram vários números, mas é preciso pesquisar se são apenas inteiros.
+wb.save("barchart.xlsx")
+
+
+	Exemplo 3-
+
+# Vamos criar um barchart/gráfico de colunas, também, usaremos funções do excel.
+
+from openpyxl import load_workbook
+
+wb = load_workbook('(nome do arquivo).xlsx')
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos identificar as rows/linhas e colunas(máx. e mín.).
+min_column = wb.active.min_column
+max_column = wb.active.max_column
+min_row = wb.active.min_row
+max_row = wb.active.max_row
+
+# Aqui fizemos manualmente
+sheet["(nome da célula que o resultado será escrito, ex.: B8)"] = "=sum(B6:B7)"
+sheet["(nome da célula que o resultado será escrito, ex.: B8)"].style = "Currency"
+
+wb.save("(nome do arquivo).xlsx")
+
+
+	Exemplo 4-
+
+# Vamos criar um barchart/gráfico de colunas, também, usaremos funções do excel.
+
+from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter
+
+wb = load_workbook('(nome do arquivo).xlsx')
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos identificar as rows/linhas e colunas(máx. e mín.).
+min_column = wb.active.min_column
+max_column = wb.active.max_column
+min_row = wb.active.min_row
+max_row = wb.active.max_row
+
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"] = "=sum(B6:B7)".
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"].style = "Currency"
+# Aqui faremos com uma iteração.
+y0 = min_column + 1  # Aqui estamos formatando a planilha.
+yf = max_column + 1  # Aqui estamos ajustando para o loop for, senão a última coluna não será contada.
+x0 = min_row
+xf = max_row
+
+for j in range(y0, yf):
+    letter = get_column_letter
+    # Segue o mesmo formato do manual acima, mas ele é iterado.
+    sheet[f"{letter}{xf}"] = f"=sum({letter}{x0+1}:{letter}{xf})"
+    sheet[f"{letter}{xf}"].style = "Currency"
+
+
+wb.save("(nome do arquivo).xlsx")
+
+
+	Exemplo 5-
+
+# Vamos formatar as células.
+
+from openpyxl import load_workbook
+from openpyxl.styles import Font
+
+wb = load_workbook('(nome do arquivo).xlsx')
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos criar um título.
+sheet["A1"] = "Título"
+# O subtítulo.
+sheet["A2"] = "Subtítulo"
+# As fonte do título e subtítulo.
+sheet["A1"].font = Font("Arial", bold=True, size=20) # Ler a documentação deve ser fundamental.
+sheet["A2"].font = Font("Arial", bold=True, size=10)
+
+wb.save("(nome do arquivo).xlsx")
+
+
+	Exemplo 6-
+
+# Aqui temos o script completo
+
+from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.styles import Font
+
+
+wb = load_workbook('(nome do arquivo).xlsx')
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos identificar as rows/linhas e colunas(máx. e mín.).
+min_column = wb.active.min_column
+max_column = wb.active.max_column
+min_row = wb.active.min_row
+max_row = wb.active.max_row
+
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"] = "=sum(B6:B7)".
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"].style = "Currency"
+# Aqui faremos com uma iteração.
+y0 = min_column + 1  # Aqui estamos formatando a planilha.
+yf = max_column + 1  # Aqui estamos ajustando para o loop for, senão a última coluna não será contada.
+x0 = min_row
+xf = max_row
+
+for j in range(y0, yf):
+    letter = get_column_letter
+    # Segue o mesmo formato do manual acima, mas ele é iterado.
+    sheet[f"{letter}{xf}"] = f"=sum({letter}{x0+1}:{letter}{xf})"
+    sheet[f"{letter}{xf}"].style = "Currency"
+
+
+# Vamos criar um título.
+sheet["A1"] = "Título"
+# O subtítulo.
+sheet["A2"] = "Subtítulo"
+# As fonte do título e subtítulo.
+sheet["A1"].font = Font("Arial", bold=True, size=20)  # Ler a documentação deve ser fundamental.
+sheet["A2"].font = Font("Arial", bold=True, size=10)
+
+wb.save("(nome do arquivo).xlsx")
+
+
+	Exemplo 7-
+
+# Aqui temos o script completo e pronto para ser transformado num executável.
+
+from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.styles import Font
+import os
+import sys
+
+
+application_path = os.path.dirname(sys.executable)
+
+# x = input("Digite algo, caso tenha uma variável que você queira escrever a cada uso do script").
+
+input_path = os.path.join(application_path, '(nome do arquivo).xlsx')
+
+wb = load_workbook(input_path)
+# Vamos escolher qual sheet/folha iremos trabalhar.
+sheet = wb['(nome da sheet/folha)']
+
+# Vamos identificar as rows/linhas e colunas(máx. e mín.).
+min_column = wb.active.min_column
+max_column = wb.active.max_column
+min_row = wb.active.min_row
+max_row = wb.active.max_row
+
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"] = "=sum(B6:B7)".
+# sheet["(nome da célula que o resultado será escrito, ex.: B8)"].style = "Currency"
+# Aqui faremos com uma iteração.
+y0 = min_column + 1  # Aqui estamos formatando a planilha.
+yf = max_column + 1  # Aqui estamos ajustando para o loop for, senão a última coluna não será contada.
+x0 = min_row
+xf = max_row
+
+for j in range(y0, yf):
+    letter = get_column_letter
+    # Segue o mesmo formato do manual acima, mas ele é iterado.
+    sheet[f"{letter}{xf}"] = f"=sum({letter}{x0+1}:{letter}{xf})"
+    sheet[f"{letter}{xf}"].style = "Currency"
+
+
+# Vamos criar um título.
+sheet["A1"] = "Título"
+# O subtítulo.
+sheet["A2"] = "Subtítulo"
+# As fonte do título e subtítulo.
+sheet["A1"].font = Font("Arial", bold=True, size=20)  # Ler a documentação deve ser fundamental.
+sheet["A2"].font = Font("Arial", bold=True, size=10)
+
+output_path = os.path.join(application_path, "(nome do arquivo).xlsx")
+wb.save(output_path)
