@@ -1,0 +1,363 @@
+	1-
+
+#   Exercício 1
+
+def somatorio(t):
+
+    x = t[0]
+
+    i = 1
+
+    while i < len(t):
+
+        x += t[i]
+
+        i += 1
+
+    soma = 0
+
+    for y in x:
+        
+        soma += y
+
+    return soma
+
+t = [[1, 2], [3], [4, 5, 6]]
+
+resp = somatorio(t)
+
+print(resp)
+
+	2-
+
+#   Exercício 2
+
+def soma_cumulativa(t):
+
+    soma = 0
+
+    i = 0
+
+    tam = len(t)
+
+    while i < tam:
+
+        soma += t[i]
+
+        t[i] = soma
+
+        i += 1
+    
+    return t
+
+t = [1, 2, 3]
+
+resp = soma_cumulativa(t)
+
+print(resp)
+
+	3-
+
+#   Exercício 3
+
+def meio(t):
+    
+    y = len(t) - 1
+
+    u = t[1:y]
+    
+    return u
+
+t = [1, 2, 3, 4]
+
+resp = meio(t)
+
+print(resp)
+
+	4-
+
+#   Exercício 4
+
+def corte(t):
+
+    del t[0]
+
+    del t[-1]
+    
+
+lista = [1, 2, 3, 4]
+
+corte(lista)
+
+print(lista)
+
+	5-
+
+#   Exercício 5
+
+def is_sorted(t):
+
+    i = 0
+
+    while i < len(t) - 1:
+
+        if t[i] > t[i + 1]:
+
+            return False
+        
+        i += 1
+
+    return True   
+
+lista = ['a', 'a', 'd']
+
+print(is_sorted(lista))
+
+	6-
+
+#   Exercício 6
+
+def is_sorted(s1, s2):
+
+    t1 = list(s1)
+
+    t2 = list(s2)
+    
+    t1.sort()
+
+    t2.sort()
+
+    if len(t1) != len(t2):
+
+        return False
+
+    i = 0
+
+    while i < len(t1):
+
+        if t1[i] != t2[i]:
+
+            return False
+        
+        i += 1
+
+    return True   
+
+string1 = 'maça'
+
+string2 = 'çama'
+
+print(is_sorted(string1, string2))
+
+	7-
+
+#   Exercício 7
+
+def has_duplicates(t):
+
+    t2 = t[:]
+
+    t2.sort()
+
+    i = 0
+
+    while i < len(t2) - 1:
+
+        if t2[i] == t2[i + 1]:
+
+            return True
+        
+        i += 1
+
+    return False
+
+lista = [1, 2, 4, 5, 5, 2, 1]
+
+print(has_duplicates(lista))
+
+	8-
+
+#   Exercício 8
+
+# Não sei se entendi muito bem, aqui na página da Wikipédia já tem o spoiler. Sendo bem sincero, eu não entendi nada
+
+def birthday(n):
+    
+    p = (1.0/365)**n
+
+    for i in range((366-n),366):
+
+        p *= i
+
+    return 1-p
+
+resp = birthday(23)
+
+print(resp * 100, '%')
+
+	9-
+
+(versão 1)
+
+#   Exercício 9
+
+def listando(t, s):
+
+    x = list(s)
+
+    t.append(x[0])
+
+lista = []
+
+tin = open('words.txt')
+
+for line in tin:
+
+    word = line.strip()
+
+    listando(lista, word)
+
+print(lista)
+
+(versão 2)
+
+#   Exercício 9
+
+def listando(t, s):
+
+    x = list(s)
+
+    t.append(x)
+
+lista = []
+
+tin = open('words.txt')
+
+for line in tin:
+
+    word = line.strip()
+
+    listando(lista, word)
+
+print(lista)
+
+(versão 3 -  versão do autor)
+
+#   Exercício 9
+
+import time
+
+
+def make_word_list1():
+    """Reads lines from a file and builds a list using append."""
+    t = []
+    fin = open('words.txt')
+    for line in fin:
+        word = line.strip()
+        t.append(word)
+    return t
+
+
+def make_word_list2():
+    """Reads lines from a file and builds a list using list +."""
+    t = []
+    fin = open('words.txt')
+    for line in fin:
+        word = line.strip()
+        t = t + [word]
+    return t
+
+
+start_time = time.time()
+t = make_word_list1()
+elapsed_time = time.time() - start_time
+
+print(len(t))
+print(t[:10])
+print(elapsed_time, 'seconds')
+
+start_time = time.time()
+t = make_word_list2()
+elapsed_time = time.time() - start_time
+
+print(len(t))
+print(t[:10])
+print(elapsed_time, 'seconds')
+
+	10-
+
+# Exercício 10
+
+def bisseccao(o, val):
+
+    if len(o) % 2 != 0:
+        iMaior = len(o) - 1
+        mediana = int(iMaior / 2)
+
+        if o[mediana] == val:
+            return mediana
+        elif o[mediana] > val:
+            return bisseccao(o[:mediana], val)
+        else:
+            return bisseccao(o[mediana:], val) + mediana
+        
+    else:
+        iMaior = len(o) - 1
+        mediana = int(iMaior / 2)
+
+        if o[mediana] == val:
+            return mediana
+        elif o[mediana] > val:
+            return bisseccao(o[:mediana], val)
+        else:
+            if o[mediana + 1] == val:
+                return mediana + 1
+            else:
+                return bisseccao(o[mediana:], val) + mediana 
+
+
+valor = input()
+
+lista = ['banana', 'abacate', 'limão', 'manga'] # Para testar com número ímpar use mais uma palavra, como, 'uva'.
+
+lista.sort()
+
+print(lista)
+
+print(bisseccao(lista, valor))
+
+	11-
+
+# Exercício 11
+
+def reversa(p1, p2):
+    if len(p1) != len(p2):
+        return False
+    else:
+        i = 0
+        j = len(p2) - 1
+
+        while j != 0:
+            if p1[i] != p2[j]:
+                return False
+            i += 1
+            j -= 1
+
+        return True
+
+lista = ['banana', 'agnam', 'ananab', 'limão', 'oãmil']
+cont = 0
+
+for i in range(len(lista)):
+    j = len(lista) - 1
+
+    while j > i:
+        if reversa(lista[j], lista[i]):
+            cont += 1
+        j -= 1
+    
+print(cont)
+
+	12-
+
+Não entendi direito, não sei se era pra ter uma lista de palavras. Noutro momento oportuno retornarei.
