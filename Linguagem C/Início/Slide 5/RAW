@@ -77,40 +77,76 @@ int main()
 
 	3-
 
+// Entrada de 10 notas, a partir de sua média definir quais são as notas abaixo e acima dela
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #define NOTAS 10
 
 int main()
 {
-    int i,contAc=0,contAb=0,contAux1,contAux2;float notas[NOTAS],notasAc[NOTAS],notasAb[NOTAS],soma=0,media;
-    for(i=0;i<NOTAS;i++){
-        printf("Digite sua nota: ");scanf("%f",&notas[i]);
+    int i, contAux1, contAux2;
+    int contAc = 0, contAb = 0;
+    float notas[NOTAS], notasAc[NOTAS], notasAb[NOTAS], media;
+    float  soma=0;
+
+    for(i = 0; i<NOTAS; i++){
+
+        printf("Digite sua nota: ");
+        scanf("%f", &notas[i]);
+
         soma+=notas[i];
+
     }
-    media=soma/NOTAS;printf("Sua media foi : %.3f\n",media);
-    for(i=0;i<NOTAS;i++){
+
+    media = soma/NOTAS;
+    
+    printf("Sua media foi : %.3f\n",media);
+
+    for(i = 0; i<NOTAS; i++){
+
         if(notas[i]>media){
-            notasAc[contAc]=notas[i];contAc++;
+
+            notasAc[contAc] = notas[i];
+            contAc++;
+
         }
         else{
-            notasAb[contAb]=notas[i];contAb++;
+
+            notasAb[contAb] = notas[i];
+            contAb++;
+
         }
     }
-    contAux1=contAc;contAux2=contAb;
+
+    contAux1 = contAc;
+    contAux2 = contAb;
+
     printf("Ha %d notas acima da media e ha %d notas abaixo da media.\n",contAc,contAb);
     printf("Suas notas acima da media sao: \n");
-    for(contAc=0;contAc<contAux1;contAc++){
-        printf("%.3f\n",notasAc[contAc]);
+
+    for(contAc = 0; contAc<contAux1; contAc++){
+
+        printf("%.3f\n", notasAc[contAc]);
+
     }
+
     printf("Suas notas abaixo da media sao: \n");
-    for(contAb=0;contAb<contAux2;contAb++){
-        printf("%.3f\n",notasAb[contAb]);
+
+    for(contAb = 0; contAb<contAux2; contAb++){
+
+        printf("%.3f\n", notasAb[contAb]);
+
     }
+
     return 0;
 }
 
 	4-
+
+// Entrada de notas de 'n' alunos, saída são suas médias
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -118,18 +154,34 @@ int main()
 
 int main()
 {
-    int n,a,nota,soma;float media[NOTAS];
-    for(a=0;a<8;a++){
-        soma=0;
+    int n, a, nota, soma;
+    float media[NOTAS];
+
+    for(a = 0; a<8; a++){
+
+        soma = 0;
+
         printf("%do alunos digite suas notas: \n",a+1);
-        for(n=1;n<8;n++){
-            printf("Digite a %da nota de 1 a 10: ",n);scanf("%d",&nota);soma+=nota;
+
+        for(n = 1; n<8; n++){
+
+            printf("Digite a %da nota de 1 a 10: ", n);
+            scanf("%d", &nota);
+
+            soma += nota;
+
         }
-        media[a]=soma/7;
+
+        media[a] = soma/7;
+
     }
-    for(a=0;a<8;a++){
-        printf("A media das notas do %do aluno e %.2f\n",a+1,media[a]);
+
+    for(a = 0; a<8; a++){
+
+        printf("A media das notas do %do aluno e %.2f\n", a+1, media[a]);
+
     }
+
     return 0;
 }
 
